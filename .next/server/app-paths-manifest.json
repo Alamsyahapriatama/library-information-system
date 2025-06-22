@@ -1,0 +1,8 @@
+{
+  "/not-found": "app/not-found.js",
+  "/pembudayaan/survei-index-membaca/page": "app/pembudayaan/survei-index-membaca/page.js",
+  "/pembudayaan/gerakan-gemar-membaca/page": "app/pembudayaan/gerakan-gemar-membaca/page.js",
+  "/pembudayaan/festival-literasi/page": "app/pembudayaan/festival-literasi/page.js",
+  "/profil/profil-perpustakaan/page": "app/profil/profil-perpustakaan/page.js",
+  "/page": "app/page.js"
+}

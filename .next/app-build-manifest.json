@@ -1,0 +1,125 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/profil/profil-perpustakaan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/profil-perpustakaan/page.js"
+    ],
+    "/profil/visi-misi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/visi-misi/page.js"
+    ],
+    "/profil/struktur-organisasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/struktur-organisasi/page.js"
+    ],
+    "/profil/sop-perpustakaan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/sop-perpustakaan/page.js"
+    ],
+    "/profil/fasilitas/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/fasilitas/page.js"
+    ],
+    "/koleksi/ebook/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/koleksi/ebook/page.js"
+    ],
+    "/layanan/reservasi-buku/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/reservasi-buku/page.js"
+    ],
+    "/layanan/perpanjangan-online/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/perpanjangan-online/page.js"
+    ],
+    "/layanan/permintaan-informasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/permintaan-informasi/page.js"
+    ],
+    "/layanan/angket-usulan-koleksi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/angket-usulan-koleksi/page.js"
+    ],
+    "/layanan/polling-kepuasan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/polling-kepuasan/page.js"
+    ],
+    "/layanan/konsultasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/konsultasi/page.js"
+    ],
+    "/layanan/deposit/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/deposit/page.js"
+    ],
+    "/layanan/aduan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/aduan/page.js"
+    ],
+    "/layanan/pendampingan-akreditasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/layanan/pendampingan-akreditasi/page.js"
+    ],
+    "/koleksi/multimedia/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/koleksi/multimedia/page.js"
+    ],
+    "/koleksi/artikel/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/koleksi/artikel/page.js"
+    ],
+    "/pembudayaan/jurnal-literasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pembudayaan/jurnal-literasi/page.js"
+    ],
+    "/pembudayaan/survei-index-membaca/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pembudayaan/survei-index-membaca/page.js"
+    ],
+    "/pembudayaan/gerakan-gemar-membaca/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pembudayaan/gerakan-gemar-membaca/page.js"
+    ],
+    "/pembudayaan/festival-literasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pembudayaan/festival-literasi/page.js"
+    ],
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/not-found.js"
+    ]
+  }
+}
