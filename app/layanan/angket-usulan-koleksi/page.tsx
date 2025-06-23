@@ -3,77 +3,80 @@
 import React, { useState } from 'react';
 import { Loader2, CheckCircle, XCircle } from 'lucide-react'; // Icons for loading and status
 
-export default function UsulanPengadaanKoleksiPage() { // Renamed component
-  const [fullName, setFullName] = useState(''); // Nama Lengkap
-  const [kelas, setKelas] = useState(''); // Kelas
-  const [institution, setInstitution] = useState(''); // Instansi/Organisasi/Umum (new field)
-  const [bookTitleProposal, setBookTitleProposal] = useState(''); // Usulan Judul Buku (new field)
+export default function UsulanPengadaanKoleksiPage() {
+  const [fullName, setFullName] = useState(''); // Maps to 'name'
+  const [kelas, setKelas] = useState(''); // Maps to 'class'
+  const [organization, setOrganization] = useState(''); // Renamed from 'institution', maps to 'organization'
+  const [bookTitleProposal, setBookTitleProposal] = useState(''); // Renamed to 'content', maps to 'content'
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(null); // 'success' | 'error' | null
+  const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null); // 'success' | 'error' | null
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Updated email based on the provided image
-  const loggedInEmail = "jhon.nie@gmail.com"; // This would ideally come from user authentication
+  // IMPORTANT: This email should come from your authentication system, not hardcoded.
+  const loggedInEmail = "jhon.nie@gmail.com"; 
 
   const handleClearForm = () => {
     setFullName('');
     setKelas('');
-    setInstitution('');
-    setBookTitleProposal('');
+    setOrganization(''); // Updated
+    setBookTitleProposal(''); // Updated
     setSubmissionStatus(null);
     setErrorMessage('');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => { // Explicitly type 'e'
     e.preventDefault();
     setSubmissionStatus(null); // Reset previous status
     setErrorMessage('');
 
     // Basic Validation for all required fields
-    if (!fullName || !kelas || !institution || !bookTitleProposal) {
+    if (!fullName || !kelas || !organization || !bookTitleProposal) { // Updated validation
       setErrorMessage('Semua kolom wajib diisi.');
       return;
     }
 
     setIsSubmitting(true); // Start loading state
 
-    // --- IMPORTANT: REPLACE THIS MOCK API CALL WITH YOUR ACTUAL BACKEND API ENDPOINT ---
-    // This is a placeholder to simulate network request and response.
-    // In a real application, you would send this data to your library's acquisition proposal system API.
+    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/acquisition-proposal'; // Assuming a new endpoint for book proposals
+
+    // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {
-      fullName,
-      kelas,
-      institution,
-      bookTitleProposal,
-      email: loggedInEmail,
-      timestamp: new Date().toISOString(),
+      email: loggedInEmail, // From loggedInEmail state/prop
+      name: fullName, // From form input
+      class: kelas, // From form input
+      organization: organization, // From form input, renamed from institution
+      content: bookTitleProposal, // From form textarea, renamed from bookTitleProposal
     };
 
     try {
-      // Simulate API call (e.g., using fetch or axios)
-      const response = await fetch('/api/propose-acquisition', { // Replace with your actual backend API URL
+      const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          // If your API requires an authorization token, uncomment and add it here:
+          // 'Authorization': 'Bearer YOUR_AUTH_TOKEN_HERE', 
         },
         body: JSON.stringify(submissionData),
       });
 
       if (response.ok) {
-        // Assuming your API returns a success status (e.g., 200 OK)
+        // Assuming your API returns a success status (e.g., 200 OK, 201 Created)
+        const result = await response.json(); // Parse the response even on success to confirm
+        console.log("API Success Response:", result);
         setSubmissionStatus('success');
         handleClearForm(); // Clear form on successful submission
       } else {
         // Handle API errors (e.g., 400 Bad Request, 500 Internal Server Error)
-        const errorData = await response.json();
+        const errorData = await response.json(); // Attempt to parse error details
         setSubmissionStatus('error');
-        setErrorMessage(errorData.message || 'Terjadi kesalahan saat mengirim data.');
+        // Prioritize API message, then specific errors, then a generic message
+        setErrorMessage(errorData.message || (errorData.errors ? Object.values(errorData.errors).flat().join(', ') : 'Terjadi kesalahan saat mengirim data.'));
       }
-    } catch (error) {
+    } catch (error: any) { // Explicitly type 'error'
       console.error('Submission error:', error);
       setSubmissionStatus('error');
-      setErrorMessage('Tidak dapat terhubung ke server. Mohon coba lagi nanti.');
+      setErrorMessage(`Tidak dapat terhubung ke server. Mohon coba lagi nanti. Detail: ${error.message}`);
     } finally {
       setIsSubmitting(false); // End loading state
     }
@@ -82,7 +85,7 @@ export default function UsulanPengadaanKoleksiPage() { // Renamed component
   return (
     <div className="min-h-screen bg-gray-100 pt-28 pb-12 flex justify-center items-start">
       {/* Container for the form */}
-      <div className="max-w-2xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
+      <div className="max-w-6xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
         <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 text-center mb-6">
           USULAN PENGADAAN KOLEKSI
         </h1>
@@ -149,15 +152,15 @@ export default function UsulanPengadaanKoleksiPage() { // Renamed component
 
           {/* Instansi/Organisasi/Umum */}
           <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-            <label htmlFor="institution" className="block text-lg font-medium text-gray-900 mb-2">
+            <label htmlFor="organization" className="block text-lg font-medium text-gray-900 mb-2">
               Instansi/Organisasi/Umum <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
-              id="institution"
-              name="institution"
-              value={institution}
-              onChange={(e) => setInstitution(e.target.value)}
+              id="organization"
+              name="organization"
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
               placeholder="Jawaban Anda"
               required

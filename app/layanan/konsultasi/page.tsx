@@ -3,17 +3,18 @@
 import React, { useState } from 'react';
 import { Loader2, CheckCircle, XCircle } from 'lucide-react'; // Icons for loading and status
 
-export default function LayananInformasiAduanPage() { // Renamed component
-  const [memberId, setMemberId] = useState(''); // No. Anggota
-  const [fullName, setFullName] = useState(''); // Nama Lengkap
-  const [kelas, setKelas] = useState(''); // Kelas (new field)
-  const [inquiryDetail, setInquiryDetail] = useState(''); // Informasi/konsultasi/aduan (new field)
+export default function LayananInformasiAduanPage() {
+  const [memberId, setMemberId] = useState(''); // Maps to member_id
+  const [fullName, setFullName] = useState(''); // Maps to name
+  const [kelas, setKelas] = useState(''); // Maps to class
+  const [inquiryDetail, setInquiryDetail] = useState(''); // Maps to content
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(null); // 'success' | 'error' | null
+  const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null); // 'success' | 'error' | null
   const [errorMessage, setErrorMessage] = useState('');
 
-  const loggedInEmail = "jhon.nie@gmail.com"; // This would ideally come from user authentication
+  // IMPORTANT: This email should come from your authentication system, not hardcoded.
+  const loggedInEmail = "jhon.nie@gmail.com"; 
 
   const handleClearForm = () => {
     setMemberId('');
@@ -24,7 +25,7 @@ export default function LayananInformasiAduanPage() { // Renamed component
     setErrorMessage('');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => { // Explicitly type 'e'
     e.preventDefault();
     setSubmissionStatus(null); // Reset previous status
     setErrorMessage('');
@@ -37,42 +38,47 @@ export default function LayananInformasiAduanPage() { // Renamed component
 
     setIsSubmitting(true); // Start loading state
 
-    // --- IMPORTANT: REPLACE THIS MOCK API CALL WITH YOUR ACTUAL BACKEND API ENDPOINT ---
-    // This is a placeholder to simulate network request and response.
-    // In a real application, you would send this data to your library's information/complaint system API.
+    // --- API Endpoint: REPLACE THIS WITH YOUR ACTUAL BACKEND API URL ---
+    // Based on your previous context, this endpoint seems plausible for consultation/aduan.
+    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/consultation'; 
+
+    // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {
-      memberId,
-      fullName,
-      kelas,
-      inquiryDetail,
-      email: loggedInEmail,
-      timestamp: new Date().toISOString(),
+      email: loggedInEmail, // From loggedInEmail state/prop
+      member_id: memberId, // From form input
+      name: fullName, // From form input
+      class: kelas, // From form input
+      content: inquiryDetail, // From form textarea
     };
 
     try {
-      // Simulate API call (e.g., using fetch or axios)
-      const response = await fetch('/api/submit-inquiry', { // Replace with your actual backend API URL
+      const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          // If your API requires an authorization token, uncomment and add it here:
+          // 'Authorization': 'Bearer YOUR_AUTH_TOKEN_HERE', 
         },
         body: JSON.stringify(submissionData),
       });
 
       if (response.ok) {
-        // Assuming your API returns a success status (e.g., 200 OK)
+        // Assuming your API returns a success status (e.g., 200 OK, 201 Created)
+        const result = await response.json(); // Parse the response even on success to confirm
+        console.log("API Success Response:", result);
         setSubmissionStatus('success');
         handleClearForm(); // Clear form on successful submission
       } else {
         // Handle API errors (e.g., 400 Bad Request, 500 Internal Server Error)
-        const errorData = await response.json();
+        const errorData = await response.json(); // Attempt to parse error details
         setSubmissionStatus('error');
-        setErrorMessage(errorData.message || 'Terjadi kesalahan saat mengirim data.');
+        // Prioritize API message, then specific errors, then a generic message
+        setErrorMessage(errorData.message || (errorData.errors ? Object.values(errorData.errors).flat().join(', ') : 'Terjadi kesalahan saat mengirim data.'));
       }
-    } catch (error) {
+    } catch (error: any) { // Explicitly type 'error'
       console.error('Submission error:', error);
       setSubmissionStatus('error');
-      setErrorMessage('Tidak dapat terhubung ke server. Mohon coba lagi nanti.');
+      setErrorMessage(`Tidak dapat terhubung ke server. Mohon coba lagi nanti. Detail: ${error.message}`);
     } finally {
       setIsSubmitting(false); // End loading state
     }
@@ -81,7 +87,7 @@ export default function LayananInformasiAduanPage() { // Renamed component
   return (
     <div className="min-h-screen bg-gray-100 pt-28 pb-12 flex justify-center items-start">
       {/* Container for the form */}
-      <div className="max-w-2xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
+      <div className="max-w-6xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
         <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 text-center mb-6">
           LAYANAN INFORMASI, KONSULTASI, DAN ADUAN
         </h1>
@@ -94,11 +100,11 @@ export default function LayananInformasiAduanPage() { // Renamed component
           <div className="flex items-center justify-between mb-2">
             <span className="font-semibold">{loggedInEmail}</span>
             <button
-              onClick={() => alert('Fitur "Switch account" akan memerlukan integrasi autentikasi.')}
+              onClick={() => alert('Fitur "Ganti akun" akan memerlukan integrasi autentikasi.')}
               className="text-blue-600 hover:underline text-sm"
               type="button"
             >
-              Switch account
+              Ganti akun
             </button>
           </div>
           <div className="flex items-center text-sm text-gray-500">
@@ -106,9 +112,9 @@ export default function LayananInformasiAduanPage() { // Renamed component
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
-            Not shared
+            Tidak dibagikan
           </div>
-          <p className="text-red-500 text-sm mt-3">* Indicates required question</p>
+          <p className="text-red-500 text-sm mt-3">* Menunjukkan pertanyaan yang wajib diisi</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -124,7 +130,7 @@ export default function LayananInformasiAduanPage() { // Renamed component
               value={memberId}
               onChange={(e) => setMemberId(e.target.value)}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
-              placeholder="Your answer"
+              placeholder="Jawaban Anda"
               required
             />
           </div>
@@ -141,7 +147,7 @@ export default function LayananInformasiAduanPage() { // Renamed component
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
-              placeholder="Your answer"
+              placeholder="Jawaban Anda"
               required
             />
           </div>
@@ -158,7 +164,7 @@ export default function LayananInformasiAduanPage() { // Renamed component
               value={kelas}
               onChange={(e) => setKelas(e.target.value)}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
-              placeholder="Your answer"
+              placeholder="Jawaban Anda"
               required
             />
           </div>
@@ -175,7 +181,7 @@ export default function LayananInformasiAduanPage() { // Renamed component
               onChange={(e) => setInquiryDetail(e.target.value)}
               rows={4} // Adjust rows for desired height
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base resize-y"
-              placeholder="Your answer"
+              placeholder="Jawaban Anda"
               required
             ></textarea>
           </div>

@@ -3,16 +3,16 @@
 import React, { useState } from 'react';
 import { Loader2, CheckCircle, XCircle } from 'lucide-react'; // Icons for loading and status
 
-export default function PengajuanPendampinganAkreditasiPage() { // Renamed component
-  const [fullName, setFullName] = useState(''); // Nama Lengkap
-  const [originInstitution, setOriginInstitution] = useState(''); // Asal Instansi/Organisasi (new field)
-  const [address, setAddress] = useState(''); // Alamat (new field)
-  const [phoneNumber, setPhoneNumber] = useState(''); // No. Hp (new field)
-  const [position, setPosition] = useState(''); // Jabatan (new field - optional)
-  const [purpose, setPurpose] = useState(''); // Keperluan (new field)
+export default function PengajuanPendampinganAkreditasiPage() { // Component name remains consistent
+  const [fullName, setFullName] = useState(''); // Maps to 'name'
+  const [originInstitution, setOriginInstitution] = useState(''); // Maps to 'organization'
+  const [address, setAddress] = useState(''); // Maps to 'address'
+  const [phoneNumber, setPhoneNumber] = useState(''); // Maps to 'phone'
+  const [position, setPosition] = useState(''); // Maps to 'position' (optional)
+  const [purpose, setPurpose] = useState(''); // Maps to 'purpose'
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(null); // 'success' | 'error' | null
+  const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null); // Explicitly type submissionStatus
   const [errorMessage, setErrorMessage] = useState('');
 
   // Email based on the provided image
@@ -29,7 +29,7 @@ export default function PengajuanPendampinganAkreditasiPage() { // Renamed compo
     setErrorMessage('');
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => { // Explicitly type 'e'
     e.preventDefault();
     setSubmissionStatus(null); // Reset previous status
     setErrorMessage('');
@@ -42,44 +42,49 @@ export default function PengajuanPendampinganAkreditasiPage() { // Renamed compo
 
     setIsSubmitting(true); // Start loading state
 
-    // --- IMPORTANT: REPLACE THIS MOCK API CALL WITH YOUR ACTUAL BACKEND API ENDPOINT ---
-    // This is a placeholder to simulate network request and response.
-    // In a real application, you would send this data to your library's accreditation assistance system API.
+    // --- IMPORTANT: REPLACE THIS API ENDPOINT WITH YOUR ACTUAL BACKEND API URL FOR ACCREDITATION ASSISTANCE ---
+    // This is a hypothetical endpoint. You need to get the actual one from your backend developer.
+    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/accreditation-assistance'; // Example API endpoint
+
+    // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {
-      fullName,
-      originInstitution,
-      address,
-      phoneNumber,
-      position, // Optional field, sent if filled
-      purpose,
       email: loggedInEmail,
-      timestamp: new Date().toISOString(),
+      name: fullName,
+      organization: originInstitution,
+      address: address,
+      phone: phoneNumber,
+      position: position, // This field is optional based on your JSON (can be an empty string if not filled)
+      purpose: purpose,
     };
 
     try {
-      // Simulate API call (e.g., using fetch or axios)
-      const response = await fetch('/api/apply-accreditation-assistance', { // Replace with your actual backend API URL
+      const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          // If your API requires an authorization token, uncomment and add it here:
+          // 'Authorization': 'Bearer YOUR_AUTH_TOKEN_HERE', 
         },
         body: JSON.stringify(submissionData),
       });
 
       if (response.ok) {
-        // Assuming your API returns a success status (e.g., 200 OK)
+        // Assuming your API returns a success status (e.g., 200 OK, 201 Created)
+        const result = await response.json(); // Parse the response even on success to confirm
+        console.log("API Success Response:", result);
         setSubmissionStatus('success');
         handleClearForm(); // Clear form on successful submission
       } else {
         // Handle API errors (e.g., 400 Bad Request, 500 Internal Server Error)
-        const errorData = await response.json();
+        const errorData = await response.json(); // Attempt to parse error details
         setSubmissionStatus('error');
-        setErrorMessage(errorData.message || 'Terjadi kesalahan saat mengirim data.');
+        // Prioritize API message, then specific errors, then a generic message
+        setErrorMessage(errorData.message || (errorData.errors ? Object.values(errorData.errors).flat().join(', ') : 'Terjadi kesalahan saat mengirim data.'));
       }
-    } catch (error) {
+    } catch (error: any) { // Explicitly type 'error'
       console.error('Submission error:', error);
       setSubmissionStatus('error');
-      setErrorMessage('Tidak dapat terhubung ke server. Mohon coba lagi nanti.');
+      setErrorMessage(`Tidak dapat terhubung ke server. Mohon coba lagi nanti. Detail: ${error.message}`);
     } finally {
       setIsSubmitting(false); // End loading state
     }
@@ -88,7 +93,7 @@ export default function PengajuanPendampinganAkreditasiPage() { // Renamed compo
   return (
     <div className="min-h-screen bg-gray-100 pt-28 pb-12 flex justify-center items-start">
       {/* Container for the form */}
-      <div className="max-w-2xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
+      <div className="max-w-6xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
         <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 text-center mb-6">
           PENGAJUAN PENDAMPINGAN AKREDITASI
         </h1>
@@ -199,7 +204,7 @@ export default function PengajuanPendampinganAkreditasiPage() { // Renamed compo
               value={position}
               onChange={(e) => setPosition(e.target.value)}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
-              placeholder="Jawaban Anda"
+              placeholder="Jawaban Anda (Opsional)" // Added placeholder for optional field
             />
           </div>
 

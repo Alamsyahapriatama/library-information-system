@@ -1,4 +1,4 @@
-// File: /home/orangkeren/node/library-information-system/app/layanan/pendampingan-akreditasi/page.tsx
+// File: C:\laragon\www\library-information-system\app\layanan\pendampingan-akreditasi\page.tsx
 import * as entry from '../../../../../app/layanan/pendampingan-akreditasi/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

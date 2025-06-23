@@ -149,7 +149,7 @@ const Navbar = () => {
           {/* Desktop Menu and Search - Pushed to the right */}
           {/* Use ml-auto on this wrapper div to push it all the way to the right */}
           <div className="hidden lg:flex items-center" ref={dropdownRef}> {/* Changed hidden lg:block to hidden lg:flex items-center */}
-            <div className="flex items-center space-x-8"> {/* Increased space-x between main menu items */}
+            <div className="flex items-center space-x-4"> {/* Increased space-x between main menu items */}
               {menuItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdown ? (

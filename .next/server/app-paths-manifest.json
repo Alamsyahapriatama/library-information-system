@@ -1,10 +1,12 @@
 {
   "/not-found": "app/not-found.js",
+  "/layanan/permintaan-informasi/page": "app/layanan/permintaan-informasi/page.js",
+  "/layanan/perpanjangan-online/page": "app/layanan/perpanjangan-online/page.js",
+  "/layanan/reservasi-buku/page": "app/layanan/reservasi-buku/page.js",
+  "/layanan/pendampingan-akreditasi/page": "app/layanan/pendampingan-akreditasi/page.js",
   "/page": "app/page.js",
+  "/koleksi/ebook/[id]/page": "app/koleksi/ebook/[id]/page.js",
   "/koleksi/artikel/page": "app/koleksi/artikel/page.js",
-  "/profil/profil-perpustakaan/page": "app/profil/profil-perpustakaan/page.js",
-  "/interaksi/buku-tamu/page": "app/interaksi/buku-tamu/page.js",
-  "/interaksi/masukan-saran/page": "app/interaksi/masukan-saran/page.js",
-  "/pustakawan/page": "app/pustakawan/page.js",
-  "/informasi/pengumuman/page": "app/informasi/pengumuman/page.js"
+  "/koleksi/ebook/page": "app/koleksi/ebook/page.js",
+  "/koleksi/artikel/[slug]/page": "app/koleksi/artikel/[slug]/page.js"
 }

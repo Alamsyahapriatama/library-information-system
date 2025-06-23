@@ -1,4 +1,4 @@
-// File: /home/orangkeren/node/library-information-system/app/layanan/konsultasi/page.tsx
+// File: C:\laragon\www\library-information-system\app\layanan\konsultasi\page.tsx
 import * as entry from '../../../../../app/layanan/konsultasi/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

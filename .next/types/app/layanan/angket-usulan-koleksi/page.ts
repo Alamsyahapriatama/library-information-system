@@ -1,4 +1,4 @@
-// File: /home/orangkeren/node/library-information-system/app/layanan/angket-usulan-koleksi/page.tsx
+// File: C:\laragon\www\library-information-system\app\layanan\angket-usulan-koleksi\page.tsx
 import * as entry from '../../../../../app/layanan/angket-usulan-koleksi/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
