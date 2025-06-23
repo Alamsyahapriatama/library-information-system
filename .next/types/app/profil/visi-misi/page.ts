@@ -1,4 +1,4 @@
-// File: C:\laragon\www\library-information-system\app\profil\visi-misi\page.tsx
+// File: /home/orangkeren/node/library-information-system/app/profil/visi-misi/page.tsx
 import * as entry from '../../../../../app/profil/visi-misi/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

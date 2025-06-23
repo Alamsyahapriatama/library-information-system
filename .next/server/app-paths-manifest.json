@@ -1,8 +1,10 @@
 {
   "/not-found": "app/not-found.js",
-  "/pembudayaan/survei-index-membaca/page": "app/pembudayaan/survei-index-membaca/page.js",
-  "/pembudayaan/gerakan-gemar-membaca/page": "app/pembudayaan/gerakan-gemar-membaca/page.js",
-  "/pembudayaan/festival-literasi/page": "app/pembudayaan/festival-literasi/page.js",
+  "/page": "app/page.js",
+  "/koleksi/artikel/page": "app/koleksi/artikel/page.js",
   "/profil/profil-perpustakaan/page": "app/profil/profil-perpustakaan/page.js",
-  "/page": "app/page.js"
+  "/interaksi/buku-tamu/page": "app/interaksi/buku-tamu/page.js",
+  "/interaksi/masukan-saran/page": "app/interaksi/masukan-saran/page.js",
+  "/pustakawan/page": "app/pustakawan/page.js",
+  "/informasi/pengumuman/page": "app/informasi/pengumuman/page.js"
 }

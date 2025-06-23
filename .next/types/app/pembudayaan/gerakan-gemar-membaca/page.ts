@@ -1,4 +1,4 @@
-// File: C:\laragon\www\library-information-system\app\pembudayaan\gerakan-gemar-membaca\page.tsx
+// File: /home/orangkeren/node/library-information-system/app/pembudayaan/gerakan-gemar-membaca/page.tsx
 import * as entry from '../../../../../app/pembudayaan/gerakan-gemar-membaca/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
