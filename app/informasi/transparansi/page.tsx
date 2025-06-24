@@ -1,171 +1,226 @@
-"use client";
+"use client"; // Required for client components in Next.js
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// Icons tidak lagi relevan jika ini halaman utama yang mereplikasi gambar umum
-// import { Book, Monitor, Wifi, Users, Coffee, Library, Handshake } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Icons for carousel navigation
 
-export default function HomePageContent() {
-  // Mengganti nama komponen menjadi lebih umum
-  // Data untuk bagian "BERITA TERPOPULER" / Artikel
-  const popularArticles = [
+export default function TransparansiKeuanganPage() { // Renamed component
+  // Top Full-width Carousel Images and Content (for the main banner at the very top)
+  const topCarouselSlides = [
     {
-      imageSrc:
-        "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk hardware
-      title: "Mengenal Motherboard, Processor, Hardisk dan RAM",
-      date: "14 Februari 2024",
-      summary:
-        "Pelajari lebih lanjut tentang komponen dasar komputer seperti motherboard, processor, hardisk, dan RAM yang penting untuk kinerja perangkat Anda.",
+      src: "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Gedung Perpustakaan",
     },
     {
-      imageSrc:
-        "https://images.pexels.com/photos/4571992/pexels-photo-4571992.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk guru
-      title: "Seperti Apa Kedudukan dan Profesi Guru Dalam Islam",
-      date: "25 Januari 2024",
-      summary:
-        "Tugas utama seorang guru diislamkan atau disebut Quality System of Muslim Education (QSME) yaitu menyampakan ilmu, membentuk karakter...", // Disadur dari teks gambar
+      src: "https://images.pexels.com/photos/110646/pexels-photo-110646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Interior Perpustakaan",
     },
     {
-      imageSrc:
-        "https://images.pexels.com/photos/1684347/pexels-photo-1684347.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk bunga kamboja
-      title: "POHON KAMBOJA JEPANG di Lingkungan SMAN 6 Berau",
-      date: "18 April 2024",
-      summary:
-        "Kamboja Jepang adalah tanaman hias meranggas, berbatang gemuk besar, akarnya menyerupai umbi, daunnya panjang, bunga berbentuk terompet...",
-    },
-    {
-      imageSrc:
-        "https://images.pexels.com/photos/1031201/pexels-photo-1031201.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk mangga
-      title: "POHON MANGGA DI LINGKUNGAN SMAN 6 BERAU",
-      date: "20 Mei 2024",
-      summary:
-        "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SMAN 6 Berau, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
-    },
-    {
-      imageSrc:
-        "https://images.pexels.com/photos/11267866/pexels-photo-11267866.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk sri rejeki
-      title: "SRI REJEKI di Lingkungan SMAN 6 Berau",
-      date: "05 Juni 2024",
-      summary:
-        "Sri Rejeki (Aglaonema) adalah tanaman hias populer dari suku talas-talasan (Araceae). Tanaman ini sangat mudah dirawat dan daunnya indah...",
-    },
-    {
-      imageSrc:
-        "https://images.pexels.com/photos/11181827/pexels-photo-11181827.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk alpukat
-      title: "TANAMAN ALPUKAT yang ada dilingkungan SMAN 6 Berau",
-      date: "10 Juni 2024",
-      summary:
-        "Alpukat adalah buah yang berasal dari Amerika Tengah dan Meksiko. Di lingkungan sekolah kami, tanaman alpukat tumbuh subur dan berbuah lebat...",
-    },
-    {
-      imageSrc:
-        "https://images.pexels.com/photos/7901193/pexels-photo-7901193.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk kelor
-      title: "POHON KELOR",
-      date: "15 Juni 2024",
-      summary:
-        "Pohon kelor (Moringa oleifera) dikenal sebagai 'pohon ajaib' karena kandungan nutrisinya yang melimpah. Daunnya kaya akan vitamin, mineral, dan antioksidan...",
-    },
-    {
-      imageSrc:
-        "https://images.pexels.com/photos/1577908/pexels-photo-1577908.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk bunga tanjung
-      title: "POHON BUNGA TANJUNG",
-      date: "18 Juni 2024",
-      summary:
-        "Bunga Tanjung (Mimusops elengi) adalah pohon penghasil rempah-rempah dari Sri Lanka dan Burma...",
+      src: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Siswa di perpustakaan",
     },
   ];
 
+  const [currentTopSlide, setCurrentTopSlide] = useState(0);
+
+  // Auto-slide effect for top carousel
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentTopSlide((prevSlide) => (prevSlide + 1) % topCarouselSlides.length);
+    }, 7000); // Change slide every 7 seconds
+
+    return () => clearInterval(slideInterval);
+  }, [topCarouselSlides.length]);
+
+  // Navigation functions for top carousel
+  const goToTopSlide = (slideIndex: number) => {
+    setCurrentTopSlide(slideIndex);
+  };
+  const nextTopSlide = () => {
+    setCurrentTopSlide((prevSlide) => (prevSlide + 1) % topCarouselSlides.length);
+  };
+  const prevTopSlide = () => {
+    setCurrentTopSlide((prevSlide) => (prevSlide - 1 + topCarouselSlides.length) % topCarouselSlides.length);
+  };
+
+
+  // Agenda Data (retained)
+  const agendaItem = {
+    date: { day: "24", month: "JUNI", year: "2025" }, // Adjusted to current date
+    title: "Rapat Anggaran Tahunan",
+    location: "Ruang Rapat SMAN 6 Berau",
+    link: "#",
+  };
+
+  // Related Links Data (retained)
   const relatedLinks = [
-    // --- PENTING: Ganti '/images/logo-*.png' dengan path gambar Anda yang sebenarnya ---
-    // Asumsi logo ada di public/images/
     { name: "PSB Sekolah", logo: "/images/logo-psb-sekolah.png", href: "#" },
-    { name: "Portal Garuda", logo: "/images/logo-garuda.png", href: "#" },
+    {
+      name: "Portal Garuda",
+      logo: "/images/portal-garuda.png",
+      href: "https://garuda.kemdikbud.go.id/publisher/view/2960",
+    },
     {
       name: "Bintang Pusnas",
-      logo: "/images/logo-bintang-pusnas.png",
-      href: "#",
+      logo: "/images/bintang-pusnas.png",
+      href: "https://bintangpusnas.perpusnas.go.id/konten/",
     },
     {
       name: "Khasara Perpusnas",
-      logo: "/images/logo-khasara-perpusnas.png",
-      href: "#",
+      logo: "/images/khasara-pusnas.jpeg",
+      href: "https://khastara.perpusnas.go.id/",
     },
-    { name: "SIBI", logo: "/images/logo-sibi.png", href: "#" },
+    { name: "SIBI",
+      logo: "/images/sibi.jpeg",
+      href: "https://buku.kemdikbud.go.id/" },
     {
       name: "Youtube SMAN 6 Berau",
-      logo: "/images/logo-youtube.png",
+      logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "@sman6berauofficial",
-      logo: "/images/logo-instagram.png",
+      name: "sman6berauofficial",
+      logo: "/images/sman.jpeg",
       href: "#",
+    },
+    { name: "Kemenkeu", logo: "/images/kemenkeu.png", href: "#" },
+    { name: "Bank Indonesia", logo: "/images/bi.png", href: "#" },
+    { name: "Otoritas Jasa Keuangan", logo: "/images/ojk.png", href: "#" },
+    { name: "Bapennas", logo: "/images/bapennas.png", href: "#" },
+    { name: "BPS", logo: "/images/bps.jpeg", href: "#" },
+  ];
+
+  // Data for "BERITA TERPOPULER" / Artikel (retained, but consider fetching from API)
+  const popularArticles = [
+    {
+      imageSrc:
+        "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Mengenal Audit Laporan Keuangan Sekolah",
+      date: "14 Februari 2024",
+      summary:
+        "Memahami proses audit laporan keuangan sekolah untuk menjamin transparansi dan akuntabilitas pengelolaan dana pendidikan.",
+    },
+    {
+      imageSrc:
+        "https://images.pexels.com/photos/4571992/pexels-photo-4571992.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Prinsip-prinsip Dasar Akuntansi Keuangan",
+      date: "25 Januari 2024",
+      summary:
+        "Tinjauan komprehensif mengenai prinsip-prinsip akuntansi dasar yang diterapkan dalam pengelolaan keuangan institusi pendidikan.",
+    },
+    {
+      imageSrc:
+        "/images/pohon-kamboja.jpg", // Placeholder for kamboja, adjust to finance-related if possible
+      title: "Strategi Pengelolaan Dana BOS yang Efektif",
+      date: "18 April 2024",
+      summary:
+        "Pembahasan strategi terbaik untuk mengelola dana Bantuan Operasional Sekolah (BOS) agar tepat sasaran dan efisien.",
+    },
+    {
+      imageSrc:
+        "/images/pohon-mangga.jpg", // Placeholder for mango, adjust to finance-related if possible
+      title: "Pentingnya Pelaporan Keuangan Berkala",
+      date: "20 Mei 2024",
+      summary:
+        "Mengapa pelaporan keuangan berkala sangat penting untuk monitoring dan evaluasi kinerja keuangan sekolah.",
     },
   ];
 
-  // Data placeholder untuk pie chart (sesuaikan dengan data riil jika ada)
+  // Data placeholder untuk pie chart (retained and used)
   const pieChartData = [
-    { label: "Belanja Pegawai", value: 30 },
-    { label: "Belanja Barang/Jasa", value: 40 },
-    { label: "Belanja Modal", value: 20 },
-    { label: "Lain-lain", value: 10 },
+    { label: "Belanja Pegawai", value: 30, color: "#4299E1" }, // blue-500
+    { label: "Belanja Barang/Jasa", value: 40, color: "#38A169" }, // green-600
+    { label: "Belanja Modal", value: 20, color: "#F6AD55" }, // yellow-500
+    { label: "Lain-lain", value: 10, color: "#ED8936" }, // orange-600
   ];
 
-  // Mengganti properti fasilitas menjadi tidak terpakai atau dihapus jika tidak digunakan di halaman ini
-  // Data for Library Facilities (Not directly used in this specific layout, but kept for context if needed elsewhere)
-  // const facilities = [ ... ];
-  // const videoBenefits = [ ... ];
-  // const values = [ ... ];
+  // Function to calculate SVG path for pie chart segments
+  const getPieChartPath = (value: number, total: number, startAngle: number) => {
+    const angle = (value / total) * 360;
+    const endAngle = startAngle + angle;
+
+    const x1 = 50 + 40 * Math.cos(Math.PI * startAngle / 180);
+    const y1 = 50 + 40 * Math.sin(Math.PI * startAngle / 180);
+    const x2 = 50 + 40 * Math.cos(Math.PI * endAngle / 180);
+    const y2 = 50 + 40 * Math.sin(Math.PI * endAngle / 180);
+
+    const largeArcFlag = angle > 180 ? 1 : 0;
+
+    return `M50,50 L${x1},${y1} A40,40 0 ${largeArcFlag} 1 ${x2},${y2} Z`;
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 pb-12">
-      {/* Top Banner with "Selamat Datang" image and text */}
-      <div className="relative w-full h-[150px] md:h-[200px] overflow-hidden bg-blue-700 flex items-center justify-center text-center">
-        <Image
-          src="https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" // Background image for banner
-          alt="Perpustakaan Sekolah SMAN 6 Berau"
-          fill
-          className="object-cover opacity-30"
-          priority
-        />
-        <div className="relative z-10 text-white p-4">
-          <h1 className="text-xl md:text-3xl font-extrabold tracking-wide">
-            SELAMAT DATANG DI PERPUSTAKAAN SEKOLAH
-          </h1>
-          <p className="text-2xl md:text-4xl font-bold mt-1">SMAN 6 BERAU</p>
+    <div className="min-h-screen bg-gray-100 font-sans">
+      {/* Full-width Top Carousel (as seen in the image) */}
+      {/* No pt-[72px] on main, as fixed header is assumed to be in layout.tsx */}
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+        {topCarouselSlides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentTopSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+             <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+          </div>
+        ))}
+
+        {/* Carousel Navigation Buttons (Top Carousel) */}
+        <button
+          onClick={prevTopSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextTopSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+
+        {/* Carousel Dots/Indicators (Top Carousel) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+          {topCarouselSlides.map((_, index: number) => (
+            <button
+              key={index}
+              onClick={() => goToTopSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentTopSlide ? "bg-white" : "bg-gray-400"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            ></button>
+          ))}
         </div>
       </div>
 
-      {/* Header dengan Link SEMUA, PERPUSTAKAAN, Login (Navbar) */}
-      {/* Ini adalah bagian dari layout umum, bukan spesifik halaman ini, tapi saya sertakan untuk visual */}
-      <div className="bg-white shadow-md py-3 relative z-20">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex space-x-6 text-gray-700">
-            <Link href="#" className="font-semibold hover:text-blue-600">
-              SEMUA
-            </Link>
-            <Link href="#" className="font-semibold hover:text-blue-600">
-              PERPUSTAKAAN
-            </Link>
-          </div>
-          <div>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-              LOGIN
-            </button>
-          </div>
-        </div>
+      {/* "TRANSPARANSI KEUANGAN" Main Title */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-12 mb-8">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 relative pb-2 inline-block">
+          TRANSPARANSI KEUANGAN
+          <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-600 rounded-full"></span>
+        </h1>
       </div>
 
-      {/* Main Content Area - Grid Layout */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-        {/* Left Column */}
+      {/* Main Content Area - Grid Layout for Transparansi */}
+      <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
+        {/* Left Column (Transparansi Keuangan Content) */}
         <div className="lg:col-span-2 space-y-8">
-          {/* TRANSPARANSI KEUANGAN Section */}
+          {/* TRANSPARANSI KEUANGAN Section (main content) */}
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="flex justify-between items-center mb-4 border-b pb-2">
               <h2 className="text-xl font-bold text-gray-900">
-                TRANSPARANSI KEUANGAN
+                REKAPITULASI ANGGARAN SEKOLAH
               </h2>
               <div className="flex space-x-2">
                 <Link
@@ -211,62 +266,36 @@ export default function HomePageContent() {
                 Realisasi Belanja Anggaran 2025
               </h3>
               <div className="flex flex-col md:flex-row items-center md:space-x-8">
-                {/* Pie Chart Placeholder (ganti dengan library chart jika diperlukan) */}
+                {/* Pie Chart SVG */}
                 <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 mb-4 md:mb-0">
-                  {/* Ini adalah placeholder sederhana. Untuk pie chart nyata, gunakan library seperti Nivo, Recharts, dll. */}
                   <svg viewBox="0 0 100 100" className="w-full h-full">
-                    {/* Segmen pie chart berdasarkan data */}
-                    {/* Contoh segmen, sesuaikan path d dan fill */}
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="40"
-                      fill="#4299E1"
-                      stroke="white"
-                      strokeWidth="2"
-                    />{" "}
-                    {/* Belanja Pegawai 30% */}
-                    <path
-                      d="M50 50 L50 10 A40 40 0 0 1 89.26 31.8 L50 50"
-                      fill="#38A169"
-                      stroke="white"
-                      strokeWidth="2"
-                    />{" "}
-                    {/* Belanja Barang/Jasa 40% */}
-                    <path
-                      d="M50 50 L89.26 31.8 A40 40 0 0 1 70.71 89.26 L50 50"
-                      fill="#F6AD55"
-                      stroke="white"
-                      strokeWidth="2"
-                    />{" "}
-                    {/* Belanja Modal 20% */}
-                    <path
-                      d="M50 50 L70.71 89.26 A40 40 0 0 1 10 50 L50 50"
-                      fill="#ED8936"
-                      stroke="white"
-                      strokeWidth="2"
-                    />{" "}
-                    {/* Lain-lain 10% */}
+                    {(() => {
+                      let currentAngle = 0;
+                      const totalValue = pieChartData.reduce((sum, item) => sum + item.value, 0);
+                      return pieChartData.map((item, index) => {
+                        const path = getPieChartPath(item.value, totalValue, currentAngle);
+                        currentAngle += (item.value / totalValue) * 360;
+                        return (
+                          <path
+                            key={index}
+                            d={path}
+                            fill={item.color}
+                            stroke="white"
+                            strokeWidth="2"
+                          />
+                        );
+                      });
+                    })()}
                   </svg>
                 </div>
                 {/* Legend */}
                 <div className="space-y-2 text-sm text-gray-700">
-                  <div className="flex items-center">
-                    <span className="w-4 h-4 bg-blue-500 mr-2 rounded-sm"></span>
-                    Belanja Pegawai: 30%
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-4 h-4 bg-green-600 mr-2 rounded-sm"></span>
-                    Belanja Barang/Jasa: 40%
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-4 h-4 bg-yellow-500 mr-2 rounded-sm"></span>
-                    Belanja Modal: 20%
-                  </div>
-                  <div className="flex items-center">
-                    <span className="w-4 h-4 bg-orange-600 mr-2 rounded-sm"></span>
-                    Lain-lain: 10%
-                  </div>
+                  {pieChartData.map((item, index) => (
+                    <div key={index} className="flex items-center">
+                      <span className={`w-4 h-4 mr-2 rounded-sm`} style={{ backgroundColor: item.color }}></span>
+                      {item.label}: {item.value}%
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -277,7 +306,7 @@ export default function HomePageContent() {
             </p>
           </div>
 
-          {/* BERITA TERPOPULER Section (from previous code) */}
+          {/* BERITA TERPOPULER Section (retained) */}
           <h2 className="text-xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-4">
             BERITA TERPOPULER
           </h2>
@@ -313,7 +342,7 @@ export default function HomePageContent() {
           ))}
         </div>
 
-        {/* Right Column - Sidebar */}
+        {/* Right Column - Sidebar (retained) */}
         <div className="lg:col-span-1 space-y-6">
           {/* INFOGRAFIS Block */}
           <div className="bg-white rounded-xl shadow-lg p-4">
@@ -323,7 +352,7 @@ export default function HomePageContent() {
             <div className="space-y-4">
               <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for Infografis 1
+                  src="/images/gambar-olahraga-ituibadah.jpg"
                   alt="Infografis Digital"
                   fill
                   className="object-cover"
@@ -331,7 +360,7 @@ export default function HomePageContent() {
               </div>
               <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for Infografis 2
+                  src="https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Infografis Pendidikan"
                   fill
                   className="object-cover"
@@ -344,7 +373,7 @@ export default function HomePageContent() {
           <div className="bg-white rounded-xl shadow-lg p-4">
             <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Re-using placeholder for the poster
+                src="/images/gambar-olahraga-ituibadah.jpg"
                 alt="Olahraga Itu Ibadah Poster"
                 fill
                 className="object-cover"
@@ -352,7 +381,7 @@ export default function HomePageContent() {
             </div>
           </div>
 
-          {/* Quick Links (dari gambar, tambahkan sesuai yang ada di gambar) */}
+          {/* Quick Links (retained) */}
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4">LAYANAN</h3>
             <ul className="space-y-2 text-gray-700">
@@ -409,22 +438,24 @@ export default function HomePageContent() {
             </ul>
           </div>
 
-          {/* AGENDA Section (dari kode asli Anda) */}
+          {/* AGENDA Section (retained) */}
           <div className="bg-white rounded-xl shadow-lg p-6 sticky top-32">
             <h3 className="text-xl font-bold text-gray-900 mb-4">AGENDA</h3>
             <div className="flex items-center space-x-4 mb-4">
               <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
-                <span className="block text-2xl leading-none">21</span>
-                <span className="block text-xs uppercase">JUNI</span>
-                <span className="block text-xs">2025</span>
+                <span className="block text-2xl leading-none">
+                  {agendaItem.date.day}
+                </span>
+                <span className="block text-xs uppercase">
+                  {agendaItem.date.month}
+                </span>
+                <span className="block text-xs">{agendaItem.date.year}</span>
               </div>
               <div>
                 <p className="text-gray-800 font-semibold">
-                  Workshop Penulisan Kreatif
+                  {agendaItem.title}
                 </p>
-                <p className="text-sm text-gray-600">
-                  Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB
-                </p>
+                <p className="text-sm text-gray-600">{agendaItem.location}</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">
@@ -452,39 +483,56 @@ export default function HomePageContent() {
         </div>
       </div>
 
-      {/* LINK TERKAIT Section (tetap, karena sudah mirip) */}
+      {/* LINK TERKAIT Section (Autoscroll) - retained and outside the grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">
           LINK TERKAIT
           <span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
-          {relatedLinks.map((link, index) => (
-            <Link
-              href={link.href}
-              key={index}
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <div className="relative w-16 h-16 mb-2">
-                <Image
-                  src={link.logo}
-                  alt={link.name}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-sm text-center text-gray-700 font-medium">
-                {link.name}
-              </span>
-            </Link>
-          ))}
+        <div className="overflow-hidden relative">
+          <div className="flex animate-scroll-left">
+            {relatedLinks.concat(relatedLinks).map((link, index) => (
+              <Link
+                href={link.href}
+                key={`${link.name}-${index}`}
+                className="flex flex-shrink-0 flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors mx-4"
+                style={{ width: '120px' }}
+              >
+                <div className="relative w-16 h-16 mb-2">
+                  <Image
+                    src={link.logo}
+                    alt={link.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-sm text-center text-gray-700 font-medium whitespace-nowrap">
+                  {link.name}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
+      {/* CSS for auto-scrolling animation */}
+      <style jsx>{`
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%); /* Scrolls half of the duplicated content */
+          }
+        }
 
-      {/* Teks "Rearranged by" - Sesuaikan posisinya jika diperlukan */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-right text-sm text-gray-400 mt-8">
-        <p>Rearranged by Tama</p>
-      </div>
+        .animate-scroll-left {
+          animation: scrollLeft 30s linear infinite; /* Adjust duration as needed */
+        }
+
+        .animate-scroll-left:hover {
+          animation-play-state: paused; /* Pause on hover */
+        }
+      `}</style>
     </div>
   );
 }

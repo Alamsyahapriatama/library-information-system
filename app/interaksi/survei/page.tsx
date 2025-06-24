@@ -497,7 +497,7 @@ export default function SurveyPage() {
             <div className="space-y-4">
               <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for Infografis 1
+                  src="/images/gambar-olahraga-ituibadah.jpg" // Placeholder for Infografis 1
                   alt="Infografis Digital"
                   fill
                   className="object-cover"
@@ -518,7 +518,7 @@ export default function SurveyPage() {
           <div className="bg-white rounded-xl shadow-lg p-4">
             <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Re-using placeholder for the poster
+                src="/images/gambar-olahraga-ituibadah.jpg" // Re-using placeholder for the poster
                 alt="Olahraga Itu Ibadah Poster"
                 fill
                 className="object-cover"

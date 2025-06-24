@@ -104,30 +104,38 @@ export default function ProfilPerpustakaanPage() {
     { name: "PSB Sekolah", logo: "/images/logo-psb-sekolah.png", href: "#" },
     {
       name: "Portal Garuda",
-      logo: "/images/logo-garuda.png",
+      logo: "/images/portal-garuda.png",
       href: "https://garuda.kemdikbud.go.id/publisher/view/2960",
     },
     {
       name: "Bintang Pusnas",
-      logo: "/images/logo-bintang-pusnas.png",
-      href: "#",
+      logo: "/images/bintang-pusnas.png",
+      href: "https://bintangpusnas.perpusnas.go.id/konten/",
     },
     {
       name: "Khasara Perpusnas",
-      logo: "/images/logo-khasara-perpusnas.png",
-      href: "#",
+      logo: "/images/khasara-pusnas.jpeg",
+      href: "https://khastara.perpusnas.go.id/",
     },
-    { name: "SIBI", logo: "/images/logo-sibi.png", href: "#" },
+    { name: "SIBI", 
+      logo: "/images/sibi.jpeg", 
+      href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "Youtube SMAN 6 Berau",
-      logo: "/images/logo-youtube.png",
+      name: "SMAN 6 Berau",
+      logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "@sman6berauofficial",
-      logo: "/images/logo-instagram.png",
+      name: "sman6berauofficial",
+      logo: "/images/sman.jpeg",
       href: "#",
     },
+    // Adding more links for better scrolling effect if needed
+    { name: "kemenkeu", logo: "/images/kemenkeu.png", href: "#" },
+    { name: "Bank Indonesia", logo: "/images/bi.png", href: "#" },
+    { name: "Otoritas Jasa Keuangan", logo: "/images/ojk.png", href: "#" },
+    { name: "Bapennas", logo: "/images/bapennas.png", href: "#" },
+    { name: "BPS", logo: "/images/bps.jpeg", href: "#" },
   ];
 
   return (
@@ -286,7 +294,7 @@ export default function ProfilPerpustakaanPage() {
             </h3>
             <div className="relative w-full aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden mb-4">
               <Image
-                src="https://images.pexels.com/photos/5926392/pexels-photo-5926392.jpeg?auto=compress&cs=tinysrgb&w=800" // Gambar berita/pengumuman umum
+                src="/images/profil-perpus.jpeg" // Gambar berita/pengumuman umum
                 alt="Berita Perpustakaan"
                 fill
                 className="object-cover"
@@ -346,34 +354,59 @@ export default function ProfilPerpustakaanPage() {
           </div>
         </div>
       </div>
-      {/* LINK TERKAIT Section (Tetap ada) */}
+      ---
+      {/* LINK TERKAIT Section (Autoscroll) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">
           LINK TERKAIT
           <span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
-          {relatedLinks.map((link, index) => (
-            <Link
-              href={link.href}
-              key={index}
-              className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <div className="relative w-16 h-16 mb-2">
-                <Image
-                  src={link.logo}
-                  alt={link.name}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-sm text-center text-gray-700 font-medium">
-                {link.name}
-              </span>
-            </Link>
-          ))}
+        {/* Container for the scrolling links */}
+        <div className="overflow-hidden relative">
+          <div className="flex animate-scroll-left">
+            {/* Duplicate the links to create a seamless loop for scrolling */}
+            {relatedLinks.concat(relatedLinks).map((link, index) => (
+              <Link
+                href={link.href}
+                key={`${link.name}-${index}`} // Using a combination for a more unique key
+                className="flex flex-shrink-0 flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors mx-4" // Added mx-4 for spacing
+                style={{ width: '120px' }} // Fixed width for consistent spacing and scrolling
+              >
+                <div className="relative w-16 h-16 mb-2">
+                  <Image
+                    src={link.logo}
+                    alt={link.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-sm text-center text-gray-700 font-medium whitespace-nowrap">
+                  {link.name}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
+      {/* Add this style block to your global CSS file (e.g., globals.css) or directly within a <style jsx> tag if using Next.js */}
+      <style jsx>{`
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%); /* Scrolls half of the duplicated content */
+          }
+        }
+
+        .animate-scroll-left {
+          animation: scrollLeft 30s linear infinite; /* Adjust duration as needed */
+        }
+
+        .animate-scroll-left:hover {
+          animation-play-state: paused; /* Pause on hover */
+        }
+      `}</style>
     </div>
   );
 }

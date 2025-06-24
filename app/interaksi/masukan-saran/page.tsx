@@ -334,7 +334,7 @@ export default function FeedbackAndNewsPage() {
             <div className="space-y-4">
               <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for Infografis 1
+                  src="/images/gambar-olahraga-ituibadah.jpg" // Placeholder for Infografis 1
                   alt="Infografis Digital"
                   fill
                   className="object-cover"

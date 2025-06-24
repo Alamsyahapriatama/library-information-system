@@ -3,301 +3,506 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // Icons for carousel navigation
+import { ChevronLeft, ChevronRight, CheckCircle } from "lucide-react"; // Icons for carousel navigation and new content
 
-export default function GerakanMembacaPage() {
-  // Carousel Images and Content
-  const carouselSlides = [
+export default function KerjasamaPage() { // Component name matches file structure
+  // Top Full-width Carousel Images for the main banner (updated for Kerja Sama theme)
+  const topCarouselSlides = [
     {
-      src: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Kerjasama",
-      mainTitle: "Kerjamsama",
-      subTitle: "PERPUSTAKAAN SMAN 6 BERAU",
-      bulletPoints: [
-        "ANGKRINGAN BACA",
-        "PAMERAN LITERASI",
-        "GELAR STAND BACA MASYARAKAT",
-      ],
-      credit: "Blue Modern Company Profile Presentation by Choirul Amin",
+      src: "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Tim kerja sama berdiskusi",
     },
     {
-      src: "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Siswa belajar bersama di perpustakaan",
-      mainTitle: "TINGKATKAN LITERASI",
-      subTitle: "DENGAN KOLEKSI TERLENGKAP",
-      bulletPoints: [
-        "RIBUAN BUKU FISIK & DIGITAL",
-        "AKSES JURNAL ILMIAH",
-        "FASILITAS WI-FI GRATIS",
-      ],
-      credit: "Photo by cottonbro studio from Pexels",
+      src: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Jaringan kemitraan",
     },
     {
-      src: "https://images.pexels.com/photos/110646/pexels-photo-110646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Rak buku penuh di perpustakaan",
-      mainTitle: "MARI BERKUNJUNG",
-      subTitle: "DAN MANFAATKAN LAYANAN KAMI",
-      bulletPoints: [
-        "PEMINJAMAN & PENGEMBALIAN MUDAH",
-        "RUANG DISKUSI NYAMAN",
-        "BIMBINGAN LITERASI",
-      ],
-      credit: "Photo by Pixabay from Pexels",
+      src: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Kolaborasi dan dukungan",
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentTopSlide, setCurrentTopSlide] = useState(0);
 
-  // Auto-slide effect for carousel
+  // Auto-slide effect for the top carousel
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselSlides.length);
+      setCurrentTopSlide((prevSlide) => (prevSlide + 1) % topCarouselSlides.length);
     }, 7000); // Change slide every 7 seconds
 
     return () => clearInterval(slideInterval); // Cleanup interval on component unmount
-  }, [carouselSlides.length]);
+  }, [topCarouselSlides.length]);
 
-  const goToSlide = (slideIndex) => {
-    setCurrentSlide(slideIndex);
+  // Navigation functions for the top carousel
+  const goToTopSlide = (slideIndex: number) => {
+    setCurrentTopSlide(slideIndex);
+  };
+  const nextTopSlide = () => {
+    setCurrentTopSlide((prevSlide) => (prevSlide + 1) % topCarouselSlides.length);
+  };
+  const prevTopSlide = () => {
+    setCurrentTopSlide((prevSlide) => (prevSlide - 1 + topCarouselSlides.length) % topCarouselSlides.length);
   };
 
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) =>
-        (prevSlide - 1 + carouselSlides.length) % carouselSlides.length
-    );
-  };
-
-  // Agenda Data
+  // Agenda Data (retained) - using current time for agenda date as example
   const agendaItem = {
-    date: { day: "11", month: "NOV", year: "2023" }, // Date from image
-    title: "Pembekalan Website Perpustakaan",
-    location: "Bersama Berau Tech Center",
+    date: {
+      day: new Date().getDate().toString(),
+      month: new Date().toLocaleString('en-US', { month: 'short' }).toUpperCase(),
+      year: new Date().getFullYear().toString()
+    },
+    title: "Rapat Koordinasi Kemitraan",
+    location: "Ruang Rapat SMAN 6 Berau",
     link: "#",
   };
 
-  // Related Links Data (from previous examples, adjust paths as needed)
+  // Related Links Data (retained)
   const relatedLinks = [
+    { name: "PSB Sekolah", logo: "/images/logo-psb-sekolah.png", href: "#" },
     {
-      name: "Facebook SMAN 6 Berau",
-      logo: "/images/logo-facebook.png",
+      name: "Portal Garuda",
+      logo: "/images/portal-garuda.png",
+      href: "https://garuda.kemdikbud.go.id/publisher/view/2960",
+    },
+    {
+      name: "Bintang Pusnas",
+      logo: "/images/bintang-pusnas.png",
+      href: "https://bintangpusnas.perpusnas.go.id/konten/",
+    },
+    {
+      name: "Khasara Perpusnas",
+      logo: "/images/khasara-pusnas.jpeg",
+      href: "https://khastara.perpusnas.go.id/",
+    },
+    { name: "SIBI",
+      logo: "/images/sibi.jpeg",
+      href: "https://buku.kemdikbud.go.id/" },
+    {
+      name: "Youtube SMAN 6 Berau",
+      logo: "/images/youtube.jpeg",
       href: "#",
     },
-    { name: "IBerau", logo: "/images/logo-iberau.png", href: "#" },
-    { name: "IKaltim", logo: "/images/logo-ikaltim.png", href: "#" },
-    { name: "iPusnas", logo: "/images/logo-ipusnas.png", href: "#" },
     {
-      name: "Perpustakaan Dikbudristek",
-      logo: "/images/logo-dikbudristek.png",
+      name: "sman6berauofficial",
+      logo: "/images/sman.jpeg",
       href: "#",
-    }, // Example, use actual logo
-    { name: "onesearch.id", logo: "/images/logo-onesearch.png", href: "#" }, // Example, use actual logo
+    },
+    { name: "Kemenkeu", logo: "/images/kemenkeu.png", href: "#" },
+    { name: "Bank Indonesia", logo: "/images/bi.png", href: "#" },
+    { name: "Otoritas Jasa Keuangan", logo: "/images/ojk.png", href: "#" },
+    { name: "Bapennas", logo: "/images/bapennas.png", href: "#" },
+    { name: "BPS", logo: "/images/bps.jpeg", href: "#" },
+  ];
+
+  // Data for "BERITA TERPOPULER" / Artikel (retained, but adjusted titles for relevance)
+  const popularArticles = [
     {
-      name: "e-resources perpusnas",
-      logo: "/images/logo-e_resources.png",
-      href: "#",
-    }, // Example, use actual logo
+      imageSrc:
+        "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Manfaat Kemitraan dalam Dunia Pendidikan",
+      date: "14 Februari 2024",
+      summary:
+        "Menjelajahi bagaimana kemitraan strategis dapat meningkatkan kualitas pendidikan dan fasilitas sekolah.",
+    },
+    {
+      imageSrc:
+        "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Studi Kasus Kolaborasi Perpustakaan Komunitas",
+      date: "25 Januari 2024",
+      summary:
+        "Contoh sukses kerja sama perpustakaan sekolah dengan komunitas lokal dalam menyelenggarakan program literasi.",
+    },
+    {
+      imageSrc:
+        "https://images.pexels.com/photos/5926392/pexels-photo-5926392.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Peran Swasta dalam Mendukung Pendidikan",
+      date: "18 April 2024",
+      summary:
+        "Pembahasan kontribusi sektor swasta melalui program CSR dalam mendukung fasilitas dan kegiatan belajar mengajar.",
+    },
+    {
+      imageSrc:
+        "https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800",
+      title: "Membangun Jaringan untuk Akses Informasi Lebih Luas",
+      date: "20 Mei 2024",
+      summary:
+        "Pentingnya membangun jaringan dan kolaborasi antar institusi untuk memperluas akses siswa terhadap sumber informasi.",
+    },
+  ];
+
+  // Data for "KERJA SAMA" section (main content now)
+  const kerjasamaPoints = [
+    {
+      title: "Kemitraan Strategis",
+      description: "Membangun hubungan jangka panjang dengan berbagai institusi pendidikan, organisasi masyarakat, dan perusahaan untuk pengembangan perpustakaan.",
+      icon: CheckCircle,
+    },
+    {
+      title: "Program Kolaborasi",
+      description: "Mengadakan workshop, seminar, dan kegiatan literasi bersama mitra untuk meningkatkan minat baca dan kualitas pendidikan.",
+      icon: CheckCircle,
+    },
+    {
+      title: "Dukungan Sumber Daya",
+      description: "Menerima hibah buku, teknologi, dan dukungan finansial dari pihak ketiga untuk memperkaya koleksi dan fasilitas perpustakaan.",
+      icon: CheckCircle,
+    },
+    {
+      title: "Jaringan Perpustakaan",
+      description: "Terlibat aktif dalam jaringan perpustakaan daerah maupun nasional untuk berbagi informasi, program, dan praktik terbaik.",
+      icon: CheckCircle,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
-      {/* Top Fixed Header (simplified, assuming it's part of this page) */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md pt-4 pb-3 flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Placeholder for left content (e.g., logo, menu icon) */}
-        <div className="flex items-center space-x-4">
-          <div className="w-8 h-8 relative">
+      {/* Full-width Top Carousel (as seen in the image) */}
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+        {topCarouselSlides.map((slide, index: number) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentTopSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
             <Image
-              src="/images/logo-perpustakaan.png"
-              alt="Logo Perpustakaan"
+              src={slide.src}
+              alt={slide.alt}
               fill
-              className="object-contain"
-            />{" "}
-            {/* Placeholder logo */}
+              className="object-cover"
+              priority={index === 0}
+            />
+             <div className="absolute inset-0 bg-black bg-opacity-20"></div>
           </div>
-          {/* You can add more navigation links here */}
+        ))}
+
+        {/* Carousel Navigation Buttons (Top Carousel) */}
+        <button
+          onClick={prevTopSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextTopSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+
+        {/* Carousel Dots/Indicators (Top Carousel) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+          {topCarouselSlides.map((_, index: number) => (
+            <button
+              key={index}
+              onClick={() => goToTopSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentTopSlide ? "bg-white" : "bg-gray-400"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            ></button>
+          ))}
         </div>
+      </div>
 
-        {/* SMAN 6 BERAU Title */}
-        <div className="flex-grow text-center">
-          <h1 className="text-xl md:text-2xl font-extrabold text-blue-800 uppercase tracking-wide">
-            SMAN 6 BERAU
-          </h1>
-        </div>
+      {/* "KERJA SAMA" Main Title */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-12 mb-8">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 relative pb-2 inline-block">
+          KERJA SAMA
+          <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-600 rounded-full"></span>
+        </h1>
+      </div>
 
-        {/* Placeholder for right content (e.g., search, user icon) */}
-        <div className="flex items-center space-x-4">
-          {/* You can add icons/buttons here */}
-        </div>
-      </header>
-
-      <main className="pt-[72px] pb-12">
-        {" "}
-        {/* pt-auto for fixed header height */}
-        {/* Main Content Area */}
-        <div className="max-w-screen-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - Gerakan Gemar Membaca Hero/Carousel */}
-          <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4 tracking-wide uppercase">
-              GERAKAN GEMAR MEMBACA
-            </h2>
-
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-200">
-              {/* Carousel content */}
-              {carouselSlides.map((slide, index) => (
-                <div
-                  key={index}
-                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    index === currentSlide ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    fill
-                    className="object-cover"
-                    priority={index === 0} // Optimize LCP for the first image
-                  />
-                  {/* Dark overlay for text readability */}
-                  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
-                  {/* Text Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-4xl md:text-5xl font-extrabold leading-tight mb-2 uppercase">
-                      {slide.mainTitle}
-                    </h3>
-                    <p className="text-xl md:text-2xl font-semibold mb-4">
-                      {slide.subTitle}
-                    </p>
-                    <ul className="list-disc list-inside text-lg space-y-1">
-                      {slide.bulletPoints.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                    <p className="text-gray-300 text-xs mt-4 opacity-75">
-                      {slide.credit}
-                    </p>
-                  </div>
-                </div>
-              ))}
-
-              {/* Carousel Navigation Buttons */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </button>
-
-              {/* Carousel Dots/Indicators */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-                {carouselSlides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentSlide ? "bg-white" : "bg-gray-400"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  ></button>
-                ))}
+      {/* Main Content Area - Grid Layout for Kerja Sama */}
+      <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
+        {/* Left Column (Kerja Sama Content) */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Video Section within Kerja Sama */}
+          <div className="bg-white rounded-xl shadow-lg pb-4">
+            <div className="relative w-full aspect-video bg-gray-800 rounded-t-xl overflow-hidden">
+              <Image
+                src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for video thumbnail
+                alt="Video Profil Kerja Sama"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button className="bg-blue-600 hover:bg-blue-700 rounded-full p-4 transition-colors">
+                  <svg
+                    className="w-8 h-8 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
               </div>
-
-              {/* Slide Counter */}
-              <div className="absolute bottom-4 right-4 text-white text-sm bg-black bg-opacity-50 px-3 py-1 rounded-full z-10">
-                {currentSlide + 1} / {carouselSlides.length}
-              </div>
+            </div>
+            <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Video Profil Kerja Sama Perpustakaan</h3>
+                <p className="text-gray-700 text-sm">
+                    Saksikan bagaimana perpustakaan kami menjalin kemitraan dan kolaborasi dengan berbagai pihak untuk mewujudkan visi dan misi pendidikan.
+                </p>
             </div>
           </div>
 
-          {/* Right Column - Sidebar */}
-          <div className="lg:col-span-1 space-y-8 mt-8 lg:mt-0">
-            {/* Olahraga itu Ibadah Poster */}
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
+          {/* Main "KERJA SAMA" Section Content */}
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <p className="text-lg text-gray-700 mb-6">
+                Perpustakaan SMAN 6 Berau aktif menjalin kerja sama dengan berbagai pihak untuk meningkatkan kualitas layanan dan kontribusi bagi pendidikan. Kami percaya, sinergi yang kuat akan menciptakan ekosistem belajar yang lebih kaya dan inovatif.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {kerjasamaPoints.map((point, index) => (
+                <div key={index} className="bg-gray-50 rounded-lg p-5 border border-gray-200 flex items-start space-x-4">
+                    <div className="bg-blue-100 p-2 rounded-full flex-shrink-0 mt-1">
+                        <point.icon className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold text-gray-800 mb-1">{point.title}</h3>
+                        <p className="text-sm text-gray-600">{point.description}</p>
+                    </div>
+                </div>
+                ))}
+            </div>
+            <div className="text-center mt-8">
+                <p className="text-lg text-gray-700">
+                    Kami selalu terbuka untuk menjalin kemitraan baru yang dapat memberikan nilai tambah bagi komunitas sekolah dan masyarakat.
+                </p>
+                <Link href="/informasi/kontak" className="inline-flex items-center mt-4 px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Hubungi Kami untuk Kemitraan
+                </Link>
+            </div>
+          </div>
+
+          {/* BERITA TERPOPULER Section (retained) */}
+          <h2 className="text-xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-4 mt-8">
+            BERITA TERPOPULER
+          </h2>
+          {popularArticles.map((article, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row p-4 items-start"
+            >
+              <div className="relative w-full md:w-40 h-32 md:h-28 flex-shrink-0 mb-4 md:mb-0 md:mr-4 rounded-md overflow-hidden">
                 <Image
-                  src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for "OLAHRAGA ITU IBADAH" poster
-                  alt="Olahraga Itu Ibadah Poster"
+                  src={article.imageSrc}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-lg font-semibold text-gray-900 mb-1 leading-tight">
+                  {article.title}
+                </h3>
+                <p className="text-xs text-gray-500 mb-2">{article.date}</p>
+                <p className="text-sm text-gray-700 line-clamp-3">
+                  {article.summary}
+                </p>
+                <Link
+                  href="#"
+                  className="text-blue-600 hover:text-blue-800 text-sm font-medium mt-2 block"
+                >
+                  Baca Selengkapnya &rarr;
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Column - Sidebar (retained) */}
+        <div className="lg:col-span-1 space-y-6">
+          {/* INFOGRAFIS Block */}
+          <div className="bg-white rounded-xl shadow-lg p-4">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+              INFOGRAFIS
+            </h3>
+            <div className="space-y-4">
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src="/images/gambar-olahraga-ituibadah.jpg"
+                  alt="Infografis Digital"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Infografis Pendidikan"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
+          </div>
 
-            {/* Agenda Section */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">
-                AGENDA
-              </h3>
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
-                  <span className="block text-2xl leading-none">
-                    {agendaItem.date.day}
-                  </span>
-                  <span className="block text-xs uppercase">
-                    {agendaItem.date.month}
-                  </span>
-                  <span className="block text-xs">{agendaItem.date.year}</span>
-                </div>
-                <div>
-                  <Link
-                    href={agendaItem.link}
-                    className="text-gray-800 font-semibold hover:text-blue-700 transition-colors"
-                  >
-                    {agendaItem.title}
-                  </Link>
-                  <p className="text-sm text-gray-600">{agendaItem.location}</p>
-                </div>
-              </div>
-              <Link
-                href="#"
-                className="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium"
-              >
-                Lihat Semua Agenda &rarr;
-              </Link>
+          {/* OLAHRAGA ITU IBADAH Poster Block */}
+          <div className="bg-white rounded-xl shadow-lg p-4">
+            <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
+              <Image
+                src="/images/gambar-olahraga-ituibadah.jpg"
+                alt="Olahraga Itu Ibadah Poster"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
+
+          {/* Quick Links (retained) */}
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">LAYANAN</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  Peminjaman
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  Pengembalian
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  Kunjungan
+                </Link>
+              </li>
+            </ul>
+            <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">
+              SUMBER DAYA
+            </h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  Koleksi Digital
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  Jurnal & Database
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  Ebook
+                </Link>
+              </li>
+            </ul>
+            <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">
+              MENU LAIN
+            </h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  KEPEGAWAIAN
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-600">
+                  STRUKTUR
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* AGENDA Section (retained) */}
+          <div className="bg-white rounded-xl shadow-lg p-6 sticky top-32">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">AGENDA</h3>
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
+                <span className="block text-2xl leading-none">
+                  {agendaItem.date.day}
+                </span>
+                <span className="block text-xs uppercase">
+                  {agendaItem.date.month}
+                </span>
+                <span className="block text-xs">{agendaItem.date.year}</span>
+              </div>
+              <div>
+                <p className="text-gray-800 font-semibold">
+                  {agendaItem.title}
+                </p>
+                <p className="text-sm text-gray-600">{agendaItem.location}</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
+                <span className="block text-2xl leading-none">15</span>
+                <span className="block text-xs uppercase">JULI</span>
+                <span className="block text-xs">2025</span>
+              </div>
+              <div>
+                <p className="text-gray-800 font-semibold">
+                  Peluncuran Koleksi Ebook Terbaru
+                </p>
+                <p className="text-sm text-gray-600">
+                  Online via Website Perpustakaan
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/informasi/pengumuman"
+              className="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium"
+            >
+              Lihat Semua Agenda &rarr;
+            </Link>
+          </div>
         </div>
-        {/* LINK TERKAIT Section */}
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">
-            LINK TERKAIT
-            <span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span>
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
-            {relatedLinks.map((link, index) => (
+      </div>
+
+      {/* LINK TERKAIT Section (Autoscroll) - retained and outside the grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">
+          LINK TERKAIT
+          <span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span>
+        </h2>
+        <div className="overflow-hidden relative">
+          <div className="flex animate-scroll-left">
+            {relatedLinks.concat(relatedLinks).map((link, index) => (
               <Link
                 href={link.href}
-                key={index}
-                className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                key={`${link.name}-${index}`}
+                className="flex flex-shrink-0 flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors mx-4"
+                style={{ width: '120px' }}
               >
                 <div className="relative w-16 h-16 mb-2">
                   <Image
-                    src={link.logo} // Ensure these paths are correct in your project
+                    src={link.logo}
                     alt={link.name}
                     fill
                     className="object-contain"
                   />
                 </div>
-                <span className="text-sm text-center text-gray-700 font-medium">
+                <span className="text-sm text-center text-gray-700 font-medium whitespace-nowrap">
                   {link.name}
                 </span>
               </Link>
             ))}
           </div>
         </div>
-      </main>
+      </div>
+      {/* CSS for auto-scrolling animation */}
+      <style jsx>{`
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%); /* Scrolls half of the duplicated content */
+          }
+        }
+
+        .animate-scroll-left {
+          animation: scrollLeft 30s linear infinite; /* Adjust duration as needed */
+        }
+
+        .animate-scroll-left:hover {
+          animation-play-state: paused; /* Pause on hover */
+        }
+      `}</style>
     </div>
   );
 }

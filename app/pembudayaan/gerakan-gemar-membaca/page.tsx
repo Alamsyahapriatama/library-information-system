@@ -5,12 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // Icons for carousel navigation
 
-export default function GerakanMembacaPage() {
+
+// --- REMOVED THE DUPLICATE export default function ProfilPerpustakaanPage() ---
+// This was causing the "Modifiers cannot appear here" error.
+// The carouselImages data declared here was also unused and removed.
+
+
+export default function GerakanMembacaPage() { // This is now the ONLY default export
   // Carousel Images and Content
   const carouselSlides = [
     {
       src: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Anak-anak membaca buku di perpustakaan",
+      alt: "Anak-anak antusias membaca buku di perpustakaan sekolah",
       mainTitle: "GERAKAN GEMAR MEMBACA",
       subTitle: "PERPUSTAKAAN SMAN 6 BERAU",
       bulletPoints: [
@@ -22,7 +28,7 @@ export default function GerakanMembacaPage() {
     },
     {
       src: "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Siswa belajar bersama di perpustakaan",
+      alt: "Siswa-siswi belajar bersama di ruang baca perpustakaan yang nyaman",
       mainTitle: "TINGKATKAN LITERASI",
       subTitle: "DENGAN KOLEKSI TERLENGKAP",
       bulletPoints: [
@@ -34,7 +40,7 @@ export default function GerakanMembacaPage() {
     },
     {
       src: "https://images.pexels.com/photos/110646/pexels-photo-110646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Rak buku penuh di perpustakaan",
+      alt: "Rak buku modern dengan koleksi buku yang tertata rapi di perpustakaan",
       mainTitle: "MARI BERKUNJUNG",
       subTitle: "DAN MANFAATKAN LAYANAN KAMI",
       bulletPoints: [
@@ -57,7 +63,7 @@ export default function GerakanMembacaPage() {
     return () => clearInterval(slideInterval); // Cleanup interval on component unmount
   }, [carouselSlides.length]);
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentSlide(slideIndex);
   };
 
@@ -79,18 +85,46 @@ export default function GerakanMembacaPage() {
 
   // Related Links Data (from previous examples, adjust paths as needed)
   const relatedLinks = [
-    { name: 'Facebook SMAN 6 Berau', logo: '/images/logo-facebook.png', href: '#' },
-    { name: 'IBerau', logo: '/images/logo-iberau.png', href: '#' },
-    { name: 'IKaltim', logo: '/images/logo-ikaltim.png', href: '#' },
-    { name: 'iPusnas', logo: '/images/logo-ipusnas.png', href: '#' },
-    { name: 'Perpustakaan Dikbudristek', logo: '/images/logo-dikbudristek.png', href: '#' }, // Example, use actual logo
-    { name: 'onesearch.id', logo: '/images/logo-onesearch.png', href: '#' }, // Example, use actual logo
-    { name: 'e-resources perpusnas', logo: '/images/logo-e_resources.png', href: '#' }, // Example, use actual logo
+    { name: "PSB Sekolah", logo: "/images/logo-psb-sekolah.png", href: "#" },
+    {
+      name: "Portal Garuda",
+      logo: "/images/portal-garuda.png",
+      href: "https://garuda.kemdikbud.go.id/publisher/view/2960",
+    },
+    {
+      name: "Bintang Pusnas",
+      logo: "/images/bintang-pusnas.png",
+      href: "https://bintangpusnas.perpusnas.go.id/konten/",
+    },
+    {
+      name: "Khastara Perpusnas", // Clarified name
+      logo: "/images/khasara-pusnas.jpeg",
+      href: "https://khastara.perpusnas.go.id/",
+    },
+    { name: "SIBI",
+      logo: "/images/sibi.jpeg",
+      href: "https://buku.kemdikbud.go.id/" },
+    {
+      name: "Youtube SMAN 6 Berau", // Clarified name
+      logo: "/images/youtube.jpeg",
+      href: "#", // Replace with actual YouTube link if available
+    },
+    {
+      name: "Instagram SMAN 6 Berau", // Clarified name
+      logo: "/images/sman.jpeg", // Assuming this is an Instagram logo placeholder
+      href: "#", // Replace with actual Instagram link if available
+    },
+    { name: "Kemenkeu", logo: "/images/kemenkeu.png", href: "#" },
+    { name: "Bank Indonesia", logo: "/images/bi.png", href: "#" },
+    { name: "Otoritas Jasa Keuangan", logo: "/images/ojk.png", href: "#" },
+    { name: "Bappenas", logo: "/images/bapennas.png", href: "#" },
+    { name: "BPS", logo: "/images/bps.jpeg", href: "#" },
   ];
+
 
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
-      {/* Top Fixed Header (simplified, assuming it's part of this page) */}
+      {/* Top Fixed Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md pt-4 pb-3 flex items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Placeholder for left content (e.g., logo, menu icon) */}
         <div className="flex items-center space-x-4">
@@ -99,7 +133,7 @@ export default function GerakanMembacaPage() {
           </div>
           {/* You can add more navigation links here */}
         </div>
-        
+
         {/* SMAN 6 BERAU Title */}
         <div className="flex-grow text-center">
           <h1 className="text-xl md:text-2xl font-extrabold text-blue-800 uppercase tracking-wide">
@@ -112,10 +146,10 @@ export default function GerakanMembacaPage() {
           {/* You can add icons/buttons here */}
         </div>
       </header>
-      
-      <main className="pt-[72px] pb-12"> {/* pt-auto for fixed header height */}
+
+      <main className="pt-[72px] pb-12">
         {/* Main Content Area */}
-        <div className="max-w-screen-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Gerakan Gemar Membaca Hero/Carousel */}
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 tracking-wide uppercase">GERAKAN GEMAR MEMBACA</h2>
@@ -138,7 +172,7 @@ export default function GerakanMembacaPage() {
                   />
                   {/* Dark overlay for text readability */}
                   <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                  
+
                   {/* Text Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                     <h3 className="text-4xl md:text-5xl font-extrabold leading-tight mb-2 uppercase">
@@ -175,7 +209,7 @@ export default function GerakanMembacaPage() {
 
               {/* Carousel Dots/Indicators */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-                {carouselSlides.map((_, index) => (
+                {carouselSlides.map((_, index: number) => (
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
@@ -200,8 +234,8 @@ export default function GerakanMembacaPage() {
             <div className="bg-white rounded-lg shadow-md p-4">
               <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.pexels.com/photos/4006132/pexels-photo-4006132.jpeg?auto=compress&cs=tinysrgb&w=800" // Placeholder for "OLAHRAGA ITU IBADAH" poster
-                  alt="Olahraga Itu Ibadah Poster"
+                  src="/images/gambar-olahraga-ituibadah.jpg"
+                  alt="Poster Olahraga Itu Ibadah"
                   fill
                   className="object-cover"
                 />
@@ -209,7 +243,7 @@ export default function GerakanMembacaPage() {
             </div>
 
             {/* Agenda Section */}
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-white rounded-lg shadow-md p-6 sticky top-32">
               <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">AGENDA</h3>
               <div className="flex items-center space-x-4 mb-4">
                 <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
@@ -224,35 +258,65 @@ export default function GerakanMembacaPage() {
                   <p className="text-sm text-gray-600">{agendaItem.location}</p>
                 </div>
               </div>
-              <Link href="#" className="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium">
+              <Link href="/informasi/pengumuman" className="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium">
                 Lihat Semua Agenda &rarr;
               </Link>
             </div>
           </div>
         </div>
 
-        {/* LINK TERKAIT Section */}
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
+        {/* LINK TERKAIT Section (Autoscroll) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">
             LINK TERKAIT
             <span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span>
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
-            {relatedLinks.map((link, index) => (
-              <Link href={link.href} key={index} className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors">
-                <div className="relative w-16 h-16 mb-2">
-                  <Image
-                    src={link.logo} // Ensure these paths are correct in your project
-                    alt={link.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-sm text-center text-gray-700 font-medium">{link.name}</span>
-              </Link>
-            ))}
+          {/* Container for the scrolling links */}
+          <div className="overflow-hidden relative">
+            <div className="flex animate-scroll-left">
+              {/* Duplicate the links to create a seamless loop for scrolling */}
+              {relatedLinks.concat(relatedLinks).map((link, index) => (
+                <Link
+                  href={link.href}
+                  key={`${link.name}-${index}`}
+                  className="flex flex-shrink-0 flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors mx-4"
+                  style={{ width: '120px' }}
+                >
+                  <div className="relative w-16 h-16 mb-2">
+                    <Image
+                      src={link.logo}
+                      alt={link.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-sm text-center text-gray-700 font-medium whitespace-nowrap">
+                    {link.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
+        {/* Add this style block to your global CSS file (e.g., globals.css) or directly within a <style jsx> tag if using Next.js */}
+        <style jsx>{`
+          @keyframes scrollLeft {
+            0% {
+              transform: translateX(0%);
+            }
+            100% {
+              transform: translateX(-50%); /* Scrolls half of the duplicated content */
+            }
+          }
+
+          .animate-scroll-left {
+            animation: scrollLeft 30s linear infinite; /* Adjust duration as needed */
+          }
+
+          .animate-scroll-left:hover {
+            animation-play-state: paused; /* Pause on hover */
+          }
+        `}</style>
       </main>
     </div>
   );

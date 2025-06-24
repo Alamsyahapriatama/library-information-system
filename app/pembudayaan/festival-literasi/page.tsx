@@ -33,7 +33,7 @@ export default function FestivalLiterasiPage() {
 
   // Infografis Data
   const infografis = {
-    image: "https://images.pexels.com/photos/17666245/pexels-photo-17666245.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder Infografis image from the new screenshot
+    image: "/images/gambar-olahraga-ituibadah.jpg", // Placeholder Infografis image from the new screenshot
     alt: "Infografis Digital Library",
   };
 
@@ -87,7 +87,7 @@ export default function FestivalLiterasiPage() {
       
       <main className="pt-[72px] pb-12"> {/* pt-auto for fixed header height */}
         {/* Main Content Area */}
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Festival Literasi Hero & Video */}
           <div className="lg:col-span-2 space-y-8">
             <h2 className="text-2xl font-bold text-gray-800 tracking-wide uppercase">FESTIVAL LITERASI</h2>
