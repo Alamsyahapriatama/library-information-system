@@ -12,14 +12,20 @@ export default function StrukturOrganisasiPage() { // Renamed component
     {
       role: 'Kepala Sekolah',
       name: 'Bpk. Dr. H. Slamet, M.Pd.',
-      image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400', // Placeholder image
+      image: '/images/yudi.png', // Placeholder image
       description: 'Pemimpin tertinggi dan penanggung jawab seluruh kegiatan sekolah dan perpustakaan.'
     },
     {
       role: 'Kepala Perpustakaan',
       name: 'Ibu Ani Wijaya, S.Hum.',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400', // Placeholder image
+      image: '/images/yuli.png', // Placeholder image
       description: 'Bertanggung jawab atas pengelolaan operasional dan pengembangan perpustakaan secara keseluruhan.'
+    },
+    {
+      role: 'Staf Layanan Teknis',
+      name: 'Bpk. Budi Santoso',
+      image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400', // Placeholder image
+      description: 'Mengelola pengadaan, pengolahan, dan pemeliharaan koleksi perpustakaan.'
     },
     {
       role: 'Staf Layanan Teknis',
@@ -30,7 +36,7 @@ export default function StrukturOrganisasiPage() { // Renamed component
     {
       role: 'Staf Layanan Pemustaka',
       name: 'Ibu Siti Aminah',
-      image: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400', // Placeholder image
+      image: '/images/alfina.png', // Placeholder image
       description: 'Melayani peminjaman, pengembalian, dan membantu pemustaka dalam pencarian informasi.'
     },
     {
@@ -187,7 +193,7 @@ export default function StrukturOrganisasiPage() { // Renamed component
 
           {/* Teks "Rearranged by" */}
           <div className="p-8 pt-4 text-right text-sm text-gray-400">
-            <p>Rearranged by Tama</p>
+            <p></p>
           </div>
         </div>
 

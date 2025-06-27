@@ -426,7 +426,7 @@ export default function SurveyPage() {
                 </label>
                 <textarea
                   id="saran-masukan"
-                  rows="5"
+                  rows={5}
                   className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Tulis saran atau masukan Anda untuk peningkatan layanan..."
                 ></textarea>

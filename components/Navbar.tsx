@@ -8,9 +8,12 @@ import { Menu, X, ChevronDown, BookOpen, Search } from 'lucide-react'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null) // State ini tetap ada untuk level 1
   const pathname = usePathname()
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null) // Ref ini tetap ada untuk menutup dropdown level 1
+
+  // Tambahkan state untuk mengelola dropdown bersarang (level 2 dan seterusnya)
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +25,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // Logic ini akan menutup dropdown level 1
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setActiveDropdown(null)
+        setActiveNestedDropdown(null); // Tutup juga nested dropdown saat klik di luar main menu
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -38,58 +43,56 @@ const Navbar = () => {
         { name: 'Profil Perpustakaan', href: '/profil/profil-perpustakaan' },
         { name: 'Visi dan Misi', href: '/profil/visi-misi' },
         { name: 'Struktur Organisasi', href: '/profil/struktur-organisasi' },
-        { name: 'Fasilitas', href: '/profil/fasilitas' },
-        { name: 'Web SMAN 6 Berau', href: '/profil/web-sekolah' },
+        { name: 'Pustakawan', href: '/profil/pustakawan' },
         { name: 'SOP Perpustakaan', href: '/profil/sop-perpustakaan' }
       ]
     },
+    { name: 'PROGRAM', href: '/program' },
     {
-      name: 'LAYANAN',
+      name: 'FASILITAS',
       dropdown: [
-        { name: 'Reservasi Buku', href: '/layanan/reservasi-buku' },
-        { name: 'Perpanjangan Online', href: '/layanan/perpanjangan-online' },
-        { name: 'Permintaan Informasi', href: '/layanan/permintaan-informasi' },
-        { name: 'Angket Usulan Koleksi', href: '/layanan/angket-usulan-koleksi' },
-        { name: 'Polling Kepuasan Perpus', href: '/layanan/polling-kepuasan' },
-        { name: 'Konsultasi', href: '/layanan/konsultasi' },
-        { name: 'Deposit', href: '/layanan/deposit' },
-        { name: 'Aduan', href: '/layanan/aduan' },
-        { name: 'Koleksi', href: '/layanan/koleksi' },
-        { name: 'Pengajuan Pendampingan Akreditasi', href: '/layanan/pendampingan-akreditasi' }
-      ]
+        { name: 'Titik Baca', href: '/fasilitas/titik-baca' },
+        {
+          name: 'Layanan', // Ini adalah item 'Layanan' yang Anda maksud
+          dropdown: [ // Tambahkan properti dropdown di sini
+            { name: 'Reservasi Buku', href: '/layanan/reservasi-buku' },
+            { name: 'Perpanjangan Online', href: '/layanan/perpanjangan-online' },
+            { name: 'Permintaan Informasi', href: '/layanan/permintaan-informasi' },
+            { name: 'Angket Usulan Koleksi', href: '/layanan/angket-usulan-koleksi' },
+            { name: 'Polling Kepuasan Perpus', href: '/layanan/polling-kepuasan' },
+            { name: 'Konsultasi', href: '/layanan/konsultasi' },
+            { name: 'Deposit', href: '/layanan/deposit' },
+            { name: 'Aduan', href: '/layanan/aduan' },
+            { name: 'Koleksi', href: '/layanan/koleksi' },
+            { name: 'Pengajuan Pendampingan Akreditasi', href: '/layanan/pendampingan-akreditasi' }
+          ]
+        },
+        { name: 'Kebutuhan pemustaka', href: '/fasilitas/kebutuhan-pemustaka' },
+        { name: 'Kepuasan Permadani', href: '/fasilitas/kepuasan-permadani' },
+        // ... jika ada item lain di bawah Fasilitas yang bukan bagian dari Layanan
+      ],
     },
     {
       name: 'KOLEKSI',
       dropdown: [
         { name: 'Ebook', href: '/koleksi/ebook' },
         { name: 'Aplikasi', href: '/koleksi/aplikasi' },
-        { name: 'Multimedia', href: '/koleksi/multimedia' },
+        { name: 'Jejaring Perpustakaan', href: '/koleksi/jejaring-perpustakaan' },
         { name: 'Artikel', href: '/koleksi/artikel' }
-      ]
-    },
-    {
-      name: 'PEMBUDAYAAN GEMAR MEMBACA',
-      dropdown: [
-        { name: 'Jurnal Literasi', href: '/pembudayaan/jurnal-literasi' },
-        { name: 'Survei Index Membaca', href: '/pembudayaan/survei-index-membaca' },
-        { name: 'Gerakan Gemar Membaca', href: '/pembudayaan/gerakan-gemar-membaca' },
-        { name: 'Festival Literasi', href: '/pembudayaan/festival-literasi' }
       ]
     },
     {
       name: 'INFORMASI',
       dropdown: [
-        { name: 'News', href: '/informasi/news' },
+        { name: 'Berita', href: '/informasi/berita' },
         { name: 'Pengumuman', href: '/informasi/pengumuman' },
         { name: 'Kerjasama', href: '/informasi/kerjasama' },
-        { name: 'Transparansi', href: '/informasi/transparansi' }
       ]
     },
-    { name: 'PUSTAKAWAN', href: '/pustakawan' },
+
     {
       name: 'INTERAKSI',
       dropdown: [
-        { name: 'Login', href: '/interaksi/login' },
         { name: 'Buku Tamu', href: '/interaksi/buku-tamu' },
         { name: 'Masukan dan Saran', href: '/interaksi/masukan-saran' },
         { name: 'Survei', href: '/interaksi/survei' }
@@ -98,8 +101,19 @@ const Navbar = () => {
   ]
 
   const handleDropdownToggle = (itemName: string) => {
-    setActiveDropdown(activeDropdown === itemName ? null : itemName)
+    // Saat dropdown level 1 dibuka/ditutup, pastikan nested juga tertutup
+    setActiveDropdown(activeDropdown === itemName ? null : itemName);
+    setActiveNestedDropdown(null); // Reset nested dropdown saat parent toggle
   }
+
+  const handleNestedDropdownToggle = (itemName: string, e?: React.MouseEvent) => {
+    // Stop propagation to prevent parent dropdown from closing
+    if (e) {
+      e.stopPropagation();
+    }
+    setActiveNestedDropdown(activeNestedDropdown === itemName ? null : itemName);
+  }
+
 
   // Get current date and time in WIB (Western Indonesia Time)
   const now = new Date();
@@ -116,13 +130,12 @@ const Navbar = () => {
   const formattedDateTime = new Intl.DateTimeFormat('id-ID', options).format(now).toUpperCase();
 
   return (
-    // The fixed positioning is here. Ensure no parent element is interfering.
-    <nav className={`fixed w-full z-50 top-0 transition-all duration-300 ${ // Added top-0 for explicit positioning
+    <nav className={`fixed w-full z-50 top-0 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       {/* Top Bar - Full Width with consistent padding */}
       <div className="bg-blue-600 text-white text-sm py-2">
-        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"> {/* Increased padding for wider screens */}
+        <div className="flex justify-between items-center px-2 sm:px-4 lg:px-8 xl:px-12 2xl:px-16">
           <div className="flex items-center space-x-6">
             <span>SITUS RESMI PERPUSTAKAAN SMAN 6 BERAU - NPP: 6403091E1000001</span>
           </div>
@@ -134,9 +147,9 @@ const Navbar = () => {
 
       {/* Main Navigation - Full Width with consistent padding */}
       <div className="border-b border-gray-100">
-        <div className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"> {/* Increased padding for wider screens */}
+        <div className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Logo - Stays on the left */}
-          <Link href="/" className="flex items-center space-x-4 flex-shrink-0"> {/* flex-shrink-0 prevents logo from shrinking */}
+          <Link href="/" className="flex items-center space-x-4 flex-shrink-0">
             <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
               <BookOpen className="h-7 w-7 text-blue-600" />
             </div>
@@ -147,16 +160,16 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu and Search - Pushed to the right */}
-          {/* Use ml-auto on this wrapper div to push it all the way to the right */}
-          <div className="hidden lg:flex items-center" ref={dropdownRef}> {/* Changed hidden lg:block to hidden lg:flex items-center */}
-            <div className="flex items-center space-x-4"> {/* Increased space-x between main menu items */}
+          <div className="hidden lg:flex items-center ml-auto" ref={dropdownRef}>
+            <div className="flex items-center space-x-2">
               {menuItems.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdown ? (
+                    // Logic for top-level dropdown items
                     <div>
                       <button
                         onClick={() => handleDropdownToggle(item.name)}
-                        className="flex items-center space-x-5 text-gray-700 hover:text-blue-600 px-4 py-3 rounded-md text-base font-medium transition-colors whitespace-nowrap" // Added whitespace-nowrap
+                        className="flex items-center space-x-6 text-gray-700 hover:text-blue-600 px-4 py-3 rounded-md text-base font-medium transition-colors whitespace-nowrap"
                       >
                         <span>{item.name}</span>
                         <ChevronDown className={`h-5 w-5 transition-transform ${
@@ -166,22 +179,61 @@ const Navbar = () => {
                       {activeDropdown === item.name && (
                         <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
                           {item.dropdown.map((subItem) => (
-                            <Link
-                              key={subItem.href}
-                              href={subItem.href}
-                              className="block px-5 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              {subItem.name}
-                            </Link>
+                            <div key={subItem.name} className="relative"> {/* Tambahkan div relative untuk subItem */}
+                               {subItem.dropdown ? (
+                                // Logic for nested dropdown items
+                                <div>
+                                  <button
+                                    onClick={(e) => handleNestedDropdownToggle(subItem.name, e)}
+                                    className="flex items-center justify-between w-full px-5 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors whitespace-nowrap"
+                                  >
+                                    <span>{subItem.name}</span>
+                                    <ChevronDown className={`h-5 w-5 transition-transform ${
+                                      activeNestedDropdown === subItem.name ? 'rotate-180' : ''
+                                    }`} />
+                                  </button>
+                                  {activeNestedDropdown === subItem.name && (
+                                    <div className="absolute left-full top-0 mt-0 ml-2 w-72 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
+                                      {subItem.dropdown.map((nestedSubItem) => (
+                                        <Link
+                                          key={nestedSubItem.href}
+                                          href={nestedSubItem.href || '#'} // Perbaikan: Tambahkan fallback '#'
+                                          className="block px-5 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                          onClick={() => {
+                                            setActiveDropdown(null);
+                                            setActiveNestedDropdown(null); // Tutup semua dropdown
+                                          }}
+                                        >
+                                          {nestedSubItem.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                               ) : (
+                                // Logic for regular link within top-level dropdown
+                                <Link
+                                  key={subItem.href || subItem.name} // Gunakan name sebagai fallback key
+                                  href={subItem.href || '#'} // Perbaikan: Tambahkan fallback '#'
+                                  className="block px-5 py-3 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    setActiveNestedDropdown(null); // Tutup semua dropdown
+                                  }}
+                                >
+                                  {subItem.name}
+                                </Link>
+                               )}
+                            </div>
                           ))}
                         </div>
                       )}
                     </div>
                   ) : (
+                    // Logic for top-level link items (no dropdown)
                     <Link
                       href={item.href!}
-                      className={`text-gray-700 hover:text-blue-600 px-4 py-3 rounded-md text-base font-medium transition-colors whitespace-nowrap ${ // Added whitespace-nowrap
+                      className={`text-gray-700 hover:text-blue-600 px-4 py-3 rounded-md text-base font-medium transition-colors whitespace-nowrap ${
                         pathname === item.href ? 'text-blue-600 bg-blue-50' : ''
                       }`}
                     >
@@ -192,11 +244,11 @@ const Navbar = () => {
               ))}
             </div>
             {/* Search icon for desktop */}
-            <Search className="h-6 w-6 text-gray-400 hover:text-blue-600 cursor-pointer transition-colors ml-8" /> {/* Added ml-8 for spacing */}
+            <Search className="h-6 w-6 text-gray-400 hover:text-blue-600 cursor-pointer transition-colors ml-8" />
           </div>
 
           {/* Mobile Menu Button - Stays on the right for mobile */}
-          <div className="flex items-center lg:hidden"> {/* Only show for lg screens and below */}
+          <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
@@ -214,6 +266,7 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <div key={item.name}>
                 {item.dropdown ? (
+                  // Logic for top-level dropdown items in mobile
                   <div>
                     <button
                       onClick={() => handleDropdownToggle(item.name)}
@@ -227,22 +280,60 @@ const Navbar = () => {
                     {activeDropdown === item.name && (
                       <div className="pl-6 space-y-1">
                         {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            className="block text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md text-sm transition-colors"
-                            onClick={() => {
-                              setIsOpen(false)
-                              setActiveDropdown(null)
-                            }}
-                          >
-                            {subItem.name}
-                          </Link>
+                          <div key={subItem.name}> {/* Tambahkan div untuk subItem di mobile */}
+                            {subItem.dropdown ? (
+                              // Logic for nested dropdown items in mobile
+                              <div>
+                                <button
+                                  onClick={(e) => handleNestedDropdownToggle(subItem.name, e)}
+                                  className="flex items-center justify-between w-full text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md text-sm transition-colors"
+                                >
+                                  <span>{subItem.name}</span>
+                                  <ChevronDown className={`h-5 w-5 transition-transform ${
+                                    activeNestedDropdown === subItem.name ? 'rotate-180' : ''
+                                  }`} />
+                                </button>
+                                {activeNestedDropdown === subItem.name && (
+                                  <div className="pl-6 space-y-1">
+                                    {subItem.dropdown.map((nestedSubItem) => (
+                                      <Link
+                                        key={nestedSubItem.href || nestedSubItem.name} // Perbaikan: Tambahkan fallback '#'
+                                        href={nestedSubItem.href || '#'}
+                                        className="block text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md text-sm transition-colors"
+                                        onClick={() => {
+                                          setIsOpen(false);
+                                          setActiveDropdown(null);
+                                          setActiveNestedDropdown(null); // Tutup semua
+                                        }}
+                                      >
+                                        {nestedSubItem.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              // Logic for regular link within top-level dropdown in mobile
+                              <Link
+                                key={subItem.href || subItem.name} // Gunakan name sebagai fallback key
+                                href={subItem.href || '#'} // Perbaikan: Tambahkan fallback '#'
+                                className="block text-gray-600 hover:text-blue-600 px-4 py-2 rounded-md text-sm transition-colors"
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setActiveDropdown(null);
+                                  setActiveNestedDropdown(null); // Tutup semua dropdown
+                                }}
+                              >
+                                {subItem.name}
+                              </Link>
+                            )}
+                          </div>
                         ))}
                       </div>
                     )}
                   </div>
                 ) : (
+                  // Logic for top-level link items in mobile (no dropdown)
                   <Link
                     href={item.href!}
                     className={`block text-gray-700 hover:text-blue-600 px-4 py-3 rounded-md text-base font-medium transition-colors ${

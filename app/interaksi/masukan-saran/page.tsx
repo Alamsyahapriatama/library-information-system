@@ -182,7 +182,7 @@ export default function FeedbackAndNewsPage() {
                 </label>
                 <textarea
                   id="pesan-saran"
-                  rows="5"
+                  rows={5}
                   className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Tulis masukan atau saran Anda di sini..."
                 ></textarea>

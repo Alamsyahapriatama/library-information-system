@@ -281,7 +281,7 @@ export default function ProfilPerpustakaanPage() {
 
           {/* Teks "Rearranged by" */}
           <div className="p-8 pt-4 text-right text-sm text-gray-400">
-            <p>Rearranged by Tama</p>
+            <p></p>
           </div>
         </div>
 

@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "title": "Ebook Belajar Pengertian Bintang Pusnas",
+      "description": "Ebook Bintang Pusnas.",
+      "author": "Penulis Asep",
+      "publication_year": 2023,
+      "pdf_url": "/images/ojk.pdf",
+      "cover_image": "/images/ojk.png"
+    },
+    {
+      "id": 2,
+      "title": "Ebook Bank indonesia",
+      "description": "Pengertian Bank Indonesia.",
+      "author": "Penulis Burhan",
+      "publication_year": 2022,
+      "pdf_url": "/images/ebook-bank-indonesia.pdf",
+      "cover_image": "/images/bi.png"
+    }
+  ]
