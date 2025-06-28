@@ -1,65 +1,47 @@
-"use client"; // Required for client components in Next.js
+"use client"; // Pastikan ini ada di baris pertama
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronLeft, ChevronRight, BookOpen, Mic, Laptop, Users, CalendarDays } from "lucide-react"; // CalendarDays is now imported!
+import Link from 'next/link';
+import Image from 'next/image';
+import { CalendarDays } from "lucide-react"; // CalendarDays tetap dipertahankan untuk Agenda
 
-export default function BeritaPage() {
-  // Top Full-width Carousel Images and Content (for the main banner at the very top)
-  const topCarouselSlides = [
-    {
-      src: "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Gedung Perpustakaan",
-    },
-    {
-      src: "https://images.pexels.com/photos/110646/pexels-photo-110646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Interior Perpustakaan",
-    },
-    {
-      src: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Siswa di perpustakaan",
-    },
+// Menggunakan alias jalur (@/) menunjuk ke root proyek Anda.
+// Jalur yang benar dari root ke file JSON Anda.
+import programData from '@/app/data/program.json'; 
+
+interface Program {
+  slug: string;
+  title: string;
+  content: string;
+  image: string;
+}
+
+export default function ProgramListPage() { // Nama komponen yang lebih deskriptif
+  const programs: Program[] = programData as Program[];
+
+  // Dummy data untuk sidebar, disesuaikan agar relevan dengan program
+  const layananLinks = [
+    { name: 'PENDAFTARAN PROGRAM', href: '#' }, 
+    { name: 'JADWAL KEGIATAN', href: '#' },
+    { name: 'MATERI PROGRAM', href: '#' }, 
+    { name: 'FAQ PROGRAM', href: '#' },
+  ];
+  const kategoriProgramLinks = [ // Contoh, bisa diganti dengan kategori program atau tag
+    { name: 'AKADEMIK', href: '#' }, 
+    { name: 'NON-AKADEMIK', href: '#' },
+    { name: 'PENGEMBANGAN DIRI', href: '#' },
+    { name: 'SENI & BUDAYA', href: '#' },
+  ];
+  const relatedLinks = [
+    { name: 'Youtube', logo: '/images/youtube.jpeg', href: '#' }, 
+    { name: 'BANK INDONESIA', logo: '/images/bi.png', href: '#' },
+    { name: 'KEMENKEU', logo: '/images/kemenkeu.png', href: '#' }, 
+    { name: 'BINTANG PUSNAS', logo: '/images/bintang-pusnas.png', href: '#' },
+    { name: 'BAPENAS', logo: '/images/bapennas.png', href: '#' }, 
+    { name: 'SMAN6 BERAU', logo: '/images/sman.jpeg', href: '#' },
+    { name: 'BPS', logo: '/images/bps.jpeg', href: '#' },
   ];
 
-  const [currentTopSlide, setCurrentTopSlide] = useState(0);
-
-  // Auto-slide effect for top carousel
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      setCurrentTopSlide((prevSlide) => (prevSlide + 1) % topCarouselSlides.length);
-    }, 7000); // Change slide every 7 seconds
-
-    return () => clearInterval(slideInterval);
-  }, [topCarouselSlides.length]);
-
-  // Navigation functions for top carousel
-  const goToTopSlide = (slideIndex: number) => {
-    setCurrentTopSlide(slideIndex);
-  };
-  const nextTopSlide = () => {
-    setCurrentTopSlide((prevSlide) => (prevSlide + 1) % topCarouselSlides.length);
-  };
-  const prevTopSlide = () => {
-    setCurrentTopSlide((prevSlide) => (prevSlide - 1 + topCarouselSlides.length) % topCarouselSlides.length);
-  };
-
-  // Video Content for "Informasi Pendidikan Video"
-  const educationalVideo = {
-    thumbnailSrc: "https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Masa Depan Pendidikan: Inovasi & Tantangan",
-    description: "Video ini membahas berbagai inovasi dalam dunia pendidikan serta tantangan yang dihadapi dalam mempersiapkan generasi mendatang.",
-    benefits: [
-      "Teknologi dalam Pembelajaran",
-      "Peran Guru di Era Digital",
-      "Pendidikan Berbasis Proyek",
-      "Keterampilan Abad ke-21",
-    ],
-    videoLink: "#", // Replace with actual video link if available
-  };
-
-
-  // Agenda Data (retained)
+  // Agenda Data (dipertahankan dari BeritaPage, disesuaikan sedikit)
   const agendaItem = {
     date: { day: "24", month: "JUNI", year: "2025" }, // Adjusted to current date
     title: "Rapat Anggaran Tahunan",
@@ -67,377 +49,113 @@ export default function BeritaPage() {
     link: "#",
   };
 
-  // Related Links Data (retained)
-  const relatedLinks = [
-    { name: "PSB Sekolah", logo: "/images/logo-psb-sekolah.png", href: "#" },
-    {
-      name: "Portal Garuda",
-      logo: "/images/portal-garuda.png",
-      href: "https://garuda.kemdikbud.go.id/publisher/view/2960",
-    },
-    {
-      name: "Bintang Pusnas",
-      logo: "/images/bintang-pusnas.png",
-      href: "https://bintangpusnas.perpusnas.go.id/konten/",
-    },
-    {
-      name: "Khasara Perpusnas",
-      logo: "/images/khasara-pusnas.jpeg",
-      href: "https://khastara.perpusnas.go.id/",
-    },
-    { name: "SIBI",
-      logo: "/images/sibi.jpeg",
-      href: "https://buku.kemdikbud.go.id/" },
-    {
-      name: "Youtube SMAN 6 Berau",
-      logo: "/images/youtube.jpeg",
-      href: "#",
-    },
-    {
-      name: "sman6berauofficial",
-      logo: "/images/sman.jpeg",
-      href: "#",
-    },
-    { name: "Kemenkeu", logo: "/images/kemenkeu.png", href: "#" },
-    { name: "Bank Indonesia", logo: "/images/bi.png", href: "#" },
-    { name: "Otoritas Jasa Keuangan", logo: "/images/ojk.png", href: "#" },
-    { name: "Bapennas", logo: "/images/bapennas.png", href: "#" },
-    { name: "BPS", logo: "/images/bps.jpeg", href: "#" },
-  ];
-
-  // Data for "PROGRAM TERBARU PERPUSTAKAAN"
-  const libraryPrograms = [
-    {
-      icon: BookOpen,
-      title: "Bedah Buku & Diskusi Literasi",
-      date: "Setiap Kamis, Pukul 15.00 WIB",
-      summary: "Program rutin untuk mengulas buku-buku terbaru dan klasik. Ajang berbagi perspektif dan meningkatkan pemahaman literasi.",
-      imageSrc: "/images/bedah-buku.jpeg",
-      link: "#",
-    },
-    {
-      icon: Mic,
-      title: "Workshop Menulis Kreatif: Dari Ide hingga Karya",
-      date: "17-18 Agustus 2025",
-      summary: "Workshop dua hari bersama penulis tamu, mengajarkan teknik penulisan cerpen dan puisi. Terbuka untuk semua jenjang siswa.",
-      imageSrc: "/images/workshop-menulis.jpg",
-      link: "#",
-    },
-    {
-      icon: Laptop,
-      title: "Literasi Digital: Aman Berinternet & Cerdas Bermedia",
-      date: "05 September 2025",
-      summary: "Edukasi pentingnya literasi digital, keamanan siber, dan cara membedakan informasi kredibel di era serba digital.",
-      imageSrc: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      link: "#",
-    },
-    {
-      icon: Users,
-      title: "Klub Pecinta Buku: Jelajah Dunia Bersama Kata",
-      date: "Setiap Jumat Pertama Bulan",
-      summary: "Komunitas bagi para pecinta buku untuk berdiskusi, merekomendasikan bacaan, dan mengadakan acara terkait buku lainnya.",
-      imageSrc: "/images/pecinta-buku.jpeg",
-      link: "#",
-    },
-    {
-        icon: BookOpen,
-        title: "Bedah Buku & Diskusi Literasi",
-        date: "Setiap Kamis, Pukul 15.00 WIB",
-        summary: "Program rutin untuk mengulas buku-buku terbaru dan klasik. Ajang berbagi perspektif dan meningkatkan pemahaman literasi.",
-        imageSrc: "/images/bedah-buku.jpeg",
-        link: "#",
-      },
-      {
-        icon: Mic,
-        title: "Workshop Menulis Kreatif: Dari Ide hingga Karya",
-        date: "17-18 Agustus 2025",
-        summary: "Workshop dua hari bersama penulis tamu, mengajarkan teknik penulisan cerpen dan puisi. Terbuka untuk semua jenjang siswa.",
-        imageSrc: "/images/workshop-menulis.jpg",
-        link: "#",
-      },
-      {
-        icon: Laptop,
-        title: "Literasi Digital: Aman Berinternet & Cerdas Bermedia",
-        date: "05 September 2025",
-        summary: "Edukasi pentingnya literasi digital, keamanan siber, dan cara membedakan informasi kredibel di era serba digital.",
-        imageSrc: "https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        link: "#",
-      },
-      {
-        icon: Users,
-        title: "Klub Pecinta Buku: Jelajah Dunia Bersama Kata",
-        date: "Setiap Jumat Pertama Bulan",
-        summary: "Komunitas bagi para pecinta buku untuk berdiskusi, merekomendasikan bacaan, dan mengadakan acara terkait buku lainnya.",
-        imageSrc: "/images/pecinta-buku.jpeg",
-        link: "#",
-      },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
-      {/* Full-width Top Carousel */}
-      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
-        {topCarouselSlides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentTopSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-          </div>
-        ))}
-
-        {/* Carousel Navigation Buttons (Top Carousel) */}
-        <button
-          onClick={prevTopSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button
-          onClick={nextTopSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full text-white hover:bg-opacity-75 transition-colors z-10"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
-
-        {/* Carousel Dots/Indicators (Top Carousel) */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-          {topCarouselSlides.map((_, index: number) => (
-            <button
-              key={index}
-              onClick={() => goToTopSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentTopSlide ? "bg-white" : "bg-gray-400"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            ></button>
-          ))}
+      {/* Top Banner Image (Mirip E-book Page) */}
+      <div className="relative w-full h-[250px] md:h-[300px] overflow-hidden bg-gradient-to-r from-blue-700 to-blue-900 text-white pt-28">
+        <Image 
+          src="https://images.pexels.com/photos/3394336/pexels-photo-3394336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+          alt="Koleksi Program Banner" 
+          fill 
+          className="object-cover opacity-20" 
+          priority 
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+          <h2 className="text-xl md:text-2xl font-bold mb-2 uppercase tracking-wide">Temukan</h2>
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">KOLEKSI PROGRAM</h1>
+          <p className="text-2xl md:text-3xl font-semibold mt-2">SMAN 6 BERAU</p>
         </div>
       </div>
 
-      ---
-
-      {/* "BERITA TERBARU" Main Title */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12 mb-8">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 relative pb-2 inline-block">
-          BERITA TERBARU
-          <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-600 rounded-full"></span>
-        </h1>
-      </div>
-
-      {/* Main Content Area - Grid Layout for Berita */}
-      <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
-        {/* Left Column (Video and Program Berita Content) */}
+      <div className="max-w-screen-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Content: Program List */}
         <div className="lg:col-span-2 space-y-8">
-          {/* Video Content Section */}
-          <div className="bg-white rounded-xl shadow-lg pb-4">
-            <div className="relative w-full aspect-video bg-gray-800 rounded-t-xl overflow-hidden mb-6">
-              <Image
-                src={educationalVideo.thumbnailSrc}
-                alt={educationalVideo.title}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Daftar Program Tersedia</h2>
+          {programs.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {programs.map((program) => (
                 <Link
-                  href={educationalVideo.videoLink}
-                  target="_blank" // Opens in a new tab
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 hover:bg-blue-700 rounded-full p-4 transition-colors"
-                  aria-label={`Play video: ${educationalVideo.title}`}
+                  href={`/program/${program.slug}`}
+                  key={program.slug}
+                  className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group"
                 >
-                  <svg
-                    className="w-8 h-8 text-white ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                  <div className="relative w-full h-60"> {/* Tinggi gambar yang konsisten */}
+                    <Image 
+                      src={program.image || 'https://via.placeholder.com/200x300?text=No+Image'} 
+                      alt={program.title} 
+                      fill 
+                      className="object-cover group-hover:scale-105 transition-transform duration-300" 
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 mb-1 line-clamp-2">{program.title}</h3>
+                    <p className="text-gray-600 text-sm mb-2 line-clamp-3">
+                      {program.content.length > 100 // Tampilkan lebih banyak teks untuk preview
+                        ? program.content.substring(0, 100) + '...'
+                        : program.content}
+                    </p>
+                    <p className="text-blue-600 text-sm font-medium mt-2">Lihat Detail Program &rarr;</p>
+                  </div>
                 </Link>
-              </div>
+              ))}
             </div>
+          ) : (
+            <p className="text-center text-gray-600 text-lg">Tidak ada Program tersedia saat ini.</p>
+          )}
 
-            <div className="p-8 pt-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {educationalVideo.title}
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                {educationalVideo.description}
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 mb-3">
-                Sorotan Utama:
-              </h4>
-              <ul className="space-y-2">
-                {educationalVideo.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          ---
-
-          {/* Program Terbaru Perpustakaan Section - Enhanced Design */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-800 relative pb-2 mb-8">
-            PROGRAM TERBARU PERPUSTAKAAN
-            <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-600 rounded-full"></span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {libraryPrograms.map((program, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl"
-              >
-                <div className="relative w-full h-48 overflow-hidden">
-                  <Image
-                    src={program.imageSrc}
-                    alt={program.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <program.icon className="h-8 w-8 mb-2 drop-shadow" />
-                    <h3 className="text-xl font-bold drop-shadow">
-                      {program.title}
-                    </h3>
-                  </div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600 mb-3 flex items-center">
-                      <CalendarDays className="h-4 w-4 mr-2 text-blue-500" /> {program.date}
-                    </p>
-                    <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                      {program.summary}
-                    </p>
-                  </div>
-                  <Link
-                    href={program.link}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors mt-auto"
-                  >
-                    Baca Selengkapnya
-                    <ChevronRight className="h-4 w-4 ml-1" />
-                  </Link>
-                </div>
-              </div>
+          {/* Pagination (Dummy, seperti E-book Page) */}
+          <div className="flex justify-center items-center space-x-2 mt-10">
+            <Link href="#" className="px-3 py-1 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-200">&laquo;</Link>
+            {[1, 2, 3].map(page => (
+              <Link href="#" key={page} className={`px-3 py-1 border border-gray-300 rounded-md ${page === 1 ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-200'}`}>
+                {page}
+              </Link>
             ))}
+            <span className="px-3 py-1 text-gray-700">...</span>
+            <Link href="#" className="px-3 py-1 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-200">&raquo;</Link>
           </div>
         </div>
 
-        {/* Right Column - Sidebar (retained) */}
-        <div className="lg:col-span-1 space-y-6">
-          {/* INFOGRAFIS Block */}
-          <div className="bg-white rounded-xl shadow-lg p-4">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
-              INFOGRAFIS
-            </h3>
-            <div className="space-y-4">
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                <Image
-                  src="/images/gambar-olahraga-ituibadah.jpg"
-                  alt="Infografis Digital"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Infografis Pendidikan"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+        {/* Right Sidebar (Mirip E-book Page) */}
+        <div className="lg:col-span-1 space-y-8">
+          {/* INFOGRAFIS Block (Dipertahankan jika relevan untuk Program) */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">INFOGRAFIS PROGRAM</h3>
+            <div className="relative w-full aspect-square bg-gray-200 rounded-lg overflow-hidden mb-4">
+              <Image src="/images/gambar-olahraga-ituibadah.jpg" alt="Infografis Program" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
             </div>
+            <div className="relative w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
+              <Image src="https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Infografis Pendidikan" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
+            </div>
+            <p className="text-sm text-gray-600 mt-4 text-center">Visualisasi informasi tentang program sekolah dan kegiatan.</p>
           </div>
 
-          {/* OLAHRAGA ITU IBADAH Poster Block */}
-          <div className="bg-white rounded-xl shadow-lg p-4">
-            <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden">
-              <Image
-                src="/images/gambar-olahraga-ituibadah.jpg"
-                alt="Olahraga Itu Ibadah Poster"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="bg-white rounded-lg shadow-md p-6 sticky top-32">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">LAYANAN PROGRAM</h3>
+            <ul className="space-y-3">{layananLinks.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href} className="text-blue-600 hover:text-blue-800 text-base font-medium transition-colors">
+                  &raquo; {item.name}
+                </Link>
+              </li>
+            ))}</ul>
           </div>
 
-          {/* Quick Links (retained) */}
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">KATEGORI PROGRAM</h3>
+            <ul className="space-y-3">{kategoriProgramLinks.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href} className="text-blue-600 hover:text-blue-800 text-base font-medium transition-colors">
+                  &raquo; {item.name}
+                </Link>
+              </li>
+            ))}</ul>
+          </div>
+
+          {/* AGENDA Section (dipertahankan) */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">LAYANAN</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  Peminjaman
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  Pengembalian
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  Kunjungan
-                </Link>
-              </li>
-            </ul>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">
-              SUMBER DAYA
-            </h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  Koleksi Digital
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  Jurnal & Database
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  Ebook
-                </Link>
-              </li>
-            </ul>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">
-              MENU LAIN
-            </h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  KEPEGAWAIAN
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-blue-600">
-                  STRUKTUR
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* AGENDA Section (retained) */}
-          <div className="bg-white rounded-xl shadow-lg p-6 sticky top-32">
             <h3 className="text-xl font-bold text-gray-900 mb-4">AGENDA</h3>
             <div className="flex items-center space-x-4 mb-4">
               <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
@@ -464,10 +182,10 @@ export default function BeritaPage() {
               </div>
               <div>
                 <p className="text-gray-800 font-semibold">
-                  Peluncuran Koleksi Ebook Terbaru
+                  Peluncuran Program Mentoring Baru
                 </p>
                 <p className="text-sm text-gray-600">
-                  Online via Website Perpustakaan
+                  Online via Google Meet
                 </p>
               </div>
             </div>
@@ -481,58 +199,20 @@ export default function BeritaPage() {
         </div>
       </div>
 
-      ---
-
-      {/* LINK TERKAIT Section (Autoscroll) - retained and outside the grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">
-          LINK TERKAIT
-          <span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span>
-        </h2>
-        <div className="overflow-hidden relative">
-          <div className="flex animate-scroll-left">
-            {relatedLinks.concat(relatedLinks).map((link, index) => (
-              <Link
-                href={link.href}
-                key={`${link.name}-${index}`}
-                className="flex flex-shrink-0 flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors mx-4"
-                style={{ width: '120px' }}
-              >
-                <div className="relative w-16 h-16 mb-2">
-                  <Image
-                    src={link.logo}
-                    alt={link.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-sm text-center text-gray-700 font-medium whitespace-nowrap">
-                  {link.name}
-                </span>
-              </Link>
-            ))}
-          </div>
+      {/* Related Links Section (sama seperti E-book Page) */}
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-12">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 relative pb-2">LINK TERKAIT<span className="absolute left-0 bottom-0 w-16 h-1 bg-blue-600 rounded-full"></span></h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-center">
+          {relatedLinks.map((link, index) => (
+            <Link href={link.href} key={index} className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-colors">
+              <div className="relative w-16 h-16 mb-2">
+                <Image src={link.logo} alt={link.name} fill className="object-contain" sizes="64px"/>
+              </div>
+              <span className="text-sm text-center text-gray-700 font-medium">{link.name}</span>
+            </Link>
+          ))}
         </div>
       </div>
-      {/* CSS for auto-scrolling animation */}
-      <style jsx>{`
-        @keyframes scrollLeft {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%); /* Scrolls half of the duplicated content */
-          }
-        }
-
-        .animate-scroll-left {
-          animation: scrollLeft 30s linear infinite; /* Adjust duration as needed */
-        }
-
-        .animate-scroll-left:hover {
-          animation-play-state: paused; /* Pause on hover */
-        }
-      `}</style>
     </div>
   );
 }
