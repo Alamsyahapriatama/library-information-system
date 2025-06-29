@@ -12,7 +12,8 @@ interface Program {
   slug: string;
   title: string;
   content: string;
-  image: string;
+  coverImage: string; // Renamed from 'image' to 'coverImage'
+  images?: string[]; // New: Optional array of image URLs
 }
 
 export default function ProgramListPage() { // Nama komponen yang lebih deskriptif
@@ -82,12 +83,15 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
                 >
                   <div className="relative w-full h-60"> {/* Tinggi gambar yang konsisten */}
                     <Image 
-                      src={program.image || 'https://via.placeholder.com/200x300?text=No+Image'} 
-                      alt={program.title} 
-                      fill 
-                      className="object-cover group-hover:scale-105 transition-transform duration-300" 
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    />
+                    
+                    src={program.coverImage} // Corrected line
+                    alt={program.title}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 700px"
+                  />
+                    
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 mb-1 line-clamp-2">{program.title}</h3>
@@ -127,9 +131,9 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
               <Image src="/images/gambar-olahraga-ituibadah.jpg" alt="Infografis Program" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
             </div>
             <div className="relative w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
-              <Image src="https://images.pexels.com/photos/6803276/pexels-photo-6803276.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Infografis Pendidikan" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
+              <Image src="\images\gemar-membac.jpeg" alt="Infografis Pendidikan" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
             </div>
-            <p className="text-sm text-gray-600 mt-4 text-center">Visualisasi informasi tentang program sekolah dan kegiatan.</p>
+            <p className="text-sm text-gray-600 mt-4 text-center">informasi tentang program sekolah dan kegiatan.</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-md p-6 sticky top-32">

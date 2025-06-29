@@ -1,51 +1,59 @@
 // app/program/[slug]/page.tsx
-// Hapus 'use client' karena komponen ini mengekspor generateStaticParams()
-// yang berjalan di sisi server.
+"use client"; // <--- Tambahkan baris ini di paling atas!
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation'; // Digunakan jika program tidak ditemukan
+import { notFound } from 'next/navigation';
+import { useState } from 'react';
 
-// Alias '@/' menunjuk ke root proyek. Dari root, kita masuk ke 'app/data/program.json'
-import programData from '@/app/data/program.json'; 
+import programData from '@/app/data/program.json';
 
 interface Program {
   slug: string;
   title: string;
   content: string;
-  image: string;
+  coverImage: string;
+  images?: string[];
 }
 
-// Fungsi ini memberi tahu Next.js semua slug yang mungkin ada pada waktu build (penting untuk SSG)
-export async function generateStaticParams() {
-  // Pastikan programData dianggap sebagai array Program
-  return (programData as Program[]).map((program) => ({
-    slug: program.slug,
-  }));
-}
+// export async function generateStaticParams() {
+//   return (programData as Program[]).map((program) => ({
+//     slug: program.slug,
+//   }));
+// }
+//
+// ^^^ CATATAN PENTING: generateStaticParams tidak bisa di-export dari Client Component.
+// Kita akan membahas solusinya di bawah.
+
 
 export default function ProgramDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
-  // Temukan program berdasarkan slug yang diberikan di URL
   const program = (programData as Program[]).find((p) => p.slug === slug);
 
-  // Jika program tidak ditemukan (misal: slug salah di URL), tampilkan halaman 404 Next.js
   if (!program) {
     notFound();
   }
 
-  // Ambil program lain untuk sidebar, kecuali program yang sedang dilihat
   const otherPrograms = (programData as Program[])
-    .filter(p => p.slug !== slug) // Filter program yang sedang dilihat
-    .slice(0, 5); // Ambil maksimal 5 program lainnya untuk ditampilkan
+    .filter(p => p.slug !== slug)
+    .slice(0, 5);
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-28 pb-12"> {/* pt-28 memberi jarak atas */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-4 gap-8"> {/* Tata letak grid 4 kolom */}
+    <div className="min-h-screen bg-gray-100 pt-28 pb-12">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Kolom Kiri: Detail Program (Mengambil 3 dari 4 kolom, sekitar 75%) */}
         <div className="lg:col-span-3 bg-white rounded-xl shadow-lg p-8 space-y-6">
-          {/* Tombol kembali ke daftar program di bagian atas */}
           <Link href="/program" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm mb-4">
             &larr; Kembali ke Daftar Program
           </Link>
@@ -53,11 +61,11 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
           {/* Gambar Cover Program */}
           <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden mb-6">
             <Image
-              src={program.image}
+              src={program.coverImage}
               alt={program.title}
               fill
               className="object-cover"
-              priority // Prioritaskan gambar cover
+              priority
               sizes="(max-width: 768px) 100vw, 700px"
             />
           </div>
@@ -67,7 +75,6 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
             {program.title}
           </h1>
 
-          {/* Garis pemisah visual */}
           <hr className="border-t-2 border-blue-200 w-1/3 mb-6" />
 
           {/* Konten Program */}
@@ -75,15 +82,41 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
             {program.content}
           </p>
 
-          {/* Tombol kembali di bagian bawah */}
-          <Link href="/program" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          {/* Bagian Galeri Foto Tambahan */}
+          {program.images && program.images.length > 0 && (
+            <div className="mt-12">
+              <h2 className="text-3xl font-bold text-blue-700 mb-6 border-b pb-3 border-blue-200">Galeri Program</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {program.images.map((imageSrc, index) => (
+                  <div
+                    key={index}
+                    className="relative w-full h-48 rounded-lg overflow-hidden shadow-md group cursor-pointer"
+                    onClick={() => openModal(imageSrc)}
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt={`${program.title} - Gambar ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-white text-lg font-semibold">Klik untuk Perbesar</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <Link href="/program" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-8">
             &larr; Kembali ke Daftar Program
           </Link>
         </div>
 
         {/* Kolom Kanan: Daftar Program Lainnya (Mengambil 1 dari 4 kolom, sekitar 25%) */}
         <div className="lg:col-span-1 space-y-8">
-          <div className="bg-white rounded-4xl shadow-lg p-6 sticky top-32"> {/* sticky agar tetap terlihat saat scrolling */}
+          <div className="bg-white rounded-4xl shadow-lg p-6 sticky top-32">
             <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">Program Lainnya</h3>
             <ul className="space-y-3">
               {otherPrograms.length > 0 ? (
@@ -99,10 +132,35 @@ export default function ProgramDetailPage({ params }: { params: { slug: string }
               )}
             </ul>
           </div>
-          
-          {/* Anda bisa menambahkan bagian lain di sidebar kanan di sini, misalnya iklan atau info relevan lainnya */}
         </div>
       </div>
+
+      {/* --- Komponen Modal Gambar --- */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-4xl max-h-full w-full h-auto" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={selectedImage}
+              alt="Gambar Diperbesar"
+              layout="responsive"
+              width={1000}
+              height={700}
+              objectFit="contain"
+              className="rounded-lg shadow-xl"
+            />
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-white text-3xl font-bold bg-gray-800 bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-opacity"
+              aria-label="Tutup"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+} 

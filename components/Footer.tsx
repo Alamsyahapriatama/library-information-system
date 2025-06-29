@@ -1,21 +1,48 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { BookOpen, MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Globe } from 'lucide-react'
+import {
+  BookOpen,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Instagram,
+  Twitter,
+  Globe,
+  Youtube
+} from 'lucide-react'
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Facebook, href: '#', name: 'Facebook SMAN 6 Berau' },
-    { icon: Instagram, href: '#', name: 'Instagram @sman6berau' },
-    { icon: Twitter, href: '#', name: 'Twitter @sman6berau' },
-    { icon: Globe, href: '#', name: 'Website Sekolah' }
+    {
+      icon: Facebook,
+      href: 'https://www.facebook.com/share/1AgsTs4mMH/',
+      name: 'Facebook SMAN 6 Berau',
+    },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/perpustakaan_permadani?igsh=MTc3bWRmZGllNHA1MQ==',
+      name: 'Instagram @perpustakaan_permadani',
+    },
+    {
+      icon: Youtube,
+      href: 'https://youtube.com/@perpustakaanpermadanisditmadan?si=nVCqBlaQCRagy-Uc',
+      name: 'YouTube Perdani',
+    },
+    {
+      icon: Globe,
+      href: '#',
+      name: 'Website Sekolah',
+    },
   ]
 
   const externalLinks = [
     { name: 'iPusnas', href: '#', description: 'Perpustakaan Digital Nasional' },
     { name: 'iBerau', href: '#', description: 'Portal Digital Berau' },
     { name: 'iKaltim', href: '#', description: 'Portal Kalimantan Timur' },
-    { name: 'Kemdikbud', href: '#', description: 'Kementerian Pendidikan' }
+    { name: 'Kemdikbud', href: '#', description: 'Kementerian Pendidikan' },
   ]
 
   const quickLinks = [
@@ -23,7 +50,7 @@ const Footer = () => {
     { name: 'Layanan', href: '/layanan/reservasi-buku' },
     { name: 'Koleksi Digital', href: '/koleksi/ebook' },
     { name: 'Berita', href: '/informasi/news' },
-    { name: 'Kontak', href: '/interaksi/buku-tamu' }
+    { name: 'Kontak', href: '/interaksi/buku-tamu' },
   ]
 
   return (
@@ -38,7 +65,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold">Perpustakaan</h3>
-                <p className="text-sm text-gray-300">SMAN 6 Berau</p>
+                <p className="text-sm text-gray-300">Perpustakaan Permadani</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -52,6 +79,8 @@ const Footer = () => {
                   href={link.href}
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   title={link.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <link.icon className="h-5 w-5" />
                 </a>
@@ -135,7 +164,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Perpustakaan SMAN 6 Berau. Semua hak cipta dilindungi.
+              © 2024 Perpustakaan Permadani. Semua hak cipta dilindungi.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0">
               NPP: 6403091E1000001

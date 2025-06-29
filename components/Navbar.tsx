@@ -137,7 +137,7 @@ const Navbar = () => {
       <div className="bg-blue-600 text-white text-sm py-2">
         <div className="flex justify-between items-center px-2 sm:px-4 lg:px-8 xl:px-12 2xl:px-16">
           <div className="flex items-center space-x-6">
-            <span>SITUS RESMI PERPUSTAKAAN SMAN 6 BERAU - NPP: 6403091E1000001</span>
+            <span>SITUS RESMI PERPUSTAKAAN SDIT MADANI - NPP: 6403051B2000001</span>
           </div>
           <div className="flex items-center space-x-2">
             <span>{formattedDateTime.replace('PADA ', '')}</span>
@@ -149,13 +149,15 @@ const Navbar = () => {
       <div className="border-b border-gray-100">
         <div className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Logo - Stays on the left */}
-          <Link href="/" className="flex items-center space-x-4 flex-shrink-0">
-            <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-              <BookOpen className="h-7 w-7 text-blue-600" />
+          <Link href="/" className="flex items-center space-x-0 flex-shrink-0">
+          <img src="/images/logo-perpus.png" // Ganti path ini dengan path logo Anda
+               alt="Logo" 
+                className="w-20 h-13 rounded-full object-cover" />
+            <div className="">
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Perpustakaan</h1>
-              <p className="text-sm text-gray-500">SMAN 6 Berau</p>
+              <h1 className="text-xl font-bold text-gray-900">PERMADANI</h1>
+              <p className="text-sm text-gray-500">Perpustakaan Madani</p>
             </div>
           </Link>
 

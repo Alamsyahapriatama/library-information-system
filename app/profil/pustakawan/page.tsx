@@ -11,7 +11,7 @@ export default function DataPegawaiPage() {
   // Data untuk carousel gambar (sesuai permintaan gambar ketiga)
   const carouselImages = [
     {
-      src: "https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "/images/gamber-perpus.jpg",
       alt: "Siswa di perpustakaan belajar",
     },
     {
@@ -39,35 +39,64 @@ export default function DataPegawaiPage() {
   // Data untuk daftar pegawai
   const employees = [
     {
-      photoSrc: "/images/alfina.png", // Placeholder, ganti dengan path gambar asli
-      name: "Alifina Rusdiana S.Pd",
-      position: "Kepala Perpustakaan",
-      dob: "Muara Mantai Ulu, 22 Desember 1987",
-      gender: "Perempuan",
+      photoSrc: "/images/pusatakawan-1.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
       rank: "-",
     },
     {
-      photoSrc: "/images/yudi.png", // Placeholder, ganti dengan path gambar asli
-      name: "Yudi Setiyoningsih",
-      position: "Teknis",
-      dob: "Labanan, 14 Juni 1988",
-      gender: "Perempuan",
+      photoSrc: "/images/pusatakawan-2.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
+      rank: "-",
+    }, {
+      photoSrc: "/images/pusatakawan-3.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
+      rank: "-",
+    }, {
+      photoSrc: "/images/pusatakawan-4.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
+      rank: "-",
+    }, {
+      photoSrc: "/images/pusatakawan-5.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
       rank: "-",
     },
     {
-      photoSrc: "/images/rizky.png", // Placeholder, ganti dengan path gambar asli
-      name: "M. Rizky Saputra Djafar",
-      position: "Teknis",
-      dob: "Gunung Tabur, 18 Januari 1997",
-      gender: "Laki-laki",
+      photoSrc: "/images/pusatakawan-6.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
       rank: "-",
     },
     {
-      photoSrc: "/images/yuli.png", // Placeholder, ganti dengan path gambar asli
-      name: "Reni Andriani, S.I.P",
-      position: "Teknis",
-      dob: "Berau, 25 Februari 1989",
-      gender: "Perempuan",
+      photoSrc: "/images/pusatakawan-7.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
+      rank: "-",
+    },
+    {
+      photoSrc: "/images/pusatakawan-8.png", 
+      name: "-",
+      position: "-",
+      dob: "-",
+      gender: "-",
       rank: "-",
     },
     // Tambahkan data pegawai lain jika diperlukan

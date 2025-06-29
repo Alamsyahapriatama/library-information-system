@@ -10,7 +10,7 @@ const Hero = () => {
   const slides = [
     {
       image: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=1600',
-      title: 'Selamat Datang di Perpustakaan SMAN 6 Berau',
+      title: 'Selamat Datang di Perpustakaan Madani',
       subtitle: 'Gerbang Ilmu Pengetahuan dan Literasi',
       description: 'Temukan ribuan koleksi buku dan nikmati layanan perpustakaan modern untuk mendukung pembelajaran Anda.',
       hasVideo: false

@@ -1,21 +1,143 @@
 [
-    {
-      "slug": "workshop-literasi-keuangan",
-      "title": "Workshop Literasi Keuangan: Mengelola Uang Sejak Dini",
-      "content": "Program edukasi keuangan bagi siswa untuk memahami dasar-dasar pengelolaan uang, investasi, dan pentingnya menabung. Workshop ini dirancang untuk memberikan keterampilan finansial praktis yang relevan dengan kehidupan sehari-hari. Diadakan bekerjasama dengan lembaga keuangan untuk memberikan wawasan langsung dari para ahli. Tujuan utamanya adalah membekali siswa dengan pengetahuan yang cukup agar mereka dapat membuat keputusan finansial yang bijak di masa depan.",
-      "image": "https://images.pexels.com/photos/4050302/pexels-photo-4050302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      "slug": "seminar-kesehatan-mental",
-      "title": "Seminar Kesehatan Mental Remaja: Mengatasi Stres di Sekolah",
-      "content": "Sebuah seminar interaktif yang membahas pentingnya kesehatan mental bagi remaja, khususnya dalam menghadapi tekanan akademik dan sosial di lingkungan sekolah. Para siswa akan diajarkan strategi praktis untuk mengelola stres, membangun resiliensi, dan mengenali tanda-tanda awal masalah kesehatan mental. Dibawakan oleh psikolog profesional, seminar ini juga menyediakan sesi tanya jawab untuk diskusi yang lebih personal dan mendalam. Tujuannya adalah menciptakan lingkungan sekolah yang lebih suportif dan meningkatkan kesadaran akan kesejahteraan mental.",
-      "image": "https://images.pexels.com/photos/5668798/pexels-photo-5668798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      "slug": "pembukaan-perpustakaan-digital",
-      "title": "Perpustakaan Digital SMAN 6 Berau Resmi Dibuka: Era Baru Akses Pengetahuan",
-      "content": "SMAN 6 Berau dengan bangga mengumumkan peresmian Perpustakaan Digitalnya, sebuah tonggak penting dalam upaya meningkatkan literasi dan akses informasi bagi seluruh civitas akademika. Peresmian ini dihadiri oleh Kepala Sekolah, perwakilan Dinas Pendidikan, guru, dan siswa.\n\nDengan koleksi ribuan e-book, jurnal ilmiah, dan materi pembelajaran multimedia, Perpustakaan Digital ini dirancang untuk menjadi sumber daya utama di era digital. Fitur pencarian yang canggih, akses 24/7, dan antarmuka yang ramah pengguna akan mempermudah siswa dan guru dalam menemukan informasi yang mereka butuhkan untuk proyek, riset, atau sekadar membaca untuk kesenangan.\n\nKepala Sekolah, Bapak [Nama Kepala Sekolah], dalam sambutannya menyampaikan, \"Perpustakaan Digital ini bukan hanya tentang teknologi, tetapi tentang menciptakan kesempatan yang lebih luas bagi siswa kita untuk menjelajahi dunia pengetahuan tanpa batas. Ini adalah investasi kita untuk masa depan literasi dan pendidikan yang lebih baik.\"\n\nPelatihan dan bimbingan akan terus diberikan untuk memastikan semua pengguna dapat memaksimalkan potensi penuh dari platform ini. Mari manfaatkan fasilitas baru ini untuk memperluas wawasan dan mengembangkan potensi diri.",
-      "image": "https://images.pexels.com/photos/110646/pexels-photo-110646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }
-  ]
-  
+  {
+    "slug": "program-unggul-a",
+    "title": "Program Baca Tulis Puisi",
+    "content": "Bimbingan menulis puisi adalah proses membantu seseorang untuk mengembangkan kemampuan menulis puisi. Tujuan utama bimbingan menulis untuk meningkatkan kualitas tulisan seseorang, baik dari segi isi, struktur, maupun gaya bahasa",
+    "coverImage": "/images/program/baca-tulis-puisi1.jpg",
+    "images": [
+      "/images/program/baca-tulis-puisi2.jpg",
+      "/images/program/baca-tulis-puisi3.jpg",
+      "/images/program/baca-tulis-puisi4.jpg",
+      "/images/program/baca-tulis-puisi6.jpg",
+      "/images/program/baca-tulis-puisi7.jpg",
+      "/images/program/baca-tulis-puisi8.jpg"
+    ]
+  },
+  {
+    "slug": "program-prioritas-b",
+    "title": "Program Edukasi Digital",
+    "content": "Pembelajaran multimedia adalah sebuah metode pembelajaran yang menggabungkan berbagai media, seperti  teks,  gambar,  audio,  video,  animasi,dan interaktivitas, untuk menyampaikan materi pelajaran.. Kami menggabungkan pembelajaran dan teknologi untuk mengatasi tantangan lingkungan global.\n\nFokus utama meliputi pemahaman teknologi kepada murid, penggunaan perangkat, dan pengelolaan teknologi. Ada kesempatan untuk melakukan praktek lapangan dan berkolaborasi dengan sesama murid.\n\nKami percaya pada dampak positif yang dapat kita ciptakan bersama untuk bumi yang lebih maju.",
+    "coverImage": "/images/program/edukasi-digital/edukasi-digital1.jpg",
+    "images": [
+      "/images/program/edukasi-digital/edukasi-digital1.jpg",
+      "/images/program/edukasi-digital/edukasi-digital2.jpg",
+      "/images/program/edukasi-digital/edukasi-digital3.jpg",
+      "/images/program/edukasi-digital/edukasi-digital4.jpg",
+      "/images/program/edukasi-digital/edukasi-digital5.jpg"
+    ]
+  },
+  {
+    "slug": "program-inovasi-c",
+    "title": "Program Literasi Pagi",
+    "content": "KIP (Kegiatan Islami Pagi) dilakukan di musholah SDIT Madani ataupun dikelas masing-masing. Kegiatan ini berlangsung dari awal pendirian sekolah. Kegiatan in menjadi kunci keberkahan untuk sekolah. Kegiatan KIP yang diajarkan dari mulai berwudhu, sholat dhuha, berdzikr pagi, membaca surah, membaca hadist serta doa- doa harian. \n\nKegiatan ini berlangsung dari hari Senin-Jumat dari pukul 07.30-08.00.Untuk hari jumat ada kegiatan kultum (kuliah tujuhmenit), kegiatan kultum dilakukan bergantian antarasiswasesuaijadwalkultumyang sudah ada.",
+    "coverImage": "/images/program/literasi-pagi/literasi-pagi (1).jpg",
+    "images": [
+        "/images/program/literasi-pagi/literasi-pagi (1).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (2).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (3).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (4).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (5).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (6).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (7).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (8).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (9).jpg",
+        "/images/program/literasi-pagi/literasi-pagi (10).jpg"
+
+    ]
+  },
+  {
+    "slug": "program-global-d",
+    "title": "Program Membaca di Pojok Baca",
+    "content": "Pojok baca adalah sebuah area atau sudut yang khusus didesain untuk mendorong minat membaca. Biasanya dilengkapi dengan berbagai macam buku, majalah, atau bahan bacaan lainnya.\n\nTujuan adanya pojok baca adalah meningkatkan minat baca, memperkaya pengetahuan, menciptakan suasana belajar yang menyenangkan, dan menumbuhkan budaya literasi.",
+    "coverImage": "/images/program/pojok-baca/pojok-baca (1).jpg",
+    "images": [
+      "/images/program/pojok-baca/pojok-baca (1).jpg",
+      "/images/program/pojok-baca/pojok-baca (2).jpg",
+      "/images/program/pojok-baca/pojok-baca (3).jpg",
+      "/images/program/pojok-baca/pojok-baca (4).jpg",
+      "/images/program/pojok-baca/pojok-baca (5).jpg",
+      "/images/program/pojok-baca/pojok-baca (6).jpg",
+      "/images/program/pojok-baca/pojok-baca (7).jpg",
+      "/images/program/pojok-baca/pojok-baca (8).jpg",
+      "/images/program/pojok-baca/pojok-baca (9).jpg",
+      "/images/program/pojok-baca/pojok-baca (10).jpg",
+      "/images/program/pojok-baca/pojok-baca (11).jpg",
+      "/images/program/pojok-baca/pojok-baca (12).jpg",
+      "/images/program/pojok-baca/pojok-baca (13).jpg"
+
+    ]
+  },
+  {
+    "slug": "program-komunitas-e",
+    "title": "Program Bimbingan Story Telling",
+    "content": "Story telling adalah kegiatan menyampaikan sebuah cerita. Baik itu cerita fiksi, non-fiksi, atau bahkan pengalaman pribadi, storytelling melibatkan penggunaan kata-kata, gambar, atau media lainnya untuk menyampaikan pesan, emosi, atau informasi. .\n\nManfaat dari kegiatan story telling adalah meningkatkan komunikasi, meningkatkan kreativitas,dan membangun kepercayaan diri",
+    "coverImage": "/images/program/story-telling/story-telling (3).jpg",
+    "images": [
+      "/images/program/story-telling/story-telling (1).jpg",
+      "/images/program/story-telling/story-telling (2).jpg",
+      "/images/program/story-telling/story-telling (3).jpg",
+      "/images/program/story-telling/story-telling (4).jpg",
+      "/images/program/story-telling/story-telling (5).jpg",
+      "/images/program/story-telling/story-telling (6).jpg",
+      "/images/program/story-telling/story-telling (7).jpg",
+      "/images/program/story-telling/story-telling (8).jpg",
+      "/images/program/story-telling/story-telling (9).jpg",
+      "/images/program/story-telling/story-telling (10).jpg",
+      "/images/program/story-telling/story-telling (11).jpg",
+      "/images/program/story-telling/story-telling (12).jpg",
+      "/images/program/story-telling/story-telling (13).jpg",
+      "/images/program/story-telling/story-telling (14).jpg",
+      "/images/program/story-telling/story-telling (15).jpg",
+      "/images/program/story-telling/story-telling (16).jpg",
+      "/images/program/story-telling/story-telling (17).jpg",
+      "/images/program/story-telling/story-telling (18).jpg",
+      "/images/program/story-telling/story-telling (19).jpg",
+      "/images/program/story-telling/story-telling (20).jpg",
+      "/images/program/story-telling/story-telling (21).jpg" 
+    ]
+  },
+  {
+    "slug": "program-seni-f",
+    "title": "Program Wajib Kunjung",
+    "content": " Bimbingan pemustaka adalah proses memberikan bantuan dan panduan kepada pemustaka agar dapat memanfaatkan sumber daya dan layanan perpustakaan secara efektif dan efisie.\n\nIni mencakup berbagai kegiatan, mulai dari mengajarkan cara mencari buku, artikel, atau informasi lain yang mereka butuhkan, hingga memberikan pelatihan tentang penggunaan katalog online atau database perpustakaan.\n\n Tujuan utama bimbingan pemustaka adalah mempermudah akses informasi, meningkatkan   kemampuan   literasi   informasi, membudidayakan minat baca, dan meningkatkan.",
+    "coverImage": "/images/program/wajib-kunjung/wajib-kunjung (1).jpg",
+    "images":[
+      "/images/program/wajib-kunjung/wajib-kunjung (1).jpg",
+      "/images/program/wajib-kunjung/wajib-kunjung (2).jpg",
+      "/images/program/wajib-kunjung/wajib-kunjung (3).jpg",
+      "/images/program/wajib-kunjung/wajib-kunjung (4).jpg",
+      "/images/program/wajib-kunjung/wajib-kunjung (5).jpg"
+    ]
+  },
+  {
+    "slug": "program-global-g",
+    "title": "Program Program School Podcast",
+    "content": "Podcast sekolah adalah program audio yang dibuat oleh siswa atau guru dii sekolah. Podcast ini bisa berisi berbagai topik, mulai dari pelajaran dikelas, wawancara dengan guru atau tokoh inspiratif, cerita pendek, hingga diskusi..\n\nManfaat dari kegiatan podcast dapat melatih kemampuan berbicara, mengembangkan kreativitas, mengenal teman baru, melatih kemampuan mendengar, dan belajar jadilebih seru.",
+    "coverImage": "/images/program/school-podcast/school-podcast (1).jpg",
+    "images": [
+      "/images/program/school-podcast/school-podcast (2).jpg"
+    ]
+  },
+  {
+    "slug": "program-global-h",
+    "title": "Program Literasi Senyap",
+    "content": "Gerakan Literasi Senyap adalah sebuah inisiatif yang bertujuan untuk membudayakan kebiasaan membaca di kalangan masyarakat, terutama di lingkungan sekolah..\n\nKegiatan ini melibatkan semua peserta didik dan tenaga pendidik untuk meluangkan waktu tertentu setiap harinya untuk membaca secara mandiri dan bersama-sama.",
+    "coverImage": "/images/program/literasi-senyap/literasi-senyap (1).jpg ",
+    "images": [
+        "/images/program/literasi-senyap/literasi-senyap (1).jpg ",
+        "/images/program/literasi-senyap/literasi-senyap (2).jpg ",
+        "/images/program/literasi-senyap/literasi-senyap (3).jpg ",
+        "/images/program/literasi-senyap/literasi-senyap (4).jpg ",
+        "/images/program/literasi-senyap/literasi-senyap (5).jpg "
+    ]
+  },
+  {
+    "slug": "program-global-i",
+    "title": "Program Pemberantasan Buta Huruf Arab  ",
+    "content": " Belajar Baca Tulisan Arab.",
+    "coverImage": "/images/program/pemberantasan-buta-huruf/pemberantasan-buta-huruf-arab (1).jpg ",
+    "images": [ 
+      "/images/program/pemberantasan-buta-huruf/pemberantasan-buta-huruf-arab (2).jpg "
+    ]
+  }
+]

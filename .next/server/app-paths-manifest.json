@@ -1,6 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/program/page": "app/program/page.js",
-  "/koleksi/artikel/page": "app/koleksi/artikel/page.js",
-  "/program/[slug]/page": "app/program/[slug]/page.js"
-}
+{}
