@@ -1,19 +1,16 @@
-"use client"; // Pastikan ini ada di baris pertama
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { CalendarDays } from "lucide-react"; // CalendarDays tetap dipertahankan untuk Agenda
 
 // Menggunakan alias jalur (@/) menunjuk ke root proyek Anda.
-// Jalur yang benar dari root ke file JSON Anda.
-import programData from '@/app/data/program.json'; 
+import programData from '@/app/data/program.json';
 
 interface Program {
   slug: string;
   title: string;
   content: string;
   coverImage: string; // Renamed from 'image' to 'coverImage'
-  images?: string[]; // New: Optional array of image URLs
+  images?: string[]; // Optional array of image URLs
 }
 
 export default function ProgramListPage() { // Nama komponen yang lebih deskriptif
@@ -21,23 +18,23 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
 
   // Dummy data untuk sidebar, disesuaikan agar relevan dengan program
   const layananLinks = [
-    { name: 'PENDAFTARAN PROGRAM', href: '#' }, 
+    { name: 'PENDAFTARAN PROGRAM', href: '#' },
     { name: 'JADWAL KEGIATAN', href: '#' },
-    { name: 'MATERI PROGRAM', href: '#' }, 
+    { name: 'MATERI PROGRAM', href: '#' },
     { name: 'FAQ PROGRAM', href: '#' },
   ];
   const kategoriProgramLinks = [ // Contoh, bisa diganti dengan kategori program atau tag
-    { name: 'AKADEMIK', href: '#' }, 
+    { name: 'AKADEMIK', href: '#' },
     { name: 'NON-AKADEMIK', href: '#' },
     { name: 'PENGEMBANGAN DIRI', href: '#' },
     { name: 'SENI & BUDAYA', href: '#' },
   ];
   const relatedLinks = [
-    { name: 'Youtube', logo: '/images/youtube.jpeg', href: '#' }, 
+    { name: 'Youtube', logo: '/images/youtube.jpeg', href: '#' },
     { name: 'BANK INDONESIA', logo: '/images/bi.png', href: '#' },
-    { name: 'KEMENKEU', logo: '/images/kemenkeu.png', href: '#' }, 
+    { name: 'KEMENKEU', logo: '/images/kemenkeu.png', href: '#' },
     { name: 'BINTANG PUSNAS', logo: '/images/bintang-pusnas.png', href: '#' },
-    { name: 'BAPENAS', logo: '/images/bapennas.png', href: '#' }, 
+    { name: 'BAPENAS', logo: '/images/bapennas.png', href: '#' },
     { name: 'SMAN6 BERAU', logo: '/images/sman.jpeg', href: '#' },
     { name: 'BPS', logo: '/images/bps.jpeg', href: '#' },
   ];
@@ -54,12 +51,12 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Top Banner Image (Mirip E-book Page) */}
       <div className="relative w-full h-[250px] md:h-[300px] overflow-hidden bg-gradient-to-r from-blue-700 to-blue-900 text-white pt-28">
-        <Image 
-          src="https://images.pexels.com/photos/3394336/pexels-photo-3394336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-          alt="Koleksi Program Banner" 
-          fill 
-          className="object-cover opacity-20" 
-          priority 
+        <Image
+          src="https://images.pexels.com/photos/3394336/pexels-photo-3394336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="Koleksi Program Banner"
+          fill
+          className="object-cover opacity-20"
+          priority
           sizes="(max-width: 768px) 100vw, 100vw"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
@@ -69,7 +66,7 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
         </div>
       </div>
 
-      <div className="max-w-screen-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content: Program List */}
         <div className="lg:col-span-2 space-y-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Daftar Program Tersedia</h2>
@@ -82,16 +79,15 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
                   className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group"
                 >
                   <div className="relative w-full h-60"> {/* Tinggi gambar yang konsisten */}
-                    <Image 
-                    
-                    src={program.coverImage} // Corrected line
-                    alt={program.title}
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 700px"
-                  />
-                    
+                    <Image
+                      src={program.coverImage} // Corrected line
+                      alt={program.title}
+                      fill
+                      className="object-cover"
+                      priority
+                      sizes="(max-width: 768px) 100vw, 700px"
+                    />
+
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300 mb-1 line-clamp-2">{program.title}</h3>

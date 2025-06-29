@@ -16,16 +16,6 @@ interface Program {
   images?: string[];
 }
 
-// export async function generateStaticParams() {
-//   return (programData as Program[]).map((program) => ({
-//     slug: program.slug,
-//   }));
-// }
-//
-// ^^^ CATATAN PENTING: generateStaticParams tidak bisa di-export dari Client Component.
-// Kita akan membahas solusinya di bawah.
-
-
 export default function ProgramDetailPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
