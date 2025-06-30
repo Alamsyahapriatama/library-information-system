@@ -7,7 +7,7 @@ const LatestNews = () => {
   const news = [
     {
       id: 1,
-      title: 'Perpustakaan SMAN 6 Berau Raih Penghargaan Perpustakaan Terbaik',
+      title: 'Perpustakaan Madani Raih Penghargaan Perpustakaan Terbaik',
       excerpt: 'Perpustakaan sekolah meraih penghargaan sebagai perpustakaan sekolah terbaik tingkat provinsi Kalimantan Timur.',
       author: 'Admin Perpustakaan',
       date: '2024-02-15',

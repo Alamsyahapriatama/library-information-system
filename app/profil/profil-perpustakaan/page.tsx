@@ -55,7 +55,7 @@ export default function ProfilPerpustakaanPage() {
       icon: History,
       title: "Sejarah Singkat",
       description:
-        "Didirikan bersamaan dengan SMAN 6 Berau, perpustakaan ini telah berkembang menjadi pusat sumber daya penting bagi siswa dan guru. Berawal dari koleksi terbatas, kini kami memiliki ribuan koleksi fisik dan digital yang mendukung proses belajar mengajar.",
+        "Didirikan bersamaan dengan SDIT MADANI, perpustakaan ini telah berkembang menjadi pusat sumber daya penting bagi siswa dan guru. Berawal dari koleksi terbatas, kini kami memiliki ribuan koleksi fisik dan digital yang mendukung proses belajar mengajar.",
     },
     {
       icon: Eye, // Menggunakan ikon Eye dari visiPoints sebelumnya
@@ -73,7 +73,7 @@ export default function ProfilPerpustakaanPage() {
       icon: Users, // Menggunakan ikon Users dari misiPoints sebelumnya
       title: "Target Pemustaka",
       description:
-        "Layanan kami ditujukan untuk seluruh civitas akademika SMAN 6 Berau, meliputi siswa, guru, staf, serta alumni. Kami berupaya menciptakan lingkungan yang inklusif dan ramah bagi semua pemustaka.",
+        "Layanan kami ditujukan untuk seluruh civitas akademika SDIT MADANI, meliputi siswa, guru, staf, serta alumni. Kami berupaya menciptakan lingkungan yang inklusif dan ramah bagi semua pemustaka.",
     },
   ];
 
@@ -121,12 +121,12 @@ export default function ProfilPerpustakaanPage() {
       logo: "/images/sibi.jpeg", 
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -186,11 +186,11 @@ export default function ProfilPerpustakaanPage() {
           {/* Bagian pengantar Profil Perpustakaan */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Selamat Datang di Perpustakaan SMAN 6 Berau
+              Selamat Datang di Perpustakaan Madani
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Perpustakaan kami adalah jantungnya ilmu pengetahuan di SMAN 6
-              Berau, menyediakan lingkungan yang kondusif dan sumber daya yang
+              Perpustakaan kami adalah jantungnya ilmu pengetahuan di Madani
+              , menyediakan lingkungan yang kondusif dan sumber daya yang
               melimpah untuk mendukung proses belajar mengajar serta
               pengembangan diri. Kami berkomitmen untuk menjadi pusat literasi
               dan inovasi bagi seluruh civitas akademika.
@@ -225,7 +225,7 @@ export default function ProfilPerpustakaanPage() {
               </h3>
               <p className="text-lg text-gray-600 mb-6">
                 Tonton video untuk mengenal lebih dekat visi, misi, dan komitmen
-                perpustakaan SMAN 6 Berau dalam mendukung pendidikan
+                perpustakaan Madani dalam mendukung pendidikan
                 berkualitas.
               </p>
               <h4 className="text-xl font-semibold text-gray-800 mb-3">

@@ -116,12 +116,12 @@ export default function KebutuhanPemustakaPage() { // Renamed component
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -191,7 +191,7 @@ export default function KebutuhanPemustakaPage() { // Renamed component
               Perpustakaan Kami, Dirancang untuk Anda
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Di Perpustakaan SMAN 6 Berau, kami berkomitmen untuk memahami dan memenuhi **kebutuhan unik setiap pemustaka**. Baik Anda sedang mencari sumber untuk tugas, tempat tenang untuk belajar, atau kesempatan untuk berkolaborasi, kami hadir untuk mendukung perjalanan belajar dan pengembangan diri Anda.
+              Di Perpustakaan Madani, kami berkomitmen untuk memahami dan memenuhi **kebutuhan unik setiap pemustaka**. Baik Anda sedang mencari sumber untuk tugas, tempat tenang untuk belajar, atau kesempatan untuk berkolaborasi, kami hadir untuk mendukung perjalanan belajar dan pengembangan diri Anda.
             </p>
           </div>
 

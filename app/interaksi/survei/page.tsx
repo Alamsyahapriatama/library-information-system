@@ -34,7 +34,7 @@ export default function SurveyPage() {
     {
       imageSrc:
         "https://images.pexels.com/photos/1684347/pexels-photo-1684347.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk bunga kamboja
-      title: "POHON KAMBOJA JEPANG di Lingkungan SMAN 6 Berau",
+      title: "POHON KAMBOJA JEPANG di Lingkungan SDIT Madani",
       date: "18 April 2024",
       summary:
         "Kamboja Jepang adalah tanaman hias meranggas, berbatang gemuk besar, akarnya menyerupai umbi, daunnya panjang, bunga berbentuk terompet...",
@@ -42,10 +42,10 @@ export default function SurveyPage() {
     {
       imageSrc:
         "https://images.pexels.com/photos/1031201/pexels-photo-1031201.jpeg?auto=compress&cs=tinysrgb&w=800", // Placeholder untuk mangga
-      title: "POHON MANGGA DI LINGKUNGAN SMAN 6 BERAU",
+      title: "POHON MANGGA DI LINGKUNGAN SDIT Madani",
       date: "20 Mei 2024",
       summary:
-        "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SMAN 6 Berau, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
+        "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SDIT Madani, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
     },
   ];
 
@@ -53,16 +53,16 @@ export default function SurveyPage() {
     // --- PENTING: Ganti '/images/logo-*.png' dengan path gambar Anda yang sebenarnya ---
     // Asumsi logo ada di public/images/
     {
-      name: "@_library_@sman6berau",
+      name: "@_library_@perpustakaanmadani",
       logo: "/images/logo-instagram.png",
       href: "#",
     },
     {
-      name: "Facebook SMAN 6 Berau",
+      name: "Facebook Perpustakaan Madani",
       logo: "/images/logo-facebook.png",
       href: "#",
     },
-    { name: "iBerau", logo: "/images/logo-iberau.png", href: "#" },
+    { name: "iMadani", logo: "/images/logo-iMadani.png", href: "#" },
     { name: "IKaltim", logo: "/images/logo-ikaltim.png", href: "#" },
     { name: "iPusnas", logo: "/images/logo-ipusnas.png", href: "#" },
     {
@@ -89,7 +89,7 @@ export default function SurveyPage() {
             <h1 className="text-2xl md:text-4xl font-extrabold tracking-wide">
               SELAMAT DATANG DI PERPUSTAKAAN SEKOLAH
             </h1>
-            <p className="text-3xl md:text-5xl font-bold mt-2">SMAN 6 BERAU</p>
+            <p className="text-3xl md:text-5xl font-bold mt-2">MADANI</p>
           </div>
         </div>
       </div>
@@ -540,7 +540,7 @@ export default function SurveyPage() {
                   Workshop Penulisan Kreatif
                 </p>
                 <p className="text-sm text-gray-600">
-                  Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB
+                  Perpustakaan Madani - Pukul 14:00 WIB
                 </p>
               </div>
             </div>
@@ -556,7 +556,7 @@ export default function SurveyPage() {
                   Pembukaan Website Perpustakaan
                 </p>
                 <p className="text-sm text-gray-600">
-                  Bersama Berau Tech Center
+                  Bersama Madani Tech Center
                 </p>
               </div>
             </div>

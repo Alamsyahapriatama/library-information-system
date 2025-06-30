@@ -71,12 +71,12 @@ export default function SopPerpustakaanPage() { // Renamed component
       logo: "/images/sibi.jpeg", 
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -104,7 +104,7 @@ export default function SopPerpustakaanPage() { // Renamed component
       date: new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5), // 5 days from today
       title: 'Sosialisasi SOP Terbaru',
       time: 'Pukul 09:00 WIB',
-      location: 'Aula SMAN 6 Berau'
+      location: 'Aula SDIT Madani'
     },
     {
       date: new Date(today.getFullYear(), today.getMonth() + 1, 10), // 10th of next month
@@ -222,7 +222,7 @@ export default function SopPerpustakaanPage() { // Renamed component
 
           {/* Teks "Rearranged by" */}
           <div className="p-8 pt-4 text-right text-sm text-gray-400">
-            <p>Rearranged by Tama</p>
+            <p></p>
           </div>
         </div>
 

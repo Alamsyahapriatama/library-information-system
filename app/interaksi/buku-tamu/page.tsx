@@ -33,7 +33,7 @@ export default function GuestBookAndNewsPage() {
    {
      imageSrc:
        "/images/pohon-kamboja.jpg", // Placeholder untuk bunga kamboja
-     title: "POHON KAMBOJA JEPANG di Lingkungan SMAN 6 Berau",
+     title: "POHON KAMBOJA JEPANG di Lingkungan SDIT Madani",
      date: "18 April 2024",
      summary:
        "Kamboja Jepang adalah tanaman hias meranggas, berbatang gemuk besar, akarnya menyerupai umbi, daunnya panjang, bunga berbentuk terompet...",
@@ -41,10 +41,10 @@ export default function GuestBookAndNewsPage() {
    {
      imageSrc:
        "/images/pohon-mangga.jpg", // Placeholder untuk mangga
-     title: "POHON MANGGA DI LINGKUNGAN SMAN 6 BERAU",
+     title: "POHON MANGGA DI LINGKUNGAN SDIT Madani",
      date: "20 Mei 2024",
      summary:
-       "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SMAN 6 Berau, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
+       "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SDIT Madani, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
    },
  ];
 
@@ -69,12 +69,12 @@ export default function GuestBookAndNewsPage() {
     logo: "/images/sibi.jpeg",
     href: "https://buku.kemdikbud.go.id/" },
   {
-    name: "SMAN 6 Berau",
+    name: "Perpustakaan Madani",
     logo: "/images/youtube.jpeg",
     href: "#",
   },
   {
-    name: "sman6berauofficial",
+    name: "Madaniofficial",
     logo: "/images/sman.jpeg",
     href: "#",
   },
@@ -101,7 +101,7 @@ export default function GuestBookAndNewsPage() {
            <h1 className="text-2xl md:text-4xl font-extrabold tracking-wide">
              SELAMAT DATANG DI PERPUSTAKAAN SEKOLAH
            </h1>
-           <p className="text-3xl md:text-5xl font-bold mt-2">SMAN 6 BERAU</p>
+           <p className="text-3xl md:text-5xl font-bold mt-2">MADANI</p>
          </div>
        </div>
      </div>
@@ -308,7 +308,7 @@ export default function GuestBookAndNewsPage() {
                  Workshop Penulisan Kreatif
                </p>
                <p className="text-sm text-gray-600">
-                 Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB
+                 Perpustakaan Madani - Pukul 14:00 WIB
                </p>
              </div>
            </div>
@@ -326,7 +326,7 @@ export default function GuestBookAndNewsPage() {
                  Pembukaan Website Perpustakaan
                </p>
                <p className="text-sm text-gray-600">
-                 Bersama Berau Tech Center
+                 Bersama Madani Tech Center
                </p>
              </div>
            </div>

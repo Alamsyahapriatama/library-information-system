@@ -94,7 +94,7 @@ export default function LayananDepositPage() { // Renamed component for clarity
           LAYANAN DEPOSIT BUKU
         </h1>
         <p className="text-gray-600 text-center text-lg mb-4">
-          PERPUSTAKAAN SMAN 6 BERAU
+          PERPUSTAKAAN MADANI
         </p>
 
         {/* Email Section - Mimicking Google Forms */}

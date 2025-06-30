@@ -123,12 +123,12 @@ export default function DataPegawaiPage() {
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "SDIT Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -161,7 +161,7 @@ export default function DataPegawaiPage() {
             <h1 className="text-2xl md:text-4xl font-extrabold tracking-wide">
               SELAMAT DATANG DI PERPUSTAKAAN SEKOLAH
             </h1>
-            <p className="text-3xl md:text-5xl font-bold mt-2">SMAN 6 BERAU</p>
+            <p className="text-3xl md:text-5xl font-bold mt-2">SDIT MADANI</p>
           </div>
         </div>
         {/* Carousel indicators/dots (optional) */}
@@ -293,7 +293,7 @@ export default function DataPegawaiPage() {
                   Workshop Penulisan Kreatif
                 </p>
                 <p className="text-sm text-gray-600">
-                  Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB
+                  Perpustakaan Madani - Pukul 14:00 WIB
                 </p>
               </div>
             </div>

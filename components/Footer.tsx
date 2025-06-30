@@ -19,7 +19,7 @@ const Footer = () => {
     {
       icon: Facebook,
       href: 'https://www.facebook.com/share/1AgsTs4mMH/',
-      name: 'Facebook SMAN 6 Berau',
+      name: 'Facebook Perpustakaan Madani',
     },
     {
       icon: Instagram,
@@ -40,7 +40,7 @@ const Footer = () => {
 
   const externalLinks = [
     { name: 'iPusnas', href: '#', description: 'Perpustakaan Digital Nasional' },
-    { name: 'iBerau', href: '#', description: 'Portal Digital Berau' },
+    { name: 'iMadani', href: '#', description: 'Portal Digital Madani' },
     { name: 'iKaltim', href: '#', description: 'Portal Kalimantan Timur' },
     { name: 'Kemdikbud', href: '#', description: 'Kementerian Pendidikan' },
   ]
@@ -59,10 +59,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Library Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                <BookOpen className="h-6 w-6 text-blue-600" />
-              </div>
+            <div className="flex items-center space-x-0 mb-6">
+            <img src="/images/logo-perpus.png" // Ganti path ini dengan path logo Anda
+               alt="Logo" 
+                className="w-20 h-15 rounded-full object-cover" />
+            <div className="">
+            </div>
               <div>
                 <h3 className="text-lg font-bold">Perpustakaan</h3>
                 <p className="text-sm text-gray-300">Perpustakaan Permadani</p>
@@ -96,20 +98,20 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">Jl. Pendidikan No. 123</p>
-                  <p className="text-gray-300">Berau, Kalimantan Timur 77311</p>
+                  <p className="text-gray-300">...</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">(0554) 123-4567</p>
-                  <p className="text-gray-300">WA: 0812-3456-7890</p>
+                  <p className="text-gray-300">WA: 0812-9999-9999</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300">perpus@sman6berau.sch.id</p>
+                  <p className="text-gray-300">perpus@madani.sch.id</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -164,10 +166,10 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Perpustakaan Permadani. Semua hak cipta dilindungi.
+              © 2025 Perpustakaan Permadani. Semua hak cipta dilindungi.
             </p>
             <p className="text-gray-400 text-sm mt-2 md:mt-0">
-              NPP: 6403091E1000001
+              NPP: 403051B2000001
             </p>
           </div>
         </div>

@@ -15,15 +15,15 @@ export default function TitikBacaPage() { // Renamed component
   // Data for carousel images (can be re-themed for reading spots)
   const carouselImages = [
     {
-      src: "https://images.pexels.com/photos/159781/book-love-books-reading-159781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "/images/gamber-perpus.jpg",
       alt: "Siswa membaca buku bersama di titik baca",
     },
     {
-      src: "https://images.pexels.com/photos/4145353/pexels-photo-4145353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "/images/gamber-perpus.jpg",
       alt: "Ruang baca yang nyaman dengan banyak buku",
     },
     {
-      src: "https://images.pexels.com/photos/4090126/pexels-photo-4090126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "/images/gamber-perpus.jpg",
       alt: "Anak-anak membaca buku cerita di sudut baca",
     },
   ];
@@ -116,12 +116,12 @@ export default function TitikBacaPage() { // Renamed component
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "SDIT Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -191,7 +191,7 @@ export default function TitikBacaPage() { // Renamed component
               Jelajahi Dunia Kata di Titik Baca Kami
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Selamat datang di **Titik Baca** SMAN 6 Berau, sebuah inisiatif untuk menciptakan ruang-ruang yang nyaman dan menarik di mana setiap individu dapat menikmati keasyikan membaca. Kami percaya bahwa lingkungan yang tepat dapat membangkitkan dan memperkuat minat literasi.
+              Selamat datang di **Titik Baca** Perpustaan Madani, sebuah inisiatif untuk menciptakan ruang-ruang yang nyaman dan menarik di mana setiap individu dapat menikmati keasyikan membaca. Kami percaya bahwa lingkungan yang tepat dapat membangkitkan dan memperkuat minat literasi.
             </p>
           </div>
 
@@ -293,7 +293,7 @@ export default function TitikBacaPage() { // Renamed component
             </h3>
             <div className="relative w-full aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden mb-4">
               <Image
-                src="https://images.pexels.com/photos/3762804/pexels-photo-3762804.jpeg?auto=compress&cs=tinysrgb&w=800" // Image relevant to reading events
+                src="/images/logo-perpus.png" // Image relevant to reading events
                 alt="Berita Titik Baca"
                 fill
                 className="object-cover"

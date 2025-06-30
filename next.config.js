@@ -8,11 +8,11 @@ const nextConfig = {
       'via.placeholder.com',
       'cms-perpus.karuhundeveloper.com',
       'perpus.karuhundeveloper.com', 
-      
+      'library-information-system.vercel.app'
     ],
     
   },
-  
+  output: 'export',  
 };
 
 module.exports = nextConfig;

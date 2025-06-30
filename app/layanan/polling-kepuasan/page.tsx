@@ -114,10 +114,10 @@ export default function KuisionerKepuasanPemustakaPage() {
       {/* Container for the form */}
       <div className="max-w-2xl w-full bg-white rounded-xl shadow-lg p-8 space-y-6">
         <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 text-center mb-6">
-          KUISIONER SURVEI KEPUASAN PEMUSTAKA PADA PELAYANAN PERPUSTAKAAN SMAN 6 BERAU
+          KUISIONER SURVEI KEPUASAN PEMUSTAKA PADA PELAYANAN PERPUSTAKAAN MADANI
         </h1>
         <p className="text-gray-600 text-center text-lg mb-4">
-          PERPUSTAKAAN SMAN 6 BERAU
+          PERPUSTAKAAN MADANI
         </p>
 
         {/* Email Section - Mimicking Google Forms */}

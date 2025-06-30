@@ -98,7 +98,7 @@ export default function PengajuanPendampinganAkreditasiPage() { // Component nam
           PENGAJUAN PENDAMPINGAN AKREDITASI
         </h1>
         <p className="text-gray-600 text-center text-lg mb-4">
-          PERPUSTAKAAN SMAN 6 BERAU
+          PERPUSTAKAAN MADANI
         </p>
 
         {/* Email Section - Mimicking Google Forms */}

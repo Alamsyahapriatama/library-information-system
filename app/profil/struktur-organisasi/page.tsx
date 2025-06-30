@@ -69,13 +69,13 @@ export default function StrukturOrganisasiPage() { // Renamed component
       logo: "/images/sibi.jpeg", 
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "SDIT Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
-      logo: "/images/sman.jpeg",
+      name: "Madaniofficial",
+      logo: "/images/logo-perpus.png",
       href: "#",
     },
     // Adding more links for better scrolling effect if needed
@@ -124,7 +124,7 @@ export default function StrukturOrganisasiPage() { // Renamed component
           {/* Introduction to Organizational Structure */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Mengenal Tim Perpustakaan SMAN 6 Berau
+              Mengenal Tim Perpustakaan Madani
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Struktur organisasi perpustakaan dirancang untuk memastikan efisiensi layanan
@@ -222,7 +222,7 @@ export default function StrukturOrganisasiPage() { // Renamed component
               </div>
               <div>
                 <p className="text-gray-800 font-semibold">Workshop Penulisan Kreatif</p>
-                <p className="text-sm text-gray-600">Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB</p>
+                <p className="text-sm text-gray-600">Perpustakaan Madani - Pukul 14:00 WIB</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">

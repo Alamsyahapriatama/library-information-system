@@ -35,7 +35,7 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
     { name: 'KEMENKEU', logo: '/images/kemenkeu.png', href: '#' },
     { name: 'BINTANG PUSNAS', logo: '/images/bintang-pusnas.png', href: '#' },
     { name: 'BAPENAS', logo: '/images/bapennas.png', href: '#' },
-    { name: 'SMAN6 BERAU', logo: '/images/sman.jpeg', href: '#' },
+    { name: 'SDIT Madani', logo: '/images/sman.jpeg', href: '#' },
     { name: 'BPS', logo: '/images/bps.jpeg', href: '#' },
   ];
 
@@ -43,7 +43,7 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
   const agendaItem = {
     date: { day: "24", month: "JUNI", year: "2025" }, // Adjusted to current date
     title: "Rapat Anggaran Tahunan",
-    location: "Ruang Rapat SMAN 6 Berau",
+    location: "Ruang Rapat SDIT Madani",
     link: "#",
   };
 
@@ -52,7 +52,7 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
       {/* Top Banner Image (Mirip E-book Page) */}
       <div className="relative w-full h-[250px] md:h-[300px] overflow-hidden bg-gradient-to-r from-blue-700 to-blue-900 text-white pt-28">
         <Image
-          src="https://images.pexels.com/photos/3394336/pexels-photo-3394336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="/images/gamber-perpus.jpg"
           alt="Koleksi Program Banner"
           fill
           className="object-cover opacity-20"
@@ -62,14 +62,14 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
           <h2 className="text-xl md:text-2xl font-bold mb-2 uppercase tracking-wide">Temukan</h2>
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">KOLEKSI PROGRAM</h1>
-          <p className="text-2xl md:text-3xl font-semibold mt-2">SMAN 6 BERAU</p>
+          <p className="text-2xl md:text-3xl font-semibold mt-2">Perpustakaan</p>
         </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content: Program List */}
         <div className="lg:col-span-2 space-y-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Daftar Program Tersedia</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Daftar Program Tersedia</h2>
           {programs.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {programs.map((program) => (

@@ -45,7 +45,7 @@ export default function KepuasanPermadaniPage() { // Renamed component
       icon: Smile,
       title: "Komitmen Kami pada Kepuasan Anda",
       description:
-        "Di Perpustakaan SMAN 6 Berau, **kepuasan permadani** Anda adalah prioritas utama kami. Kami berdedikasi untuk tidak hanya memenuhi kebutuhan dasar Anda, tetapi juga menciptakan pengalaman perpustakaan yang menyenangkan, nyaman, dan berkesan positif.",
+        "Di Perpustakaan Madani, **kepuasan permadani** Anda adalah prioritas utama kami. Kami berdedikasi untuk tidak hanya memenuhi kebutuhan dasar Anda, tetapi juga menciptakan pengalaman perpustakaan yang menyenangkan, nyaman, dan berkesan positif.",
     },
     {
       icon: Star,
@@ -116,12 +116,12 @@ export default function KepuasanPermadaniPage() { // Renamed component
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -191,7 +191,7 @@ export default function KepuasanPermadaniPage() { // Renamed component
               Pengalaman Perpustakaan yang Melampaui Harapan
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Konsep **Kepuasan Permadani** bagi kami di Perpustakaan SMAN 6 Berau berarti memastikan setiap interaksi Anda dengan perpustakaan meninggalkan kesan yang mendalam dan positif. Ini tentang menciptakan lingkungan dan layanan yang tidak hanya memenuhi kebutuhan, tetapi juga memberikan kenyamanan dan kebahagiaan.
+              Konsep **Kepuasan Permadani** bagi kami di Perpustakaan Madani berarti memastikan setiap interaksi Anda dengan perpustakaan meninggalkan kesan yang mendalam dan positif. Ini tentang menciptakan lingkungan dan layanan yang tidak hanya memenuhi kebutuhan, tetapi juga memberikan kenyamanan dan kebahagiaan.
             </p>
           </div>
 

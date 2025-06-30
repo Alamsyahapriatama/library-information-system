@@ -28,7 +28,7 @@ export default function HomePageContent() {
     {
       imageSrc:
         "/images/pohon-kamboja.jpg", // Placeholder untuk bunga kamboja
-      title: "POHON KAMBOJA JEPANG di Lingkungan SMAN 6 Berau",
+      title: "POHON KAMBOJA JEPANG di Lingkungan SDIT Madani",
       date: "18 April 2024",
       summary:
         "Kamboja Jepang adalah tanaman hias meranggas, berbatang gemuk besar, akarnya menyerupai umbi, daunnya panjang, bunga berbentuk terompet...",
@@ -36,15 +36,15 @@ export default function HomePageContent() {
     {
       imageSrc:
         "/images/pohon-mangga.jpg", // Placeholder untuk mangga
-      title: "POHON MANGGA DI LINGKUNGAN SMAN 6 BERAU",
+      title: "POHON MANGGA DI LINGKUNGAN SDIT Madani",
       date: "20 Mei 2024",
       summary:
-        "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SMAN 6 Berau, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
+        "Mangga adalah buah tropis yang terkenal dengan rasa manis dan aroma harum. Di SDIT Madani, pohon mangga tumbuh subur, memberikan teduh dan buah segar...",
     },
     {
       imageSrc:
         "/images/pohon-sri.jpeg", // Placeholder untuk sri rejeki
-      title: "SRI REJEKI di Lingkungan SMAN 6 Berau",
+      title: "SRI REJEKI di Lingkungan SDIT Madani",
       date: "05 Juni 2024",
       summary:
         "Sri Rejeki (Aglaonema) adalah tanaman hias populer dari suku talas-talasan (Araceae). Tanaman ini sangat mudah dirawat dan daunnya indah...",
@@ -52,7 +52,7 @@ export default function HomePageContent() {
     {
       imageSrc:
         "/images/pohon-alpukat.jpeg", // Placeholder untuk alpukat
-      title: "TANAMAN ALPUKAT yang ada dilingkungan SMAN 6 Berau",
+      title: "TANAMAN ALPUKAT yang ada dilingkungan SDIT Madani",
       date: "10 Juni 2024",
       summary:
         "Alpukat adalah buah yang berasal dari Amerika Tengah dan Meksiko. Di lingkungan sekolah kami, tanaman alpukat tumbuh subur dan berbuah lebat...",
@@ -97,12 +97,12 @@ export default function HomePageContent() {
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -143,7 +143,7 @@ export default function HomePageContent() {
       <div className="relative w-full bg-blue-700 py-6 text-white text-center">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-xl md:text-2xl font-bold">
-            SELAMAT DATANG DI PERPUSTAKAAN SMA NEGERI 6 BERAU
+            SELAMAT DATANG DI PERPUSTAKAAN MADANI
           </h1>
         </div>
       </div>
@@ -241,7 +241,7 @@ export default function HomePageContent() {
                   Workshop Penulisan Kreatif
                 </p>
                 <p className="text-sm text-gray-600">
-                  Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB
+                  Perpustakaan Madani - Pukul 14:00 WIB
                 </p>
               </div>
             </div>

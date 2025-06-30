@@ -63,7 +63,7 @@ export default function BeritaPage() { // Renamed component
   const agendaItem = {
     date: { day: "24", month: "JUNI", year: "2025" }, // Adjusted to current date
     title: "Rapat Anggaran Tahunan",
-    location: "Ruang Rapat SMAN 6 Berau",
+    location: "Ruang Rapat SDIT Madani",
     link: "#",
   };
 
@@ -89,12 +89,12 @@ export default function BeritaPage() { // Renamed component
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "Youtube SMAN 6 Berau",
+      name: "Youtube SDIT Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },

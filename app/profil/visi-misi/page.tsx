@@ -11,7 +11,7 @@ export default function VisiMisiPage() {
     {
       icon: Eye,
       title: 'Visi Utama',
-      description: 'Menjadi pusat informasi dan literasi yang unggul, mendukung terciptanya generasi cerdas, berkarakter, dan berwawasan global di SMAN 6 Berau.'
+      description: 'Menjadi pusat informasi dan literasi yang unggul, mendukung terciptanya generasi cerdas, berkarakter, dan berwawasan global di SDIT Madani.'
     }
   ];
 
@@ -64,12 +64,12 @@ export default function VisiMisiPage() {
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -137,7 +137,7 @@ export default function VisiMisiPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Video Profil Perpustakaan</h3>
               <p className="text-lg text-gray-600 mb-6">
                 Tonton video untuk mengenal lebih dekat visi, misi, dan komitmen
-                perpustakaan SMAN 6 Berau dalam mendukung pendidikan berkualitas.
+                perpustakaan Madani dalam mendukung pendidikan berkualitas.
               </p>
               <h4 className="text-xl font-semibold text-gray-800 mb-3">Sorotan Utama:</h4>
               <ul className="space-y-2">
@@ -184,7 +184,7 @@ export default function VisiMisiPage() {
 
             {/* Teks "Rearranged by" */}
             <div className="p-8 pt-4 text-right text-sm text-gray-400">
-              <p>Rearranged by Tama</p>
+              <p></p>
             </div>
           </div>
 
@@ -236,7 +236,7 @@ export default function VisiMisiPage() {
               </div>
               <div>
                 <p className="text-gray-800 font-semibold">Workshop Penulisan Kreatif</p>
-                <p className="text-sm text-gray-600">Perpustakaan SMAN 6 Berau - Pukul 14:00 WIB</p>
+                <p className="text-sm text-gray-600">Perpustakaan Madani - Pukul 14:00 WIB</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 mb-4">

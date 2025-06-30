@@ -58,7 +58,7 @@ export default function JejaringPerpustakaanPage() { // Renamed component
       icon: Globe,
       title: "Cakupan Jejaring Kami",
       description:
-        "Perpustakaan SMAN 6 Berau aktif terhubung dengan berbagai perpustakaan sekolah, perpustakaan daerah, dan lembaga pendidikan lainnya. Kami berupaya terus memperluas jejaring untuk memberikan akses terbaik bagi seluruh pemustaka.",
+        "Perpustakaan Madani aktif terhubung dengan berbagai perpustakaan sekolah, perpustakaan daerah, dan lembaga pendidikan lainnya. Kami berupaya terus memperluas jejaring untuk memberikan akses terbaik bagi seluruh pemustaka.",
     },
     {
       icon: Database,
@@ -117,12 +117,12 @@ export default function JejaringPerpustakaanPage() { // Renamed component
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "SMAN 6 Berau",
+      name: "Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -192,7 +192,7 @@ export default function JejaringPerpustakaanPage() { // Renamed component
               Membangun Konektivitas, Memperluas Ilmu
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Perpustakaan SMAN 6 Berau percaya bahwa kekuatan informasi akan semakin besar saat dibagikan. Oleh karena itu, kami aktif membangun dan menjadi bagian dari **jejaring perpustakaan** yang luas, menghubungkan kami dengan sumber daya dan komunitas literasi di seluruh Indonesia.
+              Perpustakaan Madani percaya bahwa kekuatan informasi akan semakin besar saat dibagikan. Oleh karena itu, kami aktif membangun dan menjadi bagian dari **jejaring perpustakaan** yang luas, menghubungkan kami dengan sumber daya dan komunitas literasi di seluruh Indonesia.
             </p>
           </div>
 
@@ -318,7 +318,7 @@ export default function JejaringPerpustakaanPage() { // Renamed component
             <ul className="space-y-3">
               <li className="flex items-center text-gray-700">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                Perpustakaan Daerah Berau
+                Perpustakaan Madani
               </li>
               <li className="flex items-center text-gray-700">
                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>

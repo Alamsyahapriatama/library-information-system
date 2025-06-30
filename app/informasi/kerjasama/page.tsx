@@ -52,7 +52,7 @@ export default function KerjasamaPage() { // Component name matches file structu
       year: new Date().getFullYear().toString()
     },
     title: "Rapat Koordinasi Kemitraan",
-    location: "Ruang Rapat SMAN 6 Berau",
+    location: "Ruang Rapat SDIT Madani",
     link: "#",
   };
 
@@ -78,12 +78,12 @@ export default function KerjasamaPage() { // Component name matches file structu
       logo: "/images/sibi.jpeg",
       href: "https://buku.kemdikbud.go.id/" },
     {
-      name: "Youtube SMAN 6 Berau",
+      name: "Youtube Perpustakaan Madani",
       logo: "/images/youtube.jpeg",
       href: "#",
     },
     {
-      name: "sman6berauofficial",
+      name: "Madaniofficial",
       logo: "/images/sman.jpeg",
       href: "#",
     },
@@ -251,7 +251,7 @@ export default function KerjasamaPage() { // Component name matches file structu
           {/* Main "KERJA SAMA" Section Content */}
           <div className="bg-white rounded-xl shadow-lg p-6">
             <p className="text-lg text-gray-700 mb-6">
-                Perpustakaan SMAN 6 Berau aktif menjalin kerja sama dengan berbagai pihak untuk meningkatkan kualitas layanan dan kontribusi bagi pendidikan. Kami percaya, sinergi yang kuat akan menciptakan ekosistem belajar yang lebih kaya dan inovatif.
+                Perpustakaan Madani aktif menjalin kerja sama dengan berbagai pihak untuk meningkatkan kualitas layanan dan kontribusi bagi pendidikan. Kami percaya, sinergi yang kuat akan menciptakan ekosistem belajar yang lebih kaya dan inovatif.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {kerjasamaPoints.map((point, index) => (

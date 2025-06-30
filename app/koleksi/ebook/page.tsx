@@ -60,7 +60,7 @@ export default function EbookListPage() {
   const relatedLinks = [
     { name: 'Youtube', logo: '/images/youtube.jpeg', href: '#' }, { name: 'BANK INDONESIA', logo: '/images/bi.png', href: '#' },
     { name: 'KEMENKEU', logo: '/images/kemenkeu.png', href: '#' }, { name: 'BINTANG PUSNAS', logo: '/images/bintang-pusnas.png', href: '#' },
-    { name: 'BAPENAS', logo: '/images/bapennas.png', href: '#' }, { name: 'SMAN6 BERAU', logo: '/images/sman.jpeg', href: '#' },
+    { name: 'BAPENAS', logo: '/images/bapennas.png', href: '#' }, { name: 'SDIT MADANI', logo: '/images/sman.jpeg', href: '#' },
     { name: 'BPS', logo: '/images/bps.jpeg', href: '#' },
   ];
 
@@ -76,7 +76,7 @@ export default function EbookListPage() {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
         <h2 className="text-xl md:text-2xl font-bold mb-2 uppercase tracking-wide">Jelajahi</h2>
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">KOLEKSI E-BOOK</h1>
-        <p className="text-2xl md:text-3xl font-semibold mt-2">SMAN 6 BERAU</p>
+        <p className="text-2xl md:text-3xl font-semibold mt-2">PERPUSTAKAAN MADANI</p>
       </div>
     </div>
 
