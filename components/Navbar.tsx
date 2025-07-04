@@ -55,16 +55,15 @@ const Navbar = () => {
         {
           name: 'Layanan', // Ini adalah item 'Layanan' yang Anda maksud
           dropdown: [ // Tambahkan properti dropdown di sini
+            { name: 'Daftar Anggota Baru', href: '/layanan/daftar-anggota-baru'},
             { name: 'Reservasi Buku', href: '/layanan/reservasi-buku' },
             { name: 'Perpanjangan Online', href: '/layanan/perpanjangan-online' },
             { name: 'Permintaan Informasi', href: '/layanan/permintaan-informasi' },
             { name: 'Angket Usulan Koleksi', href: '/layanan/angket-usulan-koleksi' },
             { name: 'Polling Kepuasan Perpus', href: '/layanan/polling-kepuasan' },
-            { name: 'Konsultasi', href: '/layanan/konsultasi' },
             { name: 'Deposit', href: '/layanan/deposit' },
-            { name: 'Aduan', href: '/layanan/aduan' },
             { name: 'Koleksi', href: '/layanan/koleksi' },
-            { name: 'Pengajuan Pendampingan Akreditasi', href: '/layanan/pendampingan-akreditasi' }
+            { name: 'Pengajuan Kunjungan Perpustakaan', href: '/layanan/kunjungan-perpustakaan' }
           ]
         },
         { name: 'Kebutuhan pemustaka', href: '/fasilitas/kebutuhan-pemustaka' },
@@ -76,7 +75,21 @@ const Navbar = () => {
       name: 'KOLEKSI',
       dropdown: [
         { name: 'Ebook', href: '/koleksi/ebook' },
-        { name: 'Aplikasi', href: '/koleksi/aplikasi' },
+        {
+          name: 'Aplikasi',
+          // BEFORE: dropdowm: [
+          dropdown: [ // AFTER: Corrected to 'dropdown'
+            { name: 'Radar Berau', href: 'https://koran.radarberau.com/home.mu'},
+            { name: 'Aplikasi Edoo', href: 'https://app.edoo.id/'},
+            { name: 'Ikaltim', href: 'https://web-ikaltim.moco.co.id/'},
+            { name: 'IBerau', href: 'https://iberau.moco.co.id/'},
+            { name: 'Khastara', href: 'https://khastara.perpusnas.go.id/'},
+            { name: 'Indonesia Onesearch', href: 'https://onesearch.id/'},
+            { name: 'Ipunas', href: 'https://ipusnas.id/'},
+            { name: 'Bintang Pusnas', href: 'https://bintangpusnas.perpusnas.go.id/konten/'},
+          ]
+        },
+        
         { name: 'Jejaring Perpustakaan', href: '/koleksi/jejaring-perpustakaan' },
         { name: 'Artikel', href: '/koleksi/artikel' }
       ]
