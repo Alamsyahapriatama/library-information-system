@@ -39,10 +39,10 @@ const Footer = () => {
   ]
 
   const externalLinks = [
-    { name: 'iPusnas', href: '#', description: 'Perpustakaan Digital Nasional' },
-    { name: 'iMadani', href: '#', description: 'Portal Digital Madani' },
-    { name: 'iKaltim', href: '#', description: 'Portal Kalimantan Timur' },
-    { name: 'Kemdikbud', href: '#', description: 'Kementerian Pendidikan' },
+    { name: 'Ipunas', href: 'https://ipusnas.id/'},
+    { name: 'IBerau', href: 'https://iberau.moco.co.id/'},
+    { name: 'Ikaltim', href: 'https://web-ikaltim.moco.co.id/'},
+    { name: 'Radar Berau', href: 'https://koran.radarberau.com/home.mu'},
   ]
 
   const quickLinks = [
@@ -97,28 +97,38 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300">Jl. Pendidikan No. 123</p>
-                  <p className="text-gray-300">...</p>
+                  <p className="text-gray-300">Jl. Murjani II</p>
+                  <p className="text-gray-300">Gg Berkah, Kelurahan Karang Ambun, Kecamatan Tanjung Redeb</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-300">(0554) 123-4567</p>
-                  <p className="text-gray-300">WA: 0812-9999-9999</p>
-                </div>
+              <div>
+  <div className="flex items-start mb-2"> {/* Added flex for alignment */}
+    <span className="text-gray-300 mr-2">📞</span> {/* Icon for phone */}
+    <p className="text-gray-300">Kepala Perpustakaan:+62 822-5401-7726</p>
+  </div>
+
+  <div className="ml-8"> {/* Indent this section */}
+    <p className="text-gray-300 mb-1">
+      <strong className="font-semibold">Teknisi:</strong> +62 821-5727-5761
+    </p>
+    <p className="text-gray-300">
+      <strong className="font-semibold">IT:</strong> +62 852-5076-8024
+    </p>
+  </div>
+</div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300">perpus@madani.sch.id</p>
+                  <p className="text-gray-300">permadanisditmadani@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300">Senin - Jumat: 07:00 - 15:00</p>
-                  <p className="text-gray-300">Sabtu: 07:00 - 12:00</p>
+                  <p className="text-gray-300">Senin - Kamis : 07:00 - 16:00</p>
+                  <p className="text-gray-300">Jum'at : 07:00 - 11:00</p>
                 </div>
               </div>
             </div>
