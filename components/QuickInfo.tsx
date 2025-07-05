@@ -4,30 +4,41 @@ import { Clock, MapPin, Phone, Mail } from 'lucide-react'
 const QuickInfo = () => {
   const infos = [
     {
-      icon: Clock,
-      title: 'Jam Buka',
-      details: ['Senin - Jumat: 07:00 - 15:00', 'Sabtu: 07:00 - 12:00'],
+      icon: Clock, // Icon untuk jam buka tetap Clock
+      title: 'Jam Kunjungan',
+      details: [
+        'Senin - Kamis: 07:00 - 16:00', 
+        'Jumat: 07:00 - 11:00'
+      ],
       color: 'bg-blue-500'
     },
     {
-      icon: MapPin,
-      title: 'Lokasi',
-      details: ['Jl. Pendidikan No. 123', 'Berau, Kalimantan Timur'],
+      icon: MapPin, // Icon lokasi tetap MapPin
+      title: 'Alamat', 
+      details: [
+        'Jl. Murjani II, Gg Berkah,',
+        'Kelurahan Karang Ambun,',
+        'Kecamatan Tanjung Redeb'
+      ],
       color: 'bg-green-500'
     },
     {
-      icon: Phone,
-      title: 'Kontak',
-      details: ['(0554) 123-4567', 'WhatsApp: 0812-3456-7890'],
+      icon: Phone, // Icon telepon tetap Phone
+      title: 'No. Telepon/WhatsApp', 
+      details: [
+        'Kepala Perpustakaan: +62 822-5401-7726',
+        'Teknis: +62 821-5727-5761',
+        'IT: +62 852-5076-8024'
+      ],
       color: 'bg-purple-500'
     },
     {
-      icon: Mail,
-      title: 'Email',
-      details: ['perpus@sman6berau.sch.id', 'info@sman6berau.sch.id'],
+      icon: Mail, // Icon email tetap Mail
+      title: 'Email', // Judul tetap Email
+      details: ['permadanisditmadani@gmail.com'], // Data email
       color: 'bg-red-500'
     }
-  ]
+  ];
 
   return (
     <section className="py-16 bg-white">
