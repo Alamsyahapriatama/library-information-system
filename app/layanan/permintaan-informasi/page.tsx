@@ -37,7 +37,7 @@ export default function LayananInformasiAduanPage() {
     }
 
     setIsSubmitting(true); // Start loading state
-    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/complaint'; // Hypothetical, common endpoint for 'aduan'
+    const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/complaint'; // Hypothetical, common endpoint for 'aduan'
 
     // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {

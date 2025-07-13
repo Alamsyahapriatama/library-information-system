@@ -40,7 +40,7 @@ export default function LayananInformasiAduanPage() {
 
     // --- API Endpoint: REPLACE THIS WITH YOUR ACTUAL BACKEND API URL ---
     // Based on your previous context, this endpoint seems plausible for consultation/aduan.
-    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/consultation'; 
+    const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/consultation'; 
 
     // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {

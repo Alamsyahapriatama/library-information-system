@@ -41,7 +41,7 @@ export default function LayananDepositPage() { // Renamed component for clarity
     setIsSubmitting(true); // Start loading state
 
     // --- API Endpoint: REPLACE THIS WITH YOUR ACTUAL BACKEND API URL FOR DEPOSITS ---
-    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/deposit'; // Hypothetical endpoint for deposits
+    const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/deposit'; // Hypothetical endpoint for deposits
 
     // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {

@@ -32,7 +32,7 @@ export default function ReservaBukuPage() {
   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null)
 
   // --- API Endpoint (Keeping the original reservation endpoint as per your API's behavior) ---
-  const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/online-renewal'; // Using the original endpoint based on your JSON response
+  const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/online-renewal'; // Using the original endpoint based on your JSON response
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setRenewalForm({

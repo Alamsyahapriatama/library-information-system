@@ -32,7 +32,7 @@ export default function ReservaBukuPage() {
   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null)
 
   // --- API Endpoint ---
-  const API_RESERVATION_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/book-reservation';
+  const API_RESERVATION_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/book-reservation';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setReservationForm({

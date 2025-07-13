@@ -60,7 +60,7 @@ export default function KuisionerKepuasanPemustakaPage() {
     setIsSubmitting(true); // Start loading state
 
     // --- API Endpoint: Replace with your actual backend API URL for this service ---
-    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/questionnaire'; // Hypothetical endpoint for survey
+    const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/questionnaire'; // Hypothetical endpoint for survey
 
     // Prepare questions data for API
     const formattedQuestions = questions.map(q => ({

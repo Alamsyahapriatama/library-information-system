@@ -38,7 +38,7 @@ export default function UsulanPengadaanKoleksiPage() {
 
     setIsSubmitting(true); // Start loading state
 
-    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/acquisition-proposal'; // Assuming a new endpoint for book proposals
+    const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/acquisition-proposal'; // Assuming a new endpoint for book proposals
 
     // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {

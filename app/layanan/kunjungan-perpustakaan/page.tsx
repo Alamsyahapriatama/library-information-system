@@ -44,7 +44,7 @@ export default function PengajuanPendampinganAkreditasiPage() { // Component nam
 
     // --- IMPORTANT: REPLACE THIS API ENDPOINT WITH YOUR ACTUAL BACKEND API URL FOR ACCREDITATION ASSISTANCE ---
     // This is a hypothetical endpoint. You need to get the actual one from your backend developer.
-    const API_ENDPOINT = 'https://cms-perpus.karuhundeveloper.com/api/v1/service/accreditation-assistance'; // Example API endpoint
+    const API_ENDPOINT = 'https://cms.perpustakaansditmadani.web.id/api/v1/service/accreditation-assistance'; // Example API endpoint
 
     // Construct the payload to EXACTLY match your provided JSON format
     const submissionData = {

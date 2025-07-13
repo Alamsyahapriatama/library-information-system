@@ -6,9 +6,8 @@ const nextConfig = {
     domains: [
       'images.pexels.com',
       'via.placeholder.com',
-      'cms-perpus.karuhundeveloper.com',
-      'perpus.karuhundeveloper.com', 
-      'library-information-system.vercel.app'
+      'cms.perpustakaansditmadani.web.id',
+      'perpustakaansditmadani.web.id'
     ],
     
   },
