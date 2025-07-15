@@ -1,4 +1,4 @@
-// File: C:\laragon\www\library-information-system\app\profil\struktur-organisasi\page.tsx
+// File: C:\laragon\www\karuhundev\library-information-system\app\profil\struktur-organisasi\page.tsx
 import * as entry from '../../../../../app/profil/struktur-organisasi/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

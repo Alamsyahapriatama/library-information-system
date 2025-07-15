@@ -140,47 +140,21 @@ export default function ProfilPerpustakaanPage() {
 
   return (
     <div className="min-h-screen bg-gray-100 pt-28 pb-12">
-      {" "}
-      {/* pt-28 untuk mengosongkan ruang Navbar yang fixed */}
-      {/* Top Banner Carousel */}
-      <div className="relative w-full h-[300px] overflow-hidden">
-        {carouselImages.map((image, index) => (
-          <Image
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            fill
-            className={`object-cover transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-            priority={index === 0} // Prioritize first image for LCP
-          />
-        ))}
-        {/* Indikator slide (dots) - opsional */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-          {carouselImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-white" : "bg-gray-400"
-              }`}
-              aria-label={`Slide ${index + 1}`}
-            ></button>
-          ))}
-        </div>
-      </div>
-      {/* Profil Perpustakaan Header */}
-      <div className="bg-white py-4 mb-8 relative z-10">
-        <div className="max-w-screen-1xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-6xl md:text-5xl font-extrabold text-blue-800 relative pb-2">
-            PROFIL PERPUSTAKAAN
-            <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-800 rounded-full"></span>
-          </h1>
-        </div>
+      <div className="relative w-full h-[300px] overflow-hidden bg-black/50 flex items-center justify-center flex-col">
+        <Image
+          src="/images/slider-2.jpg"
+          alt="Perpustakaan"
+          fill
+          className="object-cover absolute inset-0 opacity-50"
+          priority
+        />
+        <h1 className="text-white text-center text-3xl md:text-4xl font-extrabold relative pb-2 z-10">
+          PROFIL PERPUSTAKAAN
+          <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-blue-600 rounded-full"></span>
+        </h1>
       </div>
       {/* Main Content Area - Grid Layout */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8">
         {/* Left Column - Profil Perpustakaan Details */}
         <div className="lg:col-span-2 space-y-8">
           {/* Bagian pengantar Profil Perpustakaan */}

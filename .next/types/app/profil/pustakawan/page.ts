@@ -1,4 +1,4 @@
-// File: C:\laragon\www\library-information-system\app\profil\pustakawan\page.tsx
+// File: C:\laragon\www\karuhundev\library-information-system\app\profil\pustakawan\page.tsx
 import * as entry from '../../../../../app/profil/pustakawan/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -68,7 +68,7 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
 
       <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content: Program List */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-3 space-y-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Daftar Program Tersedia</h2>
           {programs.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -115,86 +115,6 @@ export default function ProgramListPage() { // Nama komponen yang lebih deskript
             ))}
             <span className="px-3 py-1 text-gray-700">...</span>
             <Link href="#" className="px-3 py-1 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-200">&raquo;</Link>
-          </div>
-        </div>
-
-        {/* Right Sidebar (Mirip E-book Page) */}
-        <div className="lg:col-span-1 space-y-8">
-          {/* INFOGRAFIS Block (Dipertahankan jika relevan untuk Program) */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">INFOGRAFIS PROGRAM</h3>
-            <div className="relative w-full aspect-square bg-gray-200 rounded-lg overflow-hidden mb-4">
-              <Image src="/images/gambar-olahraga-ituibadah.jpg" alt="Infografis Program" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
-            </div>
-            <div className="relative w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
-              <Image src="\images\gemar-membac.jpeg" alt="Infografis Pendidikan" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 33vw"/>
-            </div>
-            <p className="text-sm text-gray-600 mt-4 text-center">informasi tentang program sekolah dan kegiatan.</p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md p-6 sticky top-32">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">LAYANAN PROGRAM</h3>
-            <ul className="space-y-3">{layananLinks.map((item, index) => (
-              <li key={index}>
-                <Link href={item.href} className="text-blue-600 hover:text-blue-800 text-base font-medium transition-colors">
-                  &raquo; {item.name}
-                </Link>
-              </li>
-            ))}</ul>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">KATEGORI PROGRAM</h3>
-            <ul className="space-y-3">{kategoriProgramLinks.map((item, index) => (
-              <li key={index}>
-                <Link href={item.href} className="text-blue-600 hover:text-blue-800 text-base font-medium transition-colors">
-                  &raquo; {item.name}
-                </Link>
-              </li>
-            ))}</ul>
-          </div>
-
-          {/* AGENDA Section (dipertahankan) */}
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">AGENDA</h3>
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
-                <span className="block text-2xl leading-none">
-                  {agendaItem.date.day}
-                </span>
-                <span className="block text-xs uppercase">
-                  {agendaItem.date.month}
-                </span>
-                <span className="block text-xs">{agendaItem.date.year}</span>
-              </div>
-              <div>
-                <p className="text-gray-800 font-semibold">
-                  {agendaItem.title}
-                </p>
-                <p className="text-sm text-gray-600">{agendaItem.location}</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-blue-600 text-white p-3 rounded-lg text-center font-bold flex-shrink-0">
-                <span className="block text-2xl leading-none">15</span>
-                <span className="block text-xs uppercase">JULI</span>
-                <span className="block text-xs">2025</span>
-              </div>
-              <div>
-                <p className="text-gray-800 font-semibold">
-                  Peluncuran Program Mentoring Baru
-                </p>
-                <p className="text-sm text-gray-600">
-                  Online via Google Meet
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/informasi/pengumuman"
-              className="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium"
-            >
-              Lihat Semua Agenda &rarr;
-            </Link>
           </div>
         </div>
       </div>

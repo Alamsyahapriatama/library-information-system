@@ -1,310 +1,35 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/_not-found-289cd05a581b9572.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/css/c622aec7c05e92d3.css",
-      "static/chunks/app/layout-f9f5ec92b682ec4c.js"
-    ],
-    "/fasilitas/kebutuhan-pemustaka/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/fasilitas/kebutuhan-pemustaka/page-2759c0cb3b24b0f5.js"
-    ],
-    "/fasilitas/titik-baca/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/fasilitas/titik-baca/page-8cc46c14cb65db01.js"
-    ],
-    "/fasilitas/kepuasan-permadani/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/fasilitas/kepuasan-permadani/page-1930ddb176296cb7.js"
-    ],
-    "/informasi/berita/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/informasi/berita/page-5779e6da6fad7f94.js"
-    ],
-    "/informasi/pengumuman/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/informasi/pengumuman/page-0ed01355762f090a.js"
-    ],
-    "/interaksi/buku-tamu/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/interaksi/buku-tamu/page-b4a480903aad4da6.js"
-    ],
-    "/informasi/kerjasama/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/informasi/kerjasama/page-939ff794e4aeb5aa.js"
-    ],
-    "/interaksi/masukan-saran/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/interaksi/masukan-saran/page-a21dc94e7a3d3a3c.js"
-    ],
-    "/koleksi/aplikasi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/koleksi/aplikasi/page-d76411860a459e33.js"
-    ],
-    "/interaksi/survei/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/interaksi/survei/page-22ceb250d41939e0.js"
-    ],
-    "/koleksi/artikel/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/koleksi/artikel/page-2e508e28b629bd81.js"
-    ],
-    "/koleksi/jejaring-perpustakaan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/koleksi/jejaring-perpustakaan/page-49336ec6337c1fe6.js"
-    ],
-    "/koleksi/ebook/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/koleksi/ebook/page-3589083c0f1d0e7b.js"
-    ],
-    "/layanan/aduan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/aduan/page-dcc6b6090e761cf0.js"
-    ],
-    "/layanan/angket-usulan-koleksi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/angket-usulan-koleksi/page-288e89eb50602a58.js"
-    ],
-    "/layanan/koleksi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/app/layanan/koleksi/page-28b81f2ed9634f60.js"
-    ],
-    "/layanan/konsultasi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/konsultasi/page-5f2369561b593c58.js"
-    ],
-    "/layanan/deposit/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/deposit/page-5879a52646f1993f.js"
-    ],
-    "/layanan/daftar-anggota-baru/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/daftar-anggota-baru/page-740c1a84361a04e5.js"
-    ],
-    "/layanan/permintaan-informasi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/permintaan-informasi/page-cc3b3580ace4f76c.js"
-    ],
-    "/layanan/kunjungan-perpustakaan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/kunjungan-perpustakaan/page-8300acf8310c48bc.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/page-f9b069234f98b073.js"
-    ],
-    "/layanan/perpanjangan-online/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/perpanjangan-online/page-9b3e0847d56c3cbc.js"
-    ],
-    "/layanan/polling-kepuasan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/polling-kepuasan/page-8fc6232fb554d5c8.js"
-    ],
-    "/layanan/reservasi-buku/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/app/layanan/reservasi-buku/page-067b59391f54edbf.js"
-    ],
-    "/profil/profil-perpustakaan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/profil/profil-perpustakaan/page-c23f3be5df2acd76.js"
-    ],
-    "/profil/pustakawan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/profil/pustakawan/page-85eda4ed75cf024e.js"
-    ],
-    "/profil/sop-perpustakaan/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/profil/sop-perpustakaan/page-64344c136bae5daa.js"
-    ],
-    "/koleksi/artikel/[slug]/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/koleksi/artikel/[slug]/page-181e1fe3fc06d4ac.js"
-    ],
-    "/koleksi/ebook/[id]/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/koleksi/ebook/[id]/page-2850fbf4434721d6.js"
-    ],
-    "/profil/struktur-organisasi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/profil/struktur-organisasi/page-d2603009979a9a98.js"
-    ],
-    "/profil/visi-misi/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/257-50029be63c801a19.js",
-      "static/chunks/app/profil/visi-misi/page-d012a3fcdbc7a556.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/program/page": [
-      "static/chunks/webpack-52f8e82facad7427.js",
-      "static/chunks/fd9d1056-37315e7158bfc252.js",
-      "static/chunks/938-7af0677d2b27e6ad.js",
-      "static/chunks/main-app-592fe47786d8429c.js",
-      "static/chunks/250-94fe7473047a04af.js",
-      "static/chunks/749-4fede30d2f5f5f81.js",
-      "static/chunks/app/program/page-8d85562c9ba6708c.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/program/page.js"
+    ],
+    "/profil/struktur-organisasi/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/struktur-organisasi/page.js"
+    ],
+    "/profil/profil-perpustakaan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/profil-perpustakaan/page.js"
+    ],
+    "/profil/pustakawan/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/profil/pustakawan/page.js"
     ]
   }
 }

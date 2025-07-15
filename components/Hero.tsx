@@ -9,14 +9,14 @@ const Hero = () => {
 
   const slides = [
     {
-      image: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      image: '/images/slider-2.jpg',
       title: 'Selamat Datang di Perpustakaan Madani',
       subtitle: 'Gerbang Ilmu Pengetahuan dan Literasi',
       description: 'Temukan ribuan koleksi buku dan nikmati layanan perpustakaan modern untuk mendukung pembelajaran Anda.',
       hasVideo: false
     },
     {
-      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      image: '/images/slider-3.jpg',
       title: 'Visi & Misi Perpustakaan',
       subtitle: 'Mewujudkan Generasi Literat',
       description: 'Mengenal lebih dekat visi dan misi perpustakaan dalam mendukung pendidikan berkualitas.',
@@ -24,7 +24,7 @@ const Hero = () => {
       videoUrl: '/videos/visi-misi.mp4'
     },
     {
-      image: 'https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      image: '/images/slider-1.jpg',
       title: 'Layanan Digital Terdepan',
       subtitle: 'iPusnas, iBerau, dan E-book',
       description: 'Akses koleksi digital kapan saja, di mana saja melalui platform digital terintegrasi.',
