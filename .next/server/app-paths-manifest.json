@@ -1,7 +1,8 @@
 {
-  "/page": "app/page.js",
+  "/not-found": "app/not-found.js",
+  "/profil/visi-misi/page": "app/profil/visi-misi/page.js",
+  "/profil/pustakawan/page": "app/profil/pustakawan/page.js",
+  "/profil/sop-perpustakaan/page": "app/profil/sop-perpustakaan/page.js",
   "/program/page": "app/program/page.js",
-  "/profil/struktur-organisasi/page": "app/profil/struktur-organisasi/page.js",
-  "/profil/profil-perpustakaan/page": "app/profil/profil-perpustakaan/page.js",
-  "/profil/pustakawan/page": "app/profil/pustakawan/page.js"
+  "/fasilitas/titik-baca/page": "app/fasilitas/titik-baca/page.js"
 }

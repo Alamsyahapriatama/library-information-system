@@ -89,77 +89,33 @@ export default function VisiMisiPage() {
   return (
     <div className="min-h-screen bg-gray-100 pt-28 pb-12">
       {/* Top Banner Image */}
-      <div className="relative w-full h-[300px] overflow-hidden">
+      <div className="relative w-full h-[300px] overflow-hidden bg-black/50 flex items-center justify-center flex-col">
         <Image
-          src="https://images.pexels.com/photos/1001965/pexels-photo-1001965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Siswa di perpustakaan"
+          src="/images/slider-2.jpg"
+          alt="Perpustakaan"
           fill
-          className="object-cover"
+          className="object-cover absolute inset-0 opacity-50"
           priority
         />
-      </div>
-
-      {/* Visi & Misi Header */}
-      <div className="bg-white py-4 mb-8 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 relative pb-2">
-            VISI & MISI PERPUSTAKAAN
-            <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-600 rounded-full"></span>
-          </h1>
-        </div>
+        <h1 className="text-white text-center text-3xl md:text-4xl font-extrabold relative pb-2 z-10">
+          VISI & MISI PERPUSTAKAAN
+          <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-blue-600 rounded-full"></span>
+        </h1>
       </div>
 
       {/* Main Content Area - Grid Layout */}
-      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8">
         {/* Left Column - Visi Misi Block & Details (Dengan video terintegrasi) */}
         <div className="lg:col-span-2 space-y-8">
           {/* Visi Misi Central Block (Sekarang termasuk video & tanpa background biru/teks spesifik) */}
           <div className="bg-white rounded-xl shadow-lg pb-4">
-            {/* Konten Video Profil yang terintegrasi di sini (diperbesar) */}
-            <div className="relative w-full aspect-video bg-gray-800 rounded-t-xl overflow-hidden mb-6">
-              <Image
-                src="https://images.pexels.com/photos/1370298/pexels-photo-1370298.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Video Profil Perpustakaan"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="bg-blue-600 hover:bg-blue-700 rounded-full p-4 transition-colors">
-                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            {/* Deskripsi Video & Sorotan Utama */}
-            <div className="p-8 pt-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Video Profil Perpustakaan</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Tonton video untuk mengenal lebih dekat visi, misi, dan komitmen
-                perpustakaan Madani dalam mendukung pendidikan berkualitas.
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 mb-3">Sorotan Utama:</h4>
-              <ul className="space-y-2">
-                {videoBenefits.map((benefit, index) => (
-                  <li key={index} className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Konten Visi Sebenarnya */}
             <div className="p-8 border-t border-gray-200">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Visi Kami</h3>
               {visiPoints.map((point, index) => (
                 <div key={index} className="flex items-start space-x-4 mb-4">
-                  <div className="bg-blue-100 p-3 rounded-full flex-shrink-0">
-                    <point.icon className="h-6 w-6 text-blue-600" />
-                  </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-800 mb-1">{point.title}</h4>
                     <p className="text-gray-700">{point.description}</p>
                   </div>
                 </div>

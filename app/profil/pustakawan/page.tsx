@@ -40,64 +40,56 @@ export default function DataPegawaiPage() {
   const employees = [
     {
       photoSrc: "/images/pusatakawan-1.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Khoirul Ngibad, S.Pd., M.Pd",
+      position: "Kepala sekolah",
+      dob: "Magetan, 29 Mei 1989",
+      gender: "Laki-laki",
     },
     {
       photoSrc: "/images/pusatakawan-2.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Suwesty Rahayu, S.Pd.,Gr",
+      position: "Kepala Perpustakaan",
+      dob: "Samarinda, 10 Juni 1982",
+      gender: "Perempuan",
     }, {
       photoSrc: "/images/pusatakawan-3.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Ety Nor Anisa, S.Pd",
+      position: "Layanan Teknis",
+      dob: "Berau, 15 Oktober 1993",
+      gender: "Perempuan",
     }, {
       photoSrc: "/images/pusatakawan-4.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Sulistyo Nugraheny R.A, S.Pd",
+      position: "Layanan Teknis",
+      dob: "Lamongan, 23 April 1978",
+      gender: "Perempuan",
     }, {
       photoSrc: "/images/pusatakawan-5.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Mas'ani, S.Pd",
+      position: "Layanan TIK",
+      dob: "Balukang, 02 Agustus 1977",
+      gender: "Perempuan",
     },
     {
       photoSrc: "/images/pusatakawan-6.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Paridah, S.Sos",
+      position: "Layanan TIK",
+      dob: "Berau, 09 Mei 2000",
+      gender: "Perempuan",
     },
     {
       photoSrc: "/images/pusatakawan-7.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Tiara Elmi",
+      position: "Layanan Pemustaka",
+      dob: "Berau, 10 Mei 2002",
+      gender: "Perempuan",
     },
     {
       photoSrc: "/images/pusatakawan-8.png", 
-      name: "-",
-      position: "-",
-      dob: "-",
-      gender: "-",
-      rank: "-",
+      name: "Diari Bagaskoro P.H",
+      position: "Layanan Pemustaka",
+      dob: "Kudus, 30 September 1998",
+      gender: "Laki-laki",
     },
     // Tambahkan data pegawai lain jika diperlukan
   ];
@@ -141,42 +133,20 @@ export default function DataPegawaiPage() {
 
 
   return (
-    <div className="min-h-screen bg-gray-100 pb-12">
-      {/* Top Banner with Carousel - Increased Height */}
-      <div className="relative w-full h-[400px] overflow-hidden">
-        {carouselImages.map((img, index) => (
-          <Image
-            key={index}
-            src={img.src}
-            alt={img.alt}
-            fill
-            className={`object-cover transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? "opacity-100" : "opacity-0"
-            }`}
-            priority={index === currentImageIndex} // Prioritaskan gambar yang sedang aktif
-          />
-        ))}
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-center p-4">
-          <div className="text-white">
-            <h1 className="text-2xl md:text-4xl font-extrabold tracking-wide">
-              SELAMAT DATANG DI PERPUSTAKAAN SEKOLAH
-            </h1>
-            <p className="text-3xl md:text-5xl font-bold mt-2">SDIT MADANI</p>
-          </div>
-        </div>
-        {/* Carousel indicators/dots (optional) */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
-          {carouselImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-3 h-3 rounded-full ${
-                index === currentImageIndex ? "bg-white" : "bg-gray-400"
-              } transition-colors duration-300`}
-              aria-label={`Go to slide ${index + 1}`}
-            ></button>
-          ))}
-        </div>
+    <div className="min-h-screen bg-gray-100 pt-28 pb-12">
+     {/* Top Banner Image */}
+      <div className="relative w-full h-[300px] overflow-hidden bg-black/50 flex items-center justify-center flex-col">
+        <Image
+          src="/images/slider-2.jpg"
+          alt="Perpustakaan"
+          fill
+          className="object-cover absolute inset-0 opacity-50"
+          priority
+        />
+        <h1 className="text-white text-center text-3xl md:text-4xl font-extrabold relative pb-2 z-10">
+          Pustakawan
+          <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-blue-600 rounded-full"></span>
+        </h1>
       </div>
 
       {/* Main Content Area - Grid Layout */}
@@ -199,11 +169,8 @@ export default function DataPegawaiPage() {
                   fill
                   className="object-cover"
                 />
-                <button className="absolute bottom-0 left-0 w-full bg-blue-600 text-white text-xs py-1 text-center font-medium opacity-90">
-                  Lihat Selengkapnya
-                </button>
               </div>
-              <div className="flex-grow text-sm">
+              <div className="flex-grow text-sm mt-8">
                 <p className="mb-2">
                   <strong className="text-gray-700">Nama:</strong>{" "}
                   <span className="text-gray-800 font-semibold">
@@ -228,41 +195,9 @@ export default function DataPegawaiPage() {
                   <strong className="text-gray-700">Pangkat Golongan:</strong>{" "}
                   <span className="text-gray-600">{employee.rank}</span>
                 </p>
-                {/* Tombol "Lihat Selengkapnya" di luar foto */}
-                <Link
-                  href="#"
-                  className="inline-block bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition-colors mt-2"
-                >
-                  Lihat Selengkapnya
-                </Link>
               </div>
             </div>
           ))}
-
-          {/* Pagination */}
-          <div className="flex justify-center items-center space-x-2 mt-8">
-            <button className="px-3 py-1 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-200">
-              &lt;
-            </button>
-            <button className="px-3 py-1 border border-blue-600 bg-blue-600 text-white rounded-md">
-              1
-            </button>
-            <button className="px-3 py-1 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-200">
-              2
-            </button>
-            <button className="px-3 py-1 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-200">
-              3
-            </button>
-            <span className="text-gray-600">...</span>
-            <button className="px-3 py-1 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-200">
-              &gt;
-            </button>
-          </div>
-
-          {/* Teks "Rearranged by" */}
-          <div className="p-8 pt-4 text-right text-sm text-gray-400">
-            <p></p>
-          </div>
         </div>
 
         {/* Right Column - Sidebar */}

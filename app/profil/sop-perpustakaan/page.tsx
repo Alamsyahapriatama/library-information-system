@@ -122,30 +122,23 @@ export default function SopPerpustakaanPage() { // Renamed component
 
   return (
     <div className="min-h-screen bg-gray-100 pt-28 pb-12"> {/* pt-28 untuk mengosongkan ruang Navbar yang fixed */}
-
       {/* Top Banner Image */}
-      <div className="relative w-full h-[300px] overflow-hidden">
+      <div className="relative w-full h-[300px] overflow-hidden bg-black/50 flex items-center justify-center flex-col">
         <Image
-          src="https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" // Image relevant to rules/procedures
-          alt="Perpustakaan: Aturan dan Prosedur"
+          src="/images/slider-2.jpg"
+          alt="Perpustakaan"
           fill
-          className="object-cover"
+          className="object-cover absolute inset-0 opacity-50"
           priority
         />
-      </div>
-
-      {/* SOP Perpustakaan Header */}
-      <div className="bg-white py-4 mb-8 relative z-10">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Wider container */}
-          <h1 className="text-3xl md:text-4xl font-extrabold text-blue-800 relative pb-2">
-            STANDAR OPERASIONAL PROSEDUR (SOP) PERPUSTAKAAN
-            <span className="absolute left-0 bottom-0 w-24 h-1 bg-blue-600 rounded-full"></span>
-          </h1>
-        </div>
+        <h1 className="text-white text-center text-3xl md:text-4xl font-extrabold relative pb-2 z-10">
+          STANDAR OPERASIONAL PROSEDUR (SOP) PERPUSTAKAAN
+          <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-blue-600 rounded-full"></span>
+        </h1>
       </div>
 
       {/* Main Content Area - Grid Layout */}
-      <div className="max-w-screen-8xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8"> {/* Wider container */}
+      <div className="max-w-screen-8xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8"> {/* Wider container */}
 
         {/* Left Column - SOP Details & Video */}
         <div className="lg:col-span-2 space-y-8">
@@ -161,43 +154,7 @@ export default function SopPerpustakaanPage() { // Renamed component
               memastikan layanan perpustakaan berjalan lancar dan optimal.
             </p>
           </div>
-
-          {/* Video Guide for SOPs */}
-          <div className="bg-white rounded-xl shadow-lg pb-4">
-            <div className="relative w-full aspect-video bg-gray-800 rounded-t-xl overflow-hidden mb-6">
-              <Image
-                src="https://images.pexels.com/photos/716107/pexels-photo-716107.jpeg?auto=compress&cs=tinysrgb&w=800" // Video thumbnail for a guide/tutorial
-                alt="Video Panduan SOP Perpustakaan"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="bg-blue-600 hover:bg-blue-700 rounded-full p-4 transition-colors">
-                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div className="p-8 pt-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Video Panduan SOP Perpustakaan</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Tonton video panduan ini untuk memahami setiap prosedur dengan
-                lebih mudah dan cepat, dari peminjaman hingga pengembalian buku.
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 mb-3">Manfaat Menonton Video:</h4>
-              <ul className="space-y-2">
-                {videoBenefits.map((benefit, index) => (
-                  <li key={index} className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
+          
           {/* List of SOP Sections */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Daftar Prosedur Operasional Standar</h3>
